@@ -6,7 +6,7 @@ function Header() {
       <div className='bg-red-800 max-w-auto h-72 flex flex-col justify-center items-center 
       rounded-bl-8xl rounded-br-8xl bg-gradient-to-r from-red-700 to-red-600'>
         {/* H1 Tag */}
-        <h1 className='font-gilroy font-light italic text-xl text-white/60 mb-4'>
+        <h1 className='font-gilroy font-light flex italic text-xl text-white/60 mb-4'>
           Flair of Freedom,Freedom of Flair
         </h1>
 
