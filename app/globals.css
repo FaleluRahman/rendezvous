@@ -17,3 +17,17 @@
     font-style: normal;
   }
   
+
+  .mySwiper {
+    padding-bottom: 60px !important;
+    padding-top: 20px !important;
+  }
+  .swiper-pagination-bullet {
+    background: #d70000 !important;
+    transition: 0.5s !important;
+  }
+  /* .swiper-pagination-bullet-active {
+    background: var(--primary) !important;
+    width: 30px !important;
+    border-radius: 25px !important;
+  } */

@@ -25,7 +25,7 @@ function Header() {
       </div>
 
       <div className='text-black/35 m-10 flex text-justify text-sm leading-[16px] font-normal animate-typing'>
-        <p className='font-gilroy'><span className='font-semibold text-black/45'>Rendezvous Life Festival</span> is an annual arts and culture event organized by
+        <p className='font-gilroy'><span className='font-semibold text-black/45'>Rendezvous Life Festival</span>is an annual arts and culture event organized by
         Jamia Madeenathunnoor to nurture and enhance the artistic talents of its students.This festival serves as a platform for students to express their
         creativity,explore various art forms and engage with peers in an environment that celebrates artistic growth.Through workshops, performances and 
         exhibitions.The event not only promotes individual artistic development but also aims to build a supportive, vibrant community 
