@@ -10,12 +10,45 @@
     font-style: normal;
   }
   
-  @font-face {
+@font-face {
     font-family: 'Gilroy';
     src: url('/fonts/Gilroy-Bold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
-  }
+}
+
+nav::-webkit-scrollbar {
+    display: none;
+}
+
+
+.item::after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  translate: -25.5px;
+  height: 8px;
+  border-radius: 10px;
+  top: -15px;
+  left: -15px;
+  background: linear-gradient(290deg, #00ff80cc, #8dd1ff, #00ff80cc);
+}
+#footer .act {
+  transform: translate(0, -13px);
+  transition: 0.5s;
+}
+#footer .act p {
+  opacity: 0;
+}
+#footer nav svg {
+  color: rgb(0, 0, 0);
+  height: 30px;
+  transition: 0.5s;
+}
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
   
 
   .mySwiper {

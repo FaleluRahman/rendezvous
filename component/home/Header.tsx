@@ -1,8 +1,9 @@
+import Image from 'next/image';
 import React from 'react';
 
 function Header() {
   return (
-    <div className='h-screen bg-orange-50 overflow-hidden'>
+    <div className='min-h-screen bg-orange-50 overflow-hidden'>
       <div className='bg-red-800 max-w-auto h-72 flex flex-col justify-center items-center 
       rounded-bl-8xl rounded-br-8xl bg-gradient-to-r from-red-700 to-red-600'>
         {/* H1 Tag */}
@@ -24,6 +25,8 @@ function Header() {
         </h1> 
       </div>
 
+      <div className='text-black/35 m-6 flex text-justify text-sm leading-[16px] font-normal animate-typing'>
+        <p className='font-gilroy'><span className='font-semibold text-black/45'>Rendezvous Life Festival</span> is an annual arts and culture event organized by
       <div className='text-black/35 m-10 flex text-justify text-sm leading-[16px] font-normal animate-typing'>
         <p className='font-gilroy'><span className='font-semibold text-black/45'>Rendezvous Life Festival</span>is an annual arts and culture event organized by
         Jamia Madeenathunnoor to nurture and enhance the artistic talents of its students.This festival serves as a platform for students to express their
@@ -32,8 +35,8 @@ function Header() {
         around the arts at Jamia Madeenathunnoor.
         </p>
       </div>
-      <div className="w-fit flex flex-col">
-        <div className="h-10 w-screen bg-[url('/image/logo.png')] bg-repeat-x bg-contain animate-move"></div>
+      <div className=" flex flex-col">
+          <div className="h-10 w-screen bg-[url('/image/logo.png')] bg-repeat-x bg-contain animate-move"></div>
       </div>
     </div>
   );
