@@ -80,3 +80,8 @@ nav::-webkit-scrollbar {
     width: 30px !important;
     border-radius: 25px !important;
   } */
+
+  /* Enable smooth scrolling on iOS */
+nav {
+  -webkit-overflow-scrolling: touch;
+}

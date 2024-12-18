@@ -7,7 +7,7 @@ function Header() {
       <div className='bg-red-800 max-w-auto h-72 flex flex-col justify-center items-center 
       rounded-bl-8xl rounded-br-8xl bg-gradient-to-r from-red-700 to-red-600'>
         {/* H1 Tag */}
-        <h1 className='font-gilroy font-light flex italic text-xl text-white/60 mb-4'>
+        <h1 className='font-gilroy w-[60%] font-light flex italic text-lg text-white/60 mb-4'>
           Flair of Freedom,Freedom of Flair
         </h1>
 
@@ -15,7 +15,7 @@ function Header() {
         <img
           src="/image/logo-03 copy.png"
           alt="Rendezvous"
-          className='h-[55%]'
+          className='h-[45%]'
         />
       </div>
       <div className='text-red-500 w-full items-center flex '>  
@@ -25,7 +25,7 @@ function Header() {
         </h1> 
       </div>
 
-      <div className='text-black/35 m-8 flex text-justify text-sm leading-[16px] font-normal animate-typing'>
+      <div className='text-black/35 m-8 flex text-justify text-[10px] leading-[26px] font-base animate-typing'>
         <p className='font-gilroy'><span className='font-semibold text-black/45'>Rendezvous Life Festival</span> is an annual arts and culture event organized by
         Jamia Madeenathunnoor to nurture and enhance the artistic talents of its students.This festival serves as a platform for students to express their
         creativity,explore various art forms and engage with peers in an environment that celebrates artistic growth.Through workshops, performances and 
