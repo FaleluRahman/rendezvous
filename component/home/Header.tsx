@@ -4,10 +4,10 @@ import React from 'react';
 function Header() {
   return (
     <div className='bg-orange-50 overflow-hidden'>
-      <div className='bg-red-800 max-w-auto h-72 flex flex-col justify-center items-center 
-      rounded-bl-8xl rounded-br-8xl bg-gradient-to-r from-red-700 to-red-600'>
+      <div className='bg-red-800 max-w-auto h-64 flex flex-col justify-center items-center 
+      rounded-bl-3xl rounded-br-3xl bg-gradient-to-r from-red-700 to-red-600'>
         {/* H1 Tag */}
-        <h1 className='font-gilroy w-[60%] font-light flex italic text-lg text-white/60 mb-4'>
+        <h1 className='font-gilroy  font-light flex italic text-md text-center text-white/60 mb-4'>
           Flair of Freedom,Freedom of Flair
         </h1>
 

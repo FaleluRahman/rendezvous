@@ -2,13 +2,13 @@ import React from 'react';
 
 function UpComing() {
   return (
-    <div className="bg-orange-50 overflow-hidden">
-      <div className="w-full bg-orange-50 flex flex-col items-end">
-        <nav className="h-52 flex flex-row w-full overflow-x-auto no-scrollbar mt-2.5 px-4 box-border snap-x snap-mandatory touch-pan-x">
+    <div className="bg-orange-600 overflow-hidden rounded-lg ">
+      <div className="w-full flex flex-col items-end">
+        <nav className="h-52 flex flex-row w-full overflow-x-auto no-scrollbar  mt-5 box-border snap-x snap-mandatory touch-pan-x">
           {[1, 1, 1, 1].map((_, index) => (
             <div
               key={index}
-              className="w-64 h-5/6 flex-shrink-0 bg-gradient-to-r from-red-700 to-red-600 border-[#ffe5b9] border-[2px] rounded-2xl flex flex-col justify-start items-start pl-8 box-border overflow-hidden relative snap-center mx-2"
+              className="w-64 h-5/6 flex-shrink-0 bg-gradient-to-r from-red-700 to-red-600 border-red-500 border-[2px] rounded-2xl flex flex-col justify-start items-start pl-8 box-border overflow-hidden relative snap-center mx-2"
             >
               <p className="text-lg bg-red-500 px-2 font-semibold text-white rounded-md mt-5">
                 Junior
