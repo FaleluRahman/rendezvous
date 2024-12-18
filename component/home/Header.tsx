@@ -25,14 +25,16 @@ function Header() {
         </h1> 
       </div>
 
-      <div className='text-black/35 m-8 flex text-justify text-[10px] leading-[26px] font-base animate-typing'>
-        <p className='font-gilroy'><span className='font-semibold text-black/45'>Rendezvous Life Festival</span> is an annual arts and culture event organized by
-        Jamia Madeenathunnoor to nurture and enhance the artistic talents of its students.This festival serves as a platform for students to express their
-        creativity,explore various art forms and engage with peers in an environment that celebrates artistic growth.Through workshops, performances and 
-        exhibitions.The event not only promotes individual artistic development but also aims to build a supportive, vibrant community 
-        around the arts at Jamia Madeenathunnoor.
-        </p>
-      </div>
+      <div className='text-black/35 m-8 flex text-justify text-xs leading-[14px] font-base animate-typing'>
+  <p className='font-gilroy'>
+    <span className='font-semibold text-black/45'>Rendezvous Life Festival</span> is an annual arts and culture event organized by
+    Jamia Madeenathunnoor to nurture and enhance the artistic talents of its students. This festival serves as a platform for students to express their
+    creativity, explore various art forms, and engage with peers in an environment that celebrates artistic growth. Through workshops, performances, and 
+    exhibitions, the event not only promotes individual artistic development but also aims to build a supportive, vibrant community 
+    around the arts at Jamia Madeenathunnoor.
+  </p>
+</div>
+
         <div className='bg-orange-50 '>
       <div className=" flex flex-col">
           <div className="h-10 w-screen bg-[url('/image/logo.png')] bg-repeat-x bg-contain animate-move"></div>

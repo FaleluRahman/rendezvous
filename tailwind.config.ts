@@ -36,8 +36,8 @@ export default {
         },
       },
       animation: {
-        move: 'move 80s linear infinite',     
-        rightToLeft: 'moveRightToLeft 80s linear infinite',
+        move: 'move 50s linear infinite',     
+        rightToLeft: 'moveRightToLeft 50s linear infinite',
       
         typing: "typing 0.5s ease forwards",
       },
