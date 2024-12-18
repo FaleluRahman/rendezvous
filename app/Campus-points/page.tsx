@@ -1,11 +1,11 @@
-import CampuspointsJnr from "@/component/Teamstatus/CampuspointsJnr";
-import Premeir from "@/component/Teamstatus/premeir"; // Capitalized the component name
+
+import Campuspoints from "@/component/Teamstatus/Campuspoints";
 
 export default function Page() { 
   return (
     <div>
-      <CampuspointsJnr />
-      <Premeir />
+      
+      <Campuspoints/>
     </div>
   );
 }

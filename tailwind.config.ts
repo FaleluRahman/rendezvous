@@ -26,26 +26,27 @@ export default {
           '0%': { backgroundPosition: '0 0' },
           '100%': { backgroundPosition: '100% 0' },
         },
+        moveRightToLeft:  {
+          '0%': { backgroundPosition: '100% 0' },
+          '100%': { backgroundPosition: '0 0' },
+        },
         typing: {
           "0%": { opacity: "0", transform: "translateY(10px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
-        
       },
       animation: {
-        move: 'move 80s linear infinite', // Adjust timing and easing as needed
+        move: 'move 80s linear infinite',     
+        rightToLeft: 'moveRightToLeft 80s linear infinite',
+      
         typing: "typing 0.5s ease forwards",
       },
-    
     },
   },
   plugins: [
     require("daisyui"),
   ],
-  
   daisyui: {
     themes: ["light"],
   },
-  
-  
 } satisfies Config;
