@@ -2,10 +2,12 @@ import React from 'react';
 
 function UpComing() {
   return (
-    <div className="bg-orange-600 overflow-hidden rounded-lg ">
+    <div className="bg-orange-100  overflow-hidden  ">
+      <div className='flex justify-end w-full mt-3 '><p className='flex bg-red-700 font-bold text-xs text-white rounded-badge px-2 py-1 mr-2 animate-vibrate'>Ongoing <img className='text-white h-4 animate-vibrate' src="/image/vibration copy.png" alt="" /> </p>
+     </div>
       <div className="w-full flex flex-col items-end">
-        <nav className="h-52 flex flex-row w-full overflow-x-auto no-scrollbar  mt-5 box-border snap-x snap-mandatory touch-pan-x">
-          {[1, 1, 1, 1].map((_, index) => (
+        <nav className="h-52 flex flex-row w-full overflow-x-auto no-scrollbar  mt-2  box-border snap-x snap-mandatory touch-pan-x">
+          {[1, 1, 1, 1,1,1,1,1,1].map((_, index) => (
             <div
               key={index}
               className="w-64 h-5/6 flex-shrink-0 bg-gradient-to-r from-red-700 to-red-600 border-red-500 border-[2px] rounded-2xl flex flex-col justify-start items-start pl-8 box-border overflow-hidden relative snap-center mx-2"

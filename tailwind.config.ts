@@ -34,11 +34,18 @@ export default {
           "0%": { opacity: "0", transform: "translateY(10px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
+        vibrate: {
+          '0%': { transform: 'translate(0, 0)' },
+          '25%': { transform: 'translate(-1px, 1px)' },
+          '50%': { transform: 'translate(1px, -1px)' },
+          '75%': { transform: 'translate(-1px, -1px)' },
+          '100%': { transform: 'translate(1px, 1px)' },
+        },
       },
       animation: {
         move: 'move 50s linear infinite',     
         rightToLeft: 'moveRightToLeft 50s linear infinite',
-      
+        vibrate: 'vibrate 12s infinite',
         typing: "typing 0.5s ease forwards",
       },
     },

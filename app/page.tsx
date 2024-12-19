@@ -1,6 +1,6 @@
 import Header from "@/component/home/Header";
+import Headtop from "@/component/home/Headtop";
 import ImageSlider from "@/component/home/ImageSlider";
-import Shedule from "@/component/home/Shedule";
 import UpComing from "@/component/home/UpComing";
 
 
@@ -10,7 +10,6 @@ export default function Home() {
       <Header />
       <ImageSlider />
       <UpComing />
-      <Shedule />
       
     </div>
   );
