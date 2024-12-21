@@ -45,7 +45,7 @@ export default {
       animation: {
         move: 'move 50s linear infinite',     
         rightToLeft: 'moveRightToLeft 50s linear infinite',
-        vibrate: 'vibrate 12s infinite',
+        vibrate: 'vibrate 2s infinite',
         typing: "typing 0.5s ease forwards",
       },
     },
