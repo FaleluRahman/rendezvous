@@ -1,13 +1,14 @@
+import { Span } from 'next/dist/trace';
 import Image from 'next/image';
 import React from 'react';
 
 function Header() {
   return (
-    <div className='min-h-screen bg-orange-50 overflow-hidden'>
-      <div className='bg-red-800 max-w-auto h-72 flex flex-col justify-center items-center 
-      rounded-bl-8xl rounded-br-8xl bg-gradient-to-r from-red-700 to-red-600'>
+    <div className='bg-orange-50 overflow-hidden'>
+      <div className='bg-red-800 max-w-auto h-80 flex flex-col justify-center items-center 
+      rounded-bl-3xl rounded-br-3xl bg-gradient-to-r from-red-700 to-red-600'>
         {/* H1 Tag */}
-        <h1 className='font-gilroy font-light flex italic text-xl text-white/60 mb-4'>
+        <h1 className='font-gilroy  font-light flex italic text-lg text-center pt-10 text-white/60 '>
           Flair of Freedom,Freedom of Flair
         </h1>
 
@@ -15,7 +16,7 @@ function Header() {
         <img
           src="/image/logo-03 copy.png"
           alt="Rendezvous"
-          className='h-[55%]'
+          className='h-[65%] pb-10'
         />
       </div>
       <div className='text-red-500 w-full items-center flex '>  
@@ -25,17 +26,20 @@ function Header() {
         </h1> 
       </div>
 
-      <div className='text-black/35 m-6 flex text-justify text-sm leading-[16px] font-normal animate-typing'>
-        <p className='font-gilroy'><span className='font-semibold text-black/45'>Rendezvous Life Festival</span> is an annual arts and culture event organized by
-        Jamia Madeenathunnoor to nurture and enhance the artistic talents of its students.This festival serves as a platform for students to express their
-        creativity,explore various art forms and engage with peers in an environment that celebrates artistic growth.Through workshops, performances and 
-        exhibitions.The event not only promotes individual artistic development but also aims to build a supportive, vibrant community 
-        around the arts at Jamia Madeenathunnoor.
-        </p>
-      </div>
+      <div className='text-black/35 m-8 flex text-justify text-xs leading-[14px] font-base animate-typing'>
+  <p className='font-gilroy'> <span className='font-semibold text-black/45'> Rendezvous Life Festival </span> is an annual arts and cultural event organized by Jamia Madeenathunnoor
+     to nurture and enhance the artistic talents of its students. This event not only promotes individual artistic development but also aims to build a supportive, 
+     and vibrant community around the arts at Jamia Madeenathunnoor.
+  </p>
+</div>
+
+        <div className='bg-orange-50 '>
       <div className=" flex flex-col">
           <div className="h-10 w-screen bg-[url('/image/logo.png')] bg-repeat-x bg-contain animate-move"></div>
       </div>
+    </div>
+    
+
     </div>
   );
 }

@@ -16,7 +16,7 @@ const ImageSlider = () => {
   ];
 
   return (
-    <div className="w-full flex flex-col items-center bg-orange-50 overflow-hidden pb-10">
+    <div className="w-full flex flex-col items-center bg-orange-50 overflow-hidden pb-10 pt-10">
       <Swiper
         modules={[Autoplay, Pagination]}
         spaceBetween={30}

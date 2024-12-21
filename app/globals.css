@@ -6,16 +6,23 @@
 @font-face {
     font-family: 'Gilroy';
     src: url('/fonts/Gilroy-Regular.ttf') format('truetype');
-    font-weight: 400;
+    font-weight: 500;
     font-style: normal;
   }
   
+  @font-face {
+    font-family: 'Gilroy';
+    src: url('/fonts/Gilroy-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
 @font-face {
     font-family: 'Gilroy';
     src: url('/fonts/Gilroy-Bold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
 }
+
 
 nav::-webkit-scrollbar {
     display: none;
@@ -50,3 +57,31 @@ nav::-webkit-scrollbar {
 }
 
   
+
+  .mySwiper {
+    padding-bottom: 60px !important;
+    padding-top: 20px !important;
+  }
+  .swiper-pagination-bullet {
+    background: #d70000 !important;
+    transition: 0.5s !important;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+  /* .swiper-pagination-bullet-active {
+    background: var(--primary) !important;
+    width: 30px !important;
+    border-radius: 25px !important;
+  } */
+
+  /* Enable smooth scrolling on iOS */
+nav {
+  -webkit-overflow-scrolling: touch;
+}
