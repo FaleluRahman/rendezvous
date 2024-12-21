@@ -4,7 +4,7 @@ import { TbLivePhoto } from "react-icons/tb";
 function UpComing() {
   return (
     <div className="bg-orange-100  overflow-hidden  ">
-      <div className='flex justify-end w-full mt-3 '><p className='flex bg-gradient-to-r from-red-700 to-red-600 font-bold text-xs text-white rounded-badge px-2 py-1 mr-2 animate-vibrate'>Ongoing <img  className='h-5' src="/image/live-streaming.svg" alt="" />  </p>
+      <div className='flex justify-end w-full mt-3 '><p className='flex bg-gradient-to-r from-red-700 to-red-600 font-bold text-xs text-white rounded-badge px-0.5 mr-2 animate-vibrate'>Live <img  className='h-5' src="/image/live-streaming.svg" alt="" />  </p>
      </div>
       <div className="w-full flex flex-col items-end">
         <nav className="h-52 flex flex-row w-full overflow-x-auto no-scrollbar  mt-2  box-border snap-x snap-mandatory touch-pan-x">
