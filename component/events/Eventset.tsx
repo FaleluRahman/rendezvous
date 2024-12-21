@@ -2,11 +2,11 @@ import React from 'react'
 
 const Eventset = () => {
   return (
-    <div className='bg-orange-50 flex justify-center items-center flex-col min-h-screen'>
+    <div className='bg-orange-50 flex justify-center items-center flex-col min-h-screen '>
     {/* event/1 */}
-    <div className='bg-white rounded-3xl w-[85%] flex flex-col mt-5 px-5'>
+    <div className='bg-white rounded-3xl w-[85%] flex flex-col mt-12 px-5'>
     <div className='h-8 bg-white mt-3 text-zinc-700  rounded-t-3xl text-lg flex  justify-between font-bold'>
-    <p>Expert Converse</p> <img className='h-6' src="/image/qr-code-scan.svg" alt="" />
+    <p>Expert Convos</p> <img className='h-6' src="/image/qr-code-scan.svg" alt="" />
       </div>
       <img 
         className='rounded-3xl  w-auto' 
@@ -29,7 +29,7 @@ const Eventset = () => {
     {/* event/2 */}
     <div className='bg-white rounded-3xl w-[85%] flex flex-col mt-5 px-5'>
       <div className='h-8 bg-white mt-3 text-zinc-700  rounded-t-3xl text-lg flex  justify-between font-bold'>
-        <p>Expert Converse</p> <img className='h-6' src="/image/qr-code-scan.svg" alt="" />
+        <p>Expert Convos</p> <img className='h-6' src="/image/qr-code-scan.svg" alt="" />
       </div>
       <img 
         className='rounded-3xl  w-auto' 
@@ -53,7 +53,7 @@ const Eventset = () => {
      {/* event/3 */}
      <div className='bg-white rounded-3xl w-[85%] flex flex-col mt-5 px-5'>
     <div className='h-8 bg-white mt-3 text-zinc-700  rounded-t-3xl text-lg flex  justify-between font-bold'>
-    <p>Expert Converse</p> <img className='h-6' src="/image/qr-code-scan.svg" alt="" />
+    <p>Expert Convos</p> <img className='h-6' src="/image/qr-code-scan.svg" alt="" />
       </div>
       <img 
         className='rounded-3xl  w-auto' 
@@ -76,7 +76,7 @@ const Eventset = () => {
     {/* event/4 */}
     <div className='bg-white rounded-3xl w-[85%] flex flex-col mt-5 px-5'>
       <div className='h-8 bg-white mt-3 text-zinc-700  rounded-t-3xl text-lg flex  justify-between font-bold'>
-        <p>Expert Converse</p> <img className='h-6' src="/image/qr-code-scan.svg" alt="" />
+        <p>Expert Convos</p> <img className='h-6' src="/image/qr-code-scan.svg" alt="" />
       </div>
       <img 
         className='rounded-3xl  w-auto' 
