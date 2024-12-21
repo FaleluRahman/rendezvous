@@ -13,7 +13,7 @@ const Eventset = () => {
         src="/image/712.jpg" 
         alt="wwwww" 
       /> 
-      <p className=' text-justify leading-tight pt-3'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+      <p className=' text-justify text-sm leading-tight pt-3'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
         Voluptatem a, libero quas atque consectetur iusto necessitatibus voluptate nesciunt ab perferendis dolore 
         tempora earum omnis iste minus corrupti voluptas vitae officiis.</p>
         <div className='h-8 bg-white mt-5 text-zinc-700  rounded-t-3xl mb-2 text-sm flex items-center justify-between font-bold'>
@@ -36,7 +36,7 @@ const Eventset = () => {
         src="/image/301.jpg" 
         alt="wwwww" 
       /> 
-      <p className=' text-justify leading-tight pt-3'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+      <p className=' text-justify leading-tight text-sm pt-3'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
         Voluptatem a, libero quas atque consectetur iusto necessitatibus voluptate nesciunt ab perferendis dolore 
         tempora earum omnis iste minus corrupti voluptas vitae officiis.</p>
         <div className='h-8 bg-white mt-5 text-zinc-700  rounded-t-3xl mb-2 text-sm flex items-center justify-between font-bold'>
@@ -60,7 +60,7 @@ const Eventset = () => {
         src="/image/505.jpg" 
         alt="wwwww" 
       /> 
-      <p className=' text-justify leading-tight pt-3'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+      <p className=' text-justify leading-tight text-sm pt-3'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
         Voluptatem a, libero quas atque consectetur iusto necessitatibus voluptate nesciunt ab perferendis dolore 
         tempora earum omnis iste minus corrupti voluptas vitae officiis.</p>
         <div className='h-8 bg-white mt-5 text-zinc-700  rounded-t-3xl mb-2 text-sm flex items-center justify-between font-bold'>
@@ -83,7 +83,7 @@ const Eventset = () => {
         src="/image/300.jpg" 
         alt="wwwww" 
       /> 
-      <p className=' text-justify leading-tight pt-3'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+      <p className=' text-justify leading-tight text-sm  pt-3'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
         Voluptatem a, libero quas atque consectetur iusto necessitatibus voluptate nesciunt ab perferendis dolore 
         tempora earum omnis iste minus corrupti voluptas vitae officiis.</p>
         <div className='h-8 bg-white mt-5 text-zinc-700  rounded-t-3xl mb-2 text-sm flex items-center justify-between font-bold'>
