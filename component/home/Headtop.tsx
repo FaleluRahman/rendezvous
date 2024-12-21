@@ -2,7 +2,7 @@ import React from "react";
 
 const Headtop = () => {
   return (
-    <div className="overflow-hidden relative">
+    <div className="overflow-hidden flex w-screen  fixed">
       <div className="flex w-full justify-between h-8 bg-gradient-to-r from-red-700 to-red-600 items-center">
 
         <img className="h-5 px-5" src="/image/rend-w.png" alt="Logo 1" />
