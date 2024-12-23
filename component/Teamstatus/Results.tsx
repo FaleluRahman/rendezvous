@@ -328,7 +328,7 @@ function ItemResult() {
       className="result mt-0 flex flex-wrap-reverse items-center justify-center w-full gap-5 bg-orange-50 p-5 mb-20"
       id="result"
     >
-      <div className="p-6 py-3 bg-orange-50 rounded-2xl shadow-lg flex items-center gap-3">
+      <div className="p-6 py-3 bg-zinc-50 rounded-2xl text-zinc-700 shadow-lg flex items-center gap-3">
         {currentPage > 1 && (
           <button
             className="bg-red-500 p-2 rounded-xl text-white py-2 px-4 font-semibold"
