@@ -28,14 +28,10 @@ const Eventset = () => {
 
 <div
 key={event.id}
-className='bg-white rounded-3xl w-[85%] flex flex-col mt-12 px-5 cursor-pointer'
+className='bg-white rounded-3xl w-[85%] flex flex-col mt-5 gap-3 px-5 cursor-pointer'
     onClick={()=> toggleVisibility(index)}>
-
-
-
-   
     
-    <div className='h-8 bg-white mt-3 text-zinc-700  rounded-t-3xl text-lg flex  justify-between font-bold'>
+    <div className='h-fit py-2 bg-white mx-1 text-zinc-700  rounded-t-3xl text-lg flex  justify-between font-bold'>
     <p>Expert Convos</p> <img className='h-6' src="/image/qr-code-scan.svg" alt="" />
       </div>
       <img 
