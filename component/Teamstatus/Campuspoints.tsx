@@ -78,7 +78,7 @@ function Campuspoints() {
 
   return (
     <div className="bg-orange-50 flex flex-col h-fit pt-10 pb-10 ">
-      <div className="flex flex-col ml-5 justify-between items-end mr-5">
+      <div className="flex flex-col  justify-between items-end mx-5 w-full">
         {/* <h1 className="bg-red-700  rounded-lg w-fit px-2 font-semibold  text-white mb-5">Junior</h1> */}
         <div className="grid grid-cols-5 gap-2 w-full">
           {["Minor", "Premeir", "Subjunior", "Junior", "Senior"].map(
@@ -86,7 +86,7 @@ function Campuspoints() {
               <div
                 onClick={() => setCat(item)}
                 key={item}
-                className={`px-0.5 py-1 rounded-lg text-white text-center  my-4 ${cat==item ? "bg-red-700 font-bold":" bg-zinc-500 font-sans"}`}
+                className={` py-1 rounded-lg text-white text-xs text-center px-1 w-fit  my-4 ${cat==item ? "bg-red-700 text-xs font-bold":" bg-zinc-500 font-sans"}`}
               >
                 {item}
               </div>

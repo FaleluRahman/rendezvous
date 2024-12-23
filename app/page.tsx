@@ -10,8 +10,9 @@ export default function Home() {
   return (
     <div>
       <Header />
-      <ImageSlider />
+      {/* <ImageSlider /> */}
       <UpComing />
+      {/* <Navigation/> */}
       
     </div>
   );

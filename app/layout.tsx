@@ -3,6 +3,9 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Head from "next/head";
 import Headtop from "@/component/home/Headtop";
+import { Navigation } from "swiper";
+import Navig from "@/component/footer/Navigation";
+import Navbar from "@/component/footer/navbar";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,13 +31,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable}  antialiased`}
+        className={` ${geistSans.variable} ${geistMono.variable}  antialiased`}
       >
-        <div className="w-full max-w-[500px] mx-auto">
-        <Headtop/>
-          {children}
         
+        <div className="w-full max-w-[500px] mx-auto relative">
+        <Headtop/>
+        <Navig/>
+        
+          {children}
+          
+    
         </div>
+        
 
       </body>
     </html>
