@@ -2,6 +2,7 @@ import { Span } from 'next/dist/trace';
 import Image from 'next/image';
 import React from 'react';
 
+
 function Header() {
   return (
     <div className='bg-orange-50 overflow-hidden'>
@@ -20,18 +21,27 @@ function Header() {
         />
       </div>
       <div className='text-red-500 w-full items-center flex '>  
-        <h1 className='mx-auto font-gilroy font-bold text-4xl w-fit mt-20 text-red-700 text-left ml-10 mb-0 leading-[10px]'>
+        <h1 className='mx-auto font-gilroy font-bold text-4xl w-fit mt-20 text-red-700 text-left ml-10 mb-0 leading-[10px] animate-colorPulse'>
           LIBRATIVE<br/>SUBMISSONS
-          <span className='text-orange-500 text-5xl h-fit '>.</span>
+          <span className='text-orange-500 text-5xl h-fit'>.</span>
         </h1> 
       </div>
 
-      <div className='text-black/35 m-8 flex text-justify text-xs leading-[14px] font-base animate-typing'>
+      <div className='text-black/35 m-8 flex text-justify text-xs leading-[14px] font-base'>
   <p className='font-gilroy'> <span className='font-semibold text-black/45'> Rendezvous Life Festival </span> is an annual arts and cultural event organized by Jamia Madeenathunnoor
      to nurture and enhance the artistic talents of its students. This event not only promotes individual artistic development but also aims to build a supportive, 
      and vibrant community around the arts at Jamia Madeenathunnoor.
   </p>
 </div>
+
+
+
+
+
+
+
+
+
 
         <div className='bg-orange-50 '>
       <div className=" flex flex-col">

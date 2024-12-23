@@ -22,7 +22,7 @@ const Eventset = () => {
 
 
   return (
-    <div className='bg-orange-50 flex justify-center items-center flex-col min-h-screen'>
+    <div className='bg-orange-50 flex justify-center items-center flex-col '>
     {/* event/1 */}
     {event.map((event,index)=>(
 

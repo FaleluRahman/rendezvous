@@ -5,7 +5,6 @@ import Head from "next/head";
 import Headtop from "@/component/home/Headtop";
 import { Navigation } from "swiper";
 import Navig from "@/component/footer/Navigation";
-import Navbar from "@/component/footer/navbar";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",

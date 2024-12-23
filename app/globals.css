@@ -1,33 +1,34 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @import 'swiper/css';
 @import 'swiper/css/autoplay';
+
 @font-face {
-    font-family: 'Gilroy';
-    src: url('/fonts/Gilroy-Regular.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: 'Gilroy';
-    src: url('/fonts/Gilroy-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-  }
-@font-face {
-    font-family: 'Gilroy';
-    src: url('/fonts/Gilroy-Bold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
+  font-family: 'Gilroy';
+  src: url('/fonts/Gilroy-Regular.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
 }
 
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/fonts/Gilroy-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/fonts/Gilroy-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
 
 nav::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
-
 
 .item::after {
   content: "";
@@ -40,48 +41,48 @@ nav::-webkit-scrollbar {
   left: -15px;
   background: linear-gradient(290deg, #00ff80cc, #8dd1ff, #00ff80cc);
 }
+
 #footer .act {
   transform: translate(0, -13px);
   transition: 0.5s;
 }
+
 #footer .act p {
   opacity: 0;
 }
+
 #footer nav svg {
   color: rgb(0, 0, 0);
   height: 30px;
   transition: 0.5s;
 }
+
 .goog-te-banner-frame.skiptranslate {
   display: none !important;
 }
 
-  
-
-  .swiper-sec .mySwiper {
-    padding-bottom: 60px !important;
-    padding-top: 20px !important;
-  }
-  .swiper-sec .swiper-pagination-bullet {
-    background: #d70000 !important;
-    transition: 0.5s !important;
-  }
-
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
+.swiper-sec .mySwiper {
+  padding-bottom: 60px !important;
+  padding-top: 20px !important;
 }
+
+.swiper-sec .swiper-pagination-bullet {
+  background: #d70000 !important;
+  transition: 0.5s !important;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 /* Hide scrollbar for IE, Edge and Firefox */
 .no-scrollbar {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
-  /* .swiper-pagination-bullet-active {
-    background: var(--primary) !important;
-    width: 30px !important;
-    border-radius: 25px !important;
-  } */
 
-  /* Enable smooth scrolling on iOS */
+/* Enable smooth scrolling on iOS */
 nav {
   -webkit-overflow-scrolling: touch;
 }
+

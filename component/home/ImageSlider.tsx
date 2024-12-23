@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css"; // Core Swiper styles
 import "swiper/css/pagination"; // Pagination module styles
 import "swiper/css/autoplay"; // Autoplay module styles
-import { Autoplay, Pagination } from "swiper";
+import { Autoplay, Pagination } from "swiper/modules";
 
 const ImageSlider = () => {
   const images = [
@@ -18,13 +18,13 @@ const ImageSlider = () => {
   return (
     <div className="w-full swiper-sec flex flex-col items-center bg-orange-50 overflow-hidden pb-10 pt-10">
       <Swiper
-        modules={[Autoplay, Pagination]}
+        modules={[Autoplay, Pagination]} // Pass modules explicitly
         spaceBetween={30}
         slidesPerView={1}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
         pagination={{ clickable: true }}
         loop={true}
-        className="w-[85%] rounded-xl "
+        className="w-[85%] rounded-xl"
       >
         {images.map((image, index) => (
           <SwiperSlide key={index}>
@@ -41,6 +41,10 @@ const ImageSlider = () => {
 };
 
 export default ImageSlider;
+
+
+
+
 
 
 
