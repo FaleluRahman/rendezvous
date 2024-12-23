@@ -3,7 +3,7 @@ import React from 'react'
 const Wallet = () => {
   return (
     <div className='bg-orange-50 py-5 w-full flex justify-center'>
-    <div className='w-[90%] bg-white rounded-3xl flex flex-col pb-5'>
+    <div className='w-[90%] bg-white rounded-3xl flex flex-col pb-5 mb-20'>
       <div className='flex text-xs justify-between w-full'>
       <h1 className='text-zinc-700 font-bold px-5 pt-3 text-lg  flex items-center'>My Wallet </h1>
       <img className='h-12 px-5 pt-5 flex items-center pb-3' src="/image/qr-code-scan.svg" alt="" />
