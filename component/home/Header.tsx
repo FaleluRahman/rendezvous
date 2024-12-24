@@ -17,7 +17,7 @@ function Header() {
         <img
           src="/image/logo-03 copy.png"
           alt="Rendezvous"
-          className='h-[50%] pb-10'
+          className='h-[60%] pb-10'
         />
       </div>
       <div className='text-red-500 w-full items-center flex '>  
