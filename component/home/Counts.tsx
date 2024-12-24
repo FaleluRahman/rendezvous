@@ -1,5 +1,5 @@
 import React from 'react'
-import { PiStudentLight } from "react-icons/pi";
+import { PiStudentBold } from "react-icons/pi";
 import { MdMicExternalOn } from "react-icons/md";
 import { BiCard } from "react-icons/bi";
 
@@ -13,7 +13,7 @@ const Counts = () => {
         <div className='bg-yellow-50  px-3 py-5 rounded-3xl relative  mx-1 leading-[14px] overflow-hidden row-span-2'>
             <h1 className='text-yellow-600 text-3xl text-left font-extrabold'>1.7K+</h1>
             <p className='text-zinc-700 text-md  text-left '>Participates</p>
-            <PiStudentLight className='absolute w-20 h-20  bottom-[-12px] right-0 text-[#dda338] opacity-15 cursor-pointer'/>
+            <PiStudentBold className='absolute w-20 h-20  bottom-[-8px] right-0 text-[#dda338] opacity-15 cursor-pointer'/>
 
         </div>
         <div className='bg-red-50  px-3 py-5 rounded-3xl relative mx-1 leading-[14px] overflow-hidden'>
