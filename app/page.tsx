@@ -8,8 +8,8 @@ export default function Home() {
   return (
     <div>
       <Header />
-      <ImageSlider />
       <Counts/>
+      <ImageSlider />
       <UpComing />
       
     </div>
