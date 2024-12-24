@@ -6,7 +6,6 @@ import { GrHomeRounded, GrTrophy } from "react-icons/gr";
 import { AiOutlineSchedule } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
 
-// Define the nav items
 const navItems = [
   {
     id: "icon-a",
@@ -30,7 +29,6 @@ const navItems = [
     href: "/",
     left: "158px",
     png: <GrHomeRounded />,
-    png1: <GrHomeRounded />,
   },
   {
     id: "icon-d",
@@ -38,7 +36,6 @@ const navItems = [
     href: "/schedule",
     left: "230px",
     png: <AiOutlineSchedule />,
-    png1: <AiOutlineSchedule />,
   },
   {
     id: "icon-e",
