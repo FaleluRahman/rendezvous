@@ -85,4 +85,9 @@ nav::-webkit-scrollbar {
 nav {
   -webkit-overflow-scrolling: touch;
 }
+* ,*::after,*::before{
+  margin: 0;
+  padding: 0;
+  
+}
 
