@@ -11,7 +11,7 @@ const navItems = [
   {
     id: "icon-a",
     label: "Events",
-    href: "/events",
+    href: "/Events",
     left: "15px",
     png: <MdOutlineEventSeat />,
     png1: <MdOutlineEmojiEvents className="text-white" />,
