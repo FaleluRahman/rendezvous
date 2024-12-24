@@ -8,7 +8,7 @@ import { BiCard } from "react-icons/bi";
 
 const Counts = () => {
   return (
-    <div className='bg-orange-500 grid grid-cols-2  grid-rows-3 px-5 py-4 w-full mx-auto text-center gap-2  '>
+    <div className='bg-orange-50 grid grid-cols-2  grid-rows-3 px-5 py-4 w-full mx-auto text-center gap-2  '>
 
         <div className='bg-yellow-50  px-3 py-5 rounded-3xl relative  mx-1 leading-[14px] overflow-hidden row-span-2'>
             <h1 className='text-yellow-600 text-3xl text-left font-extrabold'>1.7K+</h1>
