@@ -12,41 +12,41 @@ const navItems = [
     id: "icon-a",
     label: "Events",
     href: "/Events",
-    left: "15px",
-    png: <RiFunctionAddLine />,
-    png1: <RiFunctionAddFill className="bg-red-100 w-fit p-1 rounded-2xl" />,
+    // left: "15px",
+    png: <RiFunctionAddLine className="bg-white w-fit p-0.5 rounded-2xl" />,
+    png1: <RiFunctionAddFill className="bg-red-100 w-fit p-0.5 rounded-2xl" />,
   },
   {
     id: "icon-b",
     label: "Results",
     href: "/result",
-    left: "87px",
-    png: <BsTrophy />,
-    png1: <BsTrophyFill className="bg-red-100 w-fit p-1 rounded-2xl" />,
+    // left: "87px",
+    png: <BsTrophy className="bg-white w-fit p-0.5 rounded-2xl"  />,
+    png1: <BsTrophyFill className="bg-red-100 w-fit p-0.5 rounded-2xl" />,
   },
   {
     id: "icon-c",
     label: "Home",
     href: "/",
-    left: "158px",
-    png: <RiHome5Line />,
-    png1: <RiHome5Fill className="bg-red-100 w-fit p-1 rounded-2xl"/>,
+    // left: "158px",
+    png: <RiHome5Line className="bg-white w-fit p-0.5 rounded-2xl"/>,
+    png1: <RiHome5Fill className="bg-red-100 w-fit p-0.5 rounded-2xl"/>,
   },
   {
     id: "icon-d",
     label: "Schedule",
     href: "/schedule",
-    left: "230px",
-    png: <RiCalendarScheduleLine  />,
-    png1: <RiCalendarScheduleFill className="bg-red-100 w-fit p-1 rounded-2xl" />,
+    // left: "230px",
+    png: <RiCalendarScheduleLine  className="bg-white w-fit p-0.5 rounded-2xl"/>,
+    png1: <RiCalendarScheduleFill className="bg-red-100 w-fit p-0.5 rounded-2xl" />,
   },
   {
     id: "icon-e",
     label: "Profile",
     href: "/profile",
-    left: "300px",
-    png: <img src="/image/bx-user-circle.svg" alt="" />,
-    png1: <img className="bg-red-100 w-fit p-1 rounded-2xl" src="/image/bxs-user-circle.svg" alt="" />,
+    // left: "300px",
+    png: <img className="bg-white w-fit p-0.5 rounded-2xl" src="/image/bx-user-circle.svg" alt="" />,
+    png1: <img className="bg-red-100 w-fit p-0.5 rounded-2xl" src="/image/bxs-user-circle.svg" alt="" />,
   },
 ];
 
@@ -81,7 +81,7 @@ function Navig() {
             >
               {activeIcon === item.id ? item.png1 : item.png}
             </p>
-            <p className="text-[10px] mt-[4px] flex  items-center absolute bottom-[5px] opacity-100  w-full">
+            <p className="text-[10px] mt-[4px] flex justify-center text-center opacity-100  w-full">
               {item.label}
             </p>
           </Link>

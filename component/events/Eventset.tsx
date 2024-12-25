@@ -13,8 +13,8 @@ const Eventset = () => {
   
 
   const event = [
-    { id: 1, img: "/image/712.jpg", time: "09:30AM", location: "Conference Hall", price: "05" },
-    { id: 2, img: "/image/301.jpg", time: "10:30AM", location: "Auditorium", price: "07" },
+    { id: 1, img: "/image/debate poster copy.jpg", time: "09:30AM", location: "Conference Hall", price: "05" },
+    { id: 2, img: "/image/shareea seminar 2 copy.jpg", time: "10:30AM", location: "Auditorium", price: "07" },
     { id: 3, img: "/image/505.jpg", time: "01:30PM", location: "Masjid", price: "08" },
     { id: 4, img: "/image/300.jpg", time: "03:30PM", location: "Thaqiyaa ", price: 10 },
 
@@ -35,7 +35,7 @@ className='bg-white rounded-3xl w-[85%] flex flex-col mt-5 gap-3 px-5 cursor-poi
     <p>Expert Convos</p> <img className='h-6' src="/image/qr-code-scan.svg" alt="" />
       </div>
       <img 
-        className='rounded-3xl  w-auto' 
+        className='rounded-xl h-fit w-fit' 
         src={event.img} 
         alt="wwwww" 
       /> 
