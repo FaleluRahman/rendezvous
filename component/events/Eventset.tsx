@@ -39,7 +39,7 @@ const Eventset = () => {
   ];
 
   return (
-    <div className='bg-orange-50 flex justify-center items-center flex-col pb-10'>
+    <div className='bg-orange-50 flex justify-center items-center flex-col pb-20'>
       <div className="flex flex-col justify-between items-end w-full">
         <div className="flex gap-1 w-11/12 mx-auto overflow-x-auto">
           {["Events", "News"].map((item: any) => (
@@ -90,10 +90,10 @@ const Eventset = () => {
       ))}
 
       {Expo === "News" && news.map((news, index) => (
-        <div
+        <a
           key={news.id}
-          className='bg-white rounded-t-3xl rounded-b-xl pb-4 mb-20 w-[85%] flex flex-col mt-5  cursor-pointer'
-          onClick={() => toggleVisibility(index)}
+          className='bg-white rounded-t-3xl rounded-b-xl pb-4 my-3 w-[85%] flex flex-col   cursor-pointer'
+          href={`/Events/${news.id}`}
         >
           {/* <div className='bg-gradient-to-r from-zinc-700 to-zinc-600 pt-2 text-white px-5 rounded-t-xl text-lg flex justify-between font-bold'>
             <p></p> <IoQrCode className='py-1 text-3xl' />
@@ -106,24 +106,8 @@ const Eventset = () => {
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem a, libero quas atque consectetur iusto 
                 </p>
 
-          {currentVisible === index && (
-            <div>
-              <div className='w-full flex-col px-5'>
-              
-                <p className='text-justify text-sm leading-tight w-full pb-5'>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem a, libero quas atque consectetur iusto necessitatibus voluptate nesciunt ab perferendis dolore tempora earum omnis iste minus corrupti voluptas vitae officiis.
-                </p>
-              </div>
-              {/* <div className='h-8 bg-white text-zinc-700 px-5 rounded-t-xl mb-2 text-sm flex items-center justify-between font-bold'>
-                <div className='flex flex-col'>
-                  <div className='flex'><img className='h-4' src="/image/Timer.gif" alt="" /><p>{news.time}</p></div>
-                  <div className='flex'><img className='h-4' src="/image/Location.gif" alt="" /><p>{news.location}</p></div>
-                </div>
-                <div className='flex'><BiSolidCoinStack className='text-3xl mt-3' /><p className='text-3xl mt-2'>{news.price}</p></div>
-              </div> */}
-            </div>
-          )}
-        </div>
+          
+        </a>
       ))}
     </div>
   );

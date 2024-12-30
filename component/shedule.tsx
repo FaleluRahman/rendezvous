@@ -179,7 +179,7 @@ const Schedule = () => {
     return (
 
         <section className="w-full  h-full bg-zinc-50  shadow-[0_2px_10px_rgba(0,0,0,0.13)] box-border
-            transition-all ease-in-out duration-500 ">
+            transition-all ease-in-out duration-500 pb-20 ">
 
             <div>
                 <div className='bg-gradient-to-r from-red-700 to-red-600 pb-1 rounded-bl-3xl rounded-br-3xl'>
@@ -203,7 +203,7 @@ const Schedule = () => {
                 <div className='flex  my-4 overflow-x-auto no-scrollbar w-11/12 py-2 m-auto bg-red-500 rounded-3xl '>
                     {scheduleData.find((item , i) => item.date === date)?.schedule.map((program) =>(
 
-                        <div className={`${program.stage == stage ? 'bg-white text-red-800' : 'bg-none text-white'} rounded-3xl py-1 px-3 flex-1 text-center min-w-28 font-medium  mx-1.5 text-nowrap cursor-pointer`} onClick={() => setStage(program.stage)}>Stage {program.stage}</div>
+                        <div className={`${program.stage == stage ? 'bg-white text-red-800 font-bold' : 'bg-none text-white font-bold'} rounded-3xl py-1 px-3 flex-1 text-center min-w-28   mx-1.5 text-nowrap cursor-pointer`} onClick={() => setStage(program.stage)}>Stage {program.stage}</div>
                     ))}
 
                 </div>

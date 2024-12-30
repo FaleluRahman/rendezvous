@@ -11,7 +11,7 @@ import Link from "next/link"; // Correct Link import for navigation
 const ImageSlider = () => {
   const images = [
     "/image/301.jpg",
-    "/image/505.jpg",
+    "/image/website1 expert.webg",
     "/image/712.jpg",
     "/image/300.jpg",
   ];

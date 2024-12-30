@@ -50,7 +50,7 @@ const Wallet = () => {
   
         <button className='bg-violet-200 ml-5 text-zinc-700   font-bold px-3 my-4 py-1.5 rounded-2xl flex w-fit '>Collect</button>
         
-      <img className='ml-[80%] h-23 w-20 absolute  top-5  ' src="/image/coinInEgg.svg" alt="" />
+      <img className='ml-[70%] h-23 w-20 absolute  top-5  ' src="/image/coinInEgg.svg" alt="" />
       {/* <img className='ml-[42%] h-14 w-17 absolute top-28 ' src="/image/coin.png" alt="" /> */}
   
 
