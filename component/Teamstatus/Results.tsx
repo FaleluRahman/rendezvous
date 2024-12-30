@@ -325,7 +325,7 @@ function ItemResult() {
 
   return (
     <div
-      className="result mt-0 flex flex-wrap-reverse items-center justify-center w-full gap-5 bg-orange-50 p-5 mb-20"
+      className="result mt-0 flex flex-wrap-reverse items-center justify-center w-full gap-5 bg-orange-50 p-5 pb-20"
       id="result"
     >
       <div className="p-6 py-3 bg-zinc-50 rounded-2xl text-zinc-700 shadow-lg flex items-center gap-3">
