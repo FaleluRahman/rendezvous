@@ -3,9 +3,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { RiFunctionAddLine, RiFunctionAddFill, RiHome5Fill, RiCalendarScheduleLine, RiCalendarScheduleFill } from "react-icons/ri";
 import { BsTrophy, BsTrophyFill } from "react-icons/bs";
-import { CgProfile } from "react-icons/cg";
 import { RiHome5Line } from "react-icons/ri";
-import Shedule from "../home/Shedule";
 
 const navItems = [
   {
@@ -37,8 +35,8 @@ const navItems = [
     label: "Schedule",
     href: "/schedule",
     // left: "230px",
-    png: <RiCalendarScheduleLine  className="bg-white w-fit p-0.5 rounded-2xl"/>,
-    png1: <RiCalendarScheduleFill className="bg-red-100 w-fit p-0.5 rounded-2xl" />,
+    png: <RiCalendarScheduleLine  className="bg-white w-fit p-0.5 ml-1.5 rounded-2xl"/>,
+    png1: <RiCalendarScheduleFill className="bg-red-100 w-fit p-0.5 ml-1.5 rounded-2xl" />,
   },
   {
     id: "icon-e",

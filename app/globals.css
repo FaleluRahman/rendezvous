@@ -90,4 +90,73 @@ nav {
   padding: 0;
   
 }
+.bar {
+  left: 120px !important;
+}
+@media (min-width: 320px) {
+
+  .bar {
+      left: 92px !important;
+
+  }
+}
+@media (min-width: 340px) {
+
+  .bar {
+      left: 98px !important;
+
+  }
+}
+@media (min-width: 360px) {
+
+  .bar {
+      left: 104px !important;
+
+  }
+}
+
+@media (min-width: 380px) {
+
+  .bar {
+      left: 110px !important;
+
+  }
+}
+
+@media (min-width: 400px) {
+
+  .bar {
+      left: 116px !important;
+
+  }
+}
+@media (min-width: 420px) {
+
+  .bar {
+      left: 122px !important;
+
+  }
+}
+
+@media (min-width: 440px) {
+
+  .bar {
+      left: 128px !important;
+
+  }
+}
+@media (min-width: 460px) {
+
+  .bar {
+      left: 134px !important;
+
+  }
+}
+@media (min-width: 480px) {
+
+  .bar {
+      left: 144px !important;
+
+  }
+}
 
