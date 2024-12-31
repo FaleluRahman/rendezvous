@@ -1,3 +1,5 @@
+import Navig from '@/component/footer/Navigation'
+import Login from '@/component/Log/Login'
 import Filter from '@/component/pro/Filter'
 import StudentsLogin from '@/component/pro/Logask'
 import Pdetails from '@/component/pro/Pdetails'
@@ -8,9 +10,11 @@ const page = () => {
   return (
     <div>
       <StudentsLogin/>
+      <Login />
       <Pdetails/>
       <Filter/>
       <Wallet/>
+      <Navig/>
      
     </div>
   )

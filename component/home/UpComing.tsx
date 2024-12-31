@@ -3,7 +3,7 @@ import { TbLivePhoto } from "react-icons/tb";
 
 function UpComing() {
   return (
-    <div className="bg-zinc-50  overflow-hidden  ">
+    <div className="bg-white  overflow-hidden  ">
       <div className='flex justify-between ml-4 w-full mt-3 '>
       <p className='flex  font-bold text-lg text-zinc-700 rounded-badge my-3 px-1.5 mr-2 py-0.5 '>Live Programmes</p>
       <p className='pr-10 font-bold text-red-700 text-lg my-3 '>09</p>

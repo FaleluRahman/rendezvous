@@ -33,7 +33,7 @@ export default function RootLayout({
         
         <div className="w-full max-w-[500px] mx-auto relative">
         <Headtop/>
-        <Navig/>
+        
         
           {children}
           

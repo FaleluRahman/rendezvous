@@ -5,9 +5,9 @@ import { FaRegArrowAltCircleRight } from "react-icons/fa";
 
 const EvBtn = () => {
   return (
-    <div className='bg-orange-50 pb-5 '>
+    <div className='bg-orange-50 pb-5 pt-5'>
     <div className='bg-zinc-100 mx-8 py-4  rounded-3xl' >
-      <div className='py-2 px-5'>
+      <div className='py-2 px-5 text-sm text-justify'>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi iure quibusdam unde. 
         Temporibus aliquam voluptatibus sint, eveniet minima in et quis id officia, inventore
         cumque ex voluptates maxime repudiandae provident.</p>

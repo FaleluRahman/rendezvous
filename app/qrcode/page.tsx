@@ -1,11 +1,9 @@
-import Login from '@/component/Log/Login'
+import QrCodeScanner from '@/component/Log/Qrcode'
 import React from 'react'
 
 const page = () => {
   return (
-    <div>
-        <Login />
-    </div>
+    <div><QrCodeScanner/></div>
   )
 }
 
