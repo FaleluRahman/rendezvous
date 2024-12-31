@@ -5,8 +5,9 @@ import React from 'react';
 
 function Header() {
   return (
-    <div className='bg-orange-50 overflow-hidden'>
-      <div className='bg-red-800 max-w-auto h-80 flex flex-col justify-center items-center 
+    <div className='bg-orange-50 overflow-hidden '>
+      <div className='bg-none  '>
+      <div className='bg-red-800 max-w-auto h-80 flex flex-col justify-center items-center  relative
       rounded-bl-3xl rounded-br-3xl bg-gradient-to-r from-red-700 to-red-600'>
         {/* H1 Tag */}
         <h1 className='font-gilroy  font-light flex italic text-lg text-center pt-10 text-white/60 '>
@@ -19,9 +20,10 @@ function Header() {
           alt="Rendezvous"
           className='h-[60%] pb-10'
         />
-      </div>
+
+<div  className='bg-white rounded-3xl mx-5 py-1 absolute top-72 z-10  '>
       <div className='text-red-500 w-full items-center flex '>  
-        <h1 className='mx-auto font-gilroy font-bold text-4xl w-fit mt-20 text-red-700 text-left ml-10 mb-0 leading-[10px] animate-colorPulse'>
+        <h1 className='mx-auto font-gilroy font-bold text-4xl w-fit mt-10 text-red-700 text-left ml-8 mb-0 leading-[10px] animate-colorPulse'>
           LIBRATIVE<br/>SUBMISSONS
           <span className='text-orange-500 text-5xl h-fit'>.</span>
         </h1> 
@@ -33,6 +35,11 @@ function Header() {
      and vibrant community around the arts at Jamia Madeenathunnoor.
   </p>
 </div>
+</div>
+
+      </div >
+    
+</div>
 
 
 
@@ -43,7 +50,7 @@ function Header() {
 
 
 
-        <div className='bg-orange-50 '>
+        <div className='bg-orange-50 pt-64'>
       <div className=" flex flex-col">
           <div className="h-10 w-screen bg-[url('/image/logo.png')] bg-repeat-x bg-contain animate-move"></div>
       </div>

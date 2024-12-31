@@ -13,11 +13,33 @@ const Eventset = () => {
   }, [currentVisible]);
 
   const event = [
-    { id: 1, img: "/image/debate poster copy.jpg", time: "09:30AM", location: "Conference Hall", price: "05", topic: "Navigating The Horizon Of Emerging Technologies" },
-    { id: 2, img: "/image/shareea seminar 2 copy.jpg", time: "10:30AM", location: "Auditorium", price: "07", topic: "Navigating The Horizon Of Emerging Horizon Technologies" },
-    { id: 3, img: "/image/505.jpg", time: "01:30PM", location: "Masjid", price: "08", topic: "Navigating The Horizon Of Emerging Technologies" },
-    { id: 4, img: "/image/300.jpg", time: "03:30PM", location: "Thaqiyaa ", price: 10, topic: "Navigating The Horizon Of Emerging Technologies" },
+    { id: 1, img: "/image/debate poster copy.jpg",
+    time: "09:30AM",
+    location: "Conference Hall", 
+    price: "05", 
+    topic: "Navigating The Horizon Of Emerging Technologies", 
+    mic:"Yasir Arafath Nurani ,Yasir Arafath Nurani ,Yasir Arafath Nurani"
+    },
+    { id: 2, img: "/image/shareea seminar 2 copy.jpg",
+    time: "10:30AM", location: "Auditorium", 
+    price: "07",
+    topic: "Navigating The Horizon Of Emerging Horizon Technologies",
+    mic:"Yasir Arafath Nurani " },
+
+    { id: 3, img: "/image/505.jpg",
+      time: "01:30PM", location: "Masjid",
+      price: "08", topic: "Navigating The Horizon Of Emerging Technologies"
+      ,mic:"Yasir Arafath Nurani "},
+
+    { id: 4, img: "/image/300.jpg", 
+      time: "03:30PM", location: "Thaqiyaa ", 
+      price: 10, topic: "Navigating The Horizon Of Emerging Technologies",
+      mic:"Yasir Arafath Nurani " },
   ];
+
+  
+
+
 
   const news = [
     {
@@ -27,6 +49,7 @@ const Eventset = () => {
       location: "Auditorium",
       price: "07",
       topic: "Exploring Emerging Horizons in Technology",
+
     },
     {
       id: 2,
@@ -60,14 +83,15 @@ const Eventset = () => {
           className='bg-white rounded-t-3xl rounded-b-xl pb-2 w-[85%] flex flex-col mt-5 cursor-pointer'
           onClick={() => toggleVisibility(index)}
         >
-          <div className='bg-gradient-to-r from-zinc-700 to-zinc-600 pt-2 text-white px-5 rounded-t-xl text-lg flex justify-between font-bold'>
+          <div className='bg-gradient-to-r from-zinc-700 to-zinc-600 py-2 text-white px-5 rounded-t-xl text-lg flex justify-between font-bold'>
             <p>Expert Convos</p> <IoQrCode className='py-1 text-3xl' />
           </div>
           <hr className='bg-zinc-700 w-full' />
           <h1 className='font-bold text-lg px-5 leading-tight py-2'>{event.topic}</h1>
-          <div className='flex px-5 gap-1 text-zinc-600'>
+          <div className='flex  px-5 gap-1 text-zinc-600'>
             <FaMicrophoneLines className='font-bold mt-1' />
-            <p className='font-bold text-lg pb-2'>Yasir Arafath Nurani</p>
+            <p className='font-bold text-md pb-2'>{event.mic}</p>
+            
           </div>
           {currentVisible === index && (
             <div>
@@ -79,10 +103,10 @@ const Eventset = () => {
               </div>
               <div className='h-8 bg-white text-zinc-700 px-5 rounded-t-xl mb-2 text-sm flex items-center justify-between font-bold'>
                 <div className='flex flex-col'>
-                  <div className='flex'><img className='h-4' src="/image/Timer.gif" alt="" /><p>{event.time}</p></div>
-                  <div className='flex'><img className='h-4' src="/image/Location.gif" alt="" /><p>{event.location}</p></div>
+                  <div className='flex'><img className='h-4' src="/image/icons8-alarm-clock-94.png" alt="" /><p>{event.time}</p></div>
+                  <div className='flex'><img className='h-4' src="/image/icons8-location.gif" alt="" /><p>{event.location}</p></div>
                 </div>
-                <div className='flex'><BiSolidCoinStack className='text-3xl mt-3' /><p className='text-3xl mt-2'>{event.price}</p></div>
+                <div className='flex'><img className='h-6 mt-3.5 mr-0.5' src="/image/coin.png" alt="" /><p className='text-3xl mt-2'>{event.price}</p></div>
               </div>
             </div>
           )}
