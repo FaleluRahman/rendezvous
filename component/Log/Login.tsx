@@ -5,8 +5,6 @@ import { FaRegUser } from "react-icons/fa";
 
 function Login() {
     
-    
-    
 
   return (
     
@@ -33,7 +31,7 @@ function Login() {
 
         <div className="mt-6 text-center">
             <p className="text-sm text-gray-600">Having Problem to Login?
-                <a href="https://wa.me/+919188739314" className="text-blue-500 hover:underline">Contact</a>
+                <a href="https://wa.me/+919188739314" className="text-blue-500 hover:underline ml-0.5">Contact</a>
             </p>
         </div>
     </div>
