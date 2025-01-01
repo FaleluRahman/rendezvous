@@ -71,8 +71,8 @@ const Eventset = () => {
   return (
     <div className='bg-orange-50 flex justify-center items-center flex-col pb-20'>
       <div className="flex flex-col justify-between items-end w-full">
-        <div className="flex gap-1 w-11/12 mx-auto overflow-x-auto">
-          {["Events", "News"].map((item: any) => (
+        {/* <div className="flex gap-1 w-11/12 mx-auto overflow-x-auto">
+          {["Events"].map((item: any) => (
             <div
               onClick={() => setExpo(item)}
               key={item}
@@ -81,7 +81,7 @@ const Eventset = () => {
               {item}
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
 
       {Expo === "Events" && event.map((event, index) => (
@@ -123,26 +123,7 @@ const Eventset = () => {
         </div>
       ))}
 
-      {Expo === "News" && news.map((news, index) => (
-        <a
-          key={news.id}
-          className='bg-white rounded-t-3xl rounded-b-xl pb-4 my-3 w-[85%] flex flex-col   cursor-pointer'
-          href={`/Events/${news.id}`}
-        >
-          {/* <div className='bg-gradient-to-r from-zinc-700 to-zinc-600 pt-2 text-white px-5 rounded-t-xl text-lg flex justify-between font-bold'>
-            <p></p> <IoQrCode className='py-1 text-3xl' />
-          </div> */}
-          {/* <hr className='bg-zinc-700 w-full' /> */}
-          <img className='rounded-xl h-full w-full'
-              src={news.img} alt="news" />
-              <h1 className='font-bold text-lg px-5 leading-tight py-2'>{news.topic}</h1>
-              <p className='text-justify text-sm leading-tight w-full px-5 pt-2'>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem a, libero quas atque consectetur iusto 
-                </p>
-
-          
-        </a>
-      ))}
+    
     </div>
   );
 };
