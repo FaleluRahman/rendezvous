@@ -10,13 +10,13 @@ const EvBtn = () => {
     <div className='text-zinc-700  flex-col flex w-full px-5 pt-5'>
       <p className='font-bold text-md'>Collect More Points</p>
 
-      <p className='text-xs w-[85%] '>Scan the QR code to earn points by participating in these sessions, and redeem them for delicious items at Cafe and reduction at book fair and various exhibitions</p>
+      <p className='text-xs text-justify w-[95%] '>Scan the QR code to earn points by participating in these sessions, and redeem them for delicious items at Cafe and reduction at book fair and various exhibitions</p>
       
     </div>
 
       <button className='bg-violet-200 ml-5 text-zinc-700 font-bold px-3 mt-4 py-1 rounded-2xl flex w-fit '>Collect</button>
       
-    <img className='ml-[80%] h-23 w-20 absolute top-8 ' src="/image/coinInEgg.svg" alt="" />
+    <img className='ml-[70%] h-17 w-15 absolute top-[60%]  ' src="/image/coinInEgg.svg" alt="" />
     
   </div>
   </div>

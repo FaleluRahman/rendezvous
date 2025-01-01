@@ -45,44 +45,10 @@ const Eventset = () => {
       mic:"Yasir Arafath Nurani" },
   ];
 
-  
-
-
-
-  const news = [
-    {
-      id: 1,
-      img: "/image/300.jpg",
-      time: "10:30AM",
-      location: "Auditorium",
-      price: "07",
-      topic: "Exploring Emerging Horizons in Technology",
-
-    },
-    {
-      id: 2,
-      img: "/image/505.jpg",
-      time: "01:30PM",
-      location: "Masjid",
-      price: "08",
-      topic: "Technology and Ethics",
-    },
-  ];
 
   return (
     <div className='bg-orange-50 flex justify-center items-center flex-col pb-20'>
       <div className="flex flex-col justify-between items-end w-full">
-        {/* <div className="flex gap-1 w-11/12 mx-auto overflow-x-auto">
-          {["Events"].map((item: any) => (
-            <div
-              onClick={() => setExpo(item)}
-              key={item}
-              className={`py-1 rounded-lg text-white text-xs text-center w-full my-4 ${Expo === item ? "bg-red-700 text-xs font-bold" : "bg-zinc-500 font-sans"}`}
-            >
-              {item}
-            </div>
-          ))}
-        </div> */}
       </div>
 
       {Expo === "Events" && event.map((event, index) => (
@@ -96,14 +62,8 @@ const Eventset = () => {
           </div>
           <hr className='bg-zinc-700 w-full' />
           <h1 className='font-bold text-lg px-5 font-malayalam leading-tight py-2'>{event.topic}</h1>
-          {/* <div className='flex  px-5 gap-1 text-zinc-600'>
-            <img className='h-7' src="/image/mic.png" alt="" />
-            <p className='font-bold text-md pb-2'>{event.mic}</p>
-            
-          </div> */}
-          <div className='w-full flex-col px-5'>
-                          {/* <img className='rounded-xl h-full px-5 w-full' src={event.img} alt="event" /> */}
-</div>
+      
+    
           {currentVisible === index && (
             <div>
               <div className='w-full flex-col px-5'>
@@ -117,7 +77,6 @@ const Eventset = () => {
                   <div className='flex'><img className='h-4' src="/image/icons8-alarm-clock-94.png" alt="" /><p>{event.time}</p></div>
                   <div className='flex'><img className='h-4' src="/image/icons8-location.gif" alt="" /><p>{event.location}</p></div>
                 </div>
-                {/* <div className='flex'><img className='h-6 mt-3.5 mr-0.5' src="/image/coin.png" alt="" /><p className='text-3xl mt-2'>{event.price}</p></div> */}
               </div>
             </div>
           )}
