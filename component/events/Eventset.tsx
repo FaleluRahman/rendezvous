@@ -33,7 +33,10 @@ const Eventset = () => {
     { id: 3, img: "/image/505.jpg",
       time: "01:30PM", location: "Masjid",
       price: "08", topic: "Navigating The Horizon Of Emerging Technologies"
-      ,mic:"Yasir Arafath Nurani "},
+      ,mic:"Yasir Arafath Nurani ",
+      sec:"Docter's Corner"
+
+    },
 
     { id: 4, img: "/image/300.jpg", 
       time: "03:30PM", location: "Thaqiyaa ", 
@@ -87,8 +90,8 @@ const Eventset = () => {
           className='bg-white rounded-t-3xl rounded-b-xl pb-2 w-[85%] flex flex-col mt-5 cursor-pointer font-malayalam'
           onClick={() => toggleVisibility(index)}
         >
-          <div className='bg-gradient-to-r from-zinc-700 to-zinc-600 py-2 text-white px-5 rounded-t-xl text-lg flex justify-between font-bold'>
-            <p>{event.sec}</p> <TbMicrowaveFilled className='py-1 text-3xl' />
+          <div className='bg-gradient-to-r from-zinc-700 to-zinc-600 py-1 text-white px-5 rounded-t-xl text-md flex justify-between font-bold'>
+            <p className='pt-1'>{event.sec}</p> <TbMicrowaveFilled className=' text-3xl' />
           </div>
           <hr className='bg-zinc-700 w-full' />
           <h1 className='font-bold text-lg px-5 font-malayalam leading-tight py-2'>{event.topic}</h1>

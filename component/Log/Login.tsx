@@ -10,9 +10,33 @@ function Login() {
 
   return (
     
-    <div className='bg-orange-50 min-h-screen pb-60'>
+    <div className='bg-orange-50 pb-60 flex flex-col items-center px-10'>
+
+<div className="bg-white shadow-md rounded-lg p-8 w-full  ">
+        <h2 className="text-2xl font-bold text-gray-800 text-start mb-6">Hey,<br/>
+        Login Now!</h2>
+
+        {/* Student Login Button */}
+        <div className='flex flex-col  text-center'>
+        <a className="w-full bg-orange-200 text-gray-800 hover:bg-orange-600 hover:text-white py-2 rounded-lg mb-2 font-semibold transition duration-200"
+        href="/qrcode">
+            Student Login
+        </a>
+
+        {/* Guest Login Button */}
+        <a className="w-full bg-gray-300 text-gray-800  hover:bg-gray-700 hover:text-white py-2 rounded-lg font-semibold transition duration-200">
+            Guest Login
+        </a>
+        </div>
+
+        <div className="mt-6 text-center">
+            <p className="text-sm text-gray-600">Any error 
+                <a href="#" className="text-blue-500 hover:underline">Contact</a>
+            </p>
+        </div>
+    </div>
     
-      <section className='w-9/12 mx-auto flex   flex-col '>
+      {/* <section className='w-9/12 mx-auto flex   flex-col '>
         
         <div className='pt-40 pb-4'>
             <p className='text-black text-left text-3xl font-bold'>Hey,<br/>
@@ -40,7 +64,7 @@ function Login() {
                     
                 </div>
         </div>
-      </section>
+      </section> */}
         
     </div>
   )
