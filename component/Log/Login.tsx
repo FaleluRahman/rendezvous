@@ -13,25 +13,27 @@ function Login() {
     <div className='bg-orange-50 pb-60 flex flex-col items-center px-10'>
 
 <div className="bg-white shadow-md rounded-lg p-8 w-full  ">
-        <h2 className="text-2xl font-bold text-gray-800 text-start mb-6">Hey,<br/>
+        <h2 className="text-2xl font-bold text-gray-800 text-start mb-2">Hey,<br/>
         Login Now!</h2>
+        <p className='leading-tight font-bold text-zinc-400 pb-2'>        Students can Login to get more details about programmes.
+        </p>
 
         {/* Student Login Button */}
         <div className='flex flex-col  text-center'>
         <a className="w-full bg-orange-200 text-gray-800 hover:bg-orange-600 hover:text-white py-2 rounded-lg mb-2 font-semibold transition duration-200"
         href="/qrcode">
-            Student Login
+            Participant
         </a>
 
         {/* Guest Login Button */}
         <a className="w-full bg-gray-300 text-gray-800  hover:bg-gray-700 hover:text-white py-2 rounded-lg font-semibold transition duration-200">
-            Guest Login
+            Guest
         </a>
         </div>
 
         <div className="mt-6 text-center">
-            <p className="text-sm text-gray-600">Any error 
-                <a href="#" className="text-blue-500 hover:underline">Contact</a>
+            <p className="text-sm text-gray-600">Having Problem to Login?
+                <a href="https://wa.me/+919188739314" className="text-blue-500 hover:underline">Contact</a>
             </p>
         </div>
     </div>
