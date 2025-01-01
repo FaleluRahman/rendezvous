@@ -13,7 +13,7 @@ function Login() {
 <div className="bg-white shadow-md rounded-lg p-8 w-full  ">
         <h2 className="text-2xl font-bold text-gray-800 text-start mb-2">Hey,<br/>
         Login Now!</h2>
-        <p className='leading-tight font-bold text-zinc-400 pb-2 text-xs'>        Students can Login to get more details about programmes.
+        <p className='leading-tight font-bold text-zinc-400 pb-2 text-xs'> Students can Login to get more details about programmes.
         </p>
 
         {/* Student Login Button */}
@@ -31,7 +31,7 @@ function Login() {
 
         <div className="mt-6 text-center">
             <p className="text-sm text-gray-600">Having Problem to Login?
-                <a href="https://wa.me/+919188739314" className="text-blue-500 hover:underline ml-0.5">Contact</a>
+                <a href="https://wa.me/+918289882240" className="text-blue-500 hover:underline ml-0.5">Contact</a>
             </p>
         </div>
     </div>

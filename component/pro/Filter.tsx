@@ -9,7 +9,7 @@ const Filter = () => {
           
           <div className='flex text-xs justify-between w-full'>
           <h1 className='text-zinc-700 font-bold px-3 mt-1 pt-3 text-lg py-2 flex items-center'>My Programmes</h1>
-          <img className='h-10 px-5 pt-5' src="/image/technical-support.png" alt="" />
+          <img className='h-10 px-5 pt-5' src="/image/clipboard.svg" alt="" />
         
           </div>
           

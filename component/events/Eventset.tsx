@@ -4,6 +4,7 @@ import { BiSolidCoinStack } from "react-icons/bi";
 import { IoQrCode } from "react-icons/io5";
 import { FaMicrophoneLines } from "react-icons/fa6";
 import { TbMicrowaveFilled } from 'react-icons/tb';
+import { CgEditUnmask } from 'react-icons/cg';
 
 const Eventset = () => {
   const [currentVisible, setCurrentVisible] = useState<number | string | null>(null);
@@ -91,7 +92,7 @@ const Eventset = () => {
           onClick={() => toggleVisibility(index)}
         >
           <div className='bg-gradient-to-r from-zinc-700 to-zinc-600 py-1 text-white px-5 rounded-t-xl text-md flex justify-between font-bold'>
-            <p className='pt-1'>{event.sec}</p> <TbMicrowaveFilled className=' text-3xl' />
+            <p className='pt-1'>{event.sec}</p> <CgEditUnmask className=' text-3xl py-1' />
           </div>
           <hr className='bg-zinc-700 w-full' />
           <h1 className='font-bold text-lg px-5 font-malayalam leading-tight py-2'>{event.topic}</h1>
@@ -111,12 +112,12 @@ const Eventset = () => {
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem a, libero quas atque consectetur iusto necessitatibus voluptate nesciunt ab perferendis dolore tempora earum omnis iste minus corrupti voluptas vitae officiis.
                 </p>
               </div>
-              <div className='h-8 bg-white text-zinc-700 px-5 rounded-t-xl mb-2 text-sm flex items-center justify-between font-bold'>
-                <div className='flex flex-col'>
+              <div className='h-8 bg-white text-zinc-700 px-5 rounded-t-xl text-sm flex items-center justify-between font-bold'>
+                <div className='flex w-full justify-between'>
                   <div className='flex'><img className='h-4' src="/image/icons8-alarm-clock-94.png" alt="" /><p>{event.time}</p></div>
                   <div className='flex'><img className='h-4' src="/image/icons8-location.gif" alt="" /><p>{event.location}</p></div>
                 </div>
-                <div className='flex'><img className='h-6 mt-3.5 mr-0.5' src="/image/coin.png" alt="" /><p className='text-3xl mt-2'>{event.price}</p></div>
+                {/* <div className='flex'><img className='h-6 mt-3.5 mr-0.5' src="/image/coin.png" alt="" /><p className='text-3xl mt-2'>{event.price}</p></div> */}
               </div>
             </div>
           )}

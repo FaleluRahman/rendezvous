@@ -5,7 +5,7 @@ const Wallet = () => {
     <div className='bg-orange-50 pt-5 px-6 w-full flex pb-20 flex-col justify-center'>
     <div className='w-full relative bg-white rounded-3xl flex flex-col overflow-hidden  pb-5 mb-4'>
       <div className='flex text-xs justify-between w-full'>
-      <h1 className='text-zinc-800 font-bold px-5 pt-3 text-lg  flex items-center'>My Wallet </h1>
+      <h1 className='text-zinc-800 font-bold px-5 pt-3 text-lg  flex items-center'>My Wallet</h1>
       {/* <img className='h-12 px-5 pt-5 flex items-center pb-3' src="/image/qr-code-scan.svg" alt="" /> */}
       </div>
 
@@ -21,54 +21,23 @@ const Wallet = () => {
       <img className='ml-[50%] h-23 w-20 absolute top-24 ' src="/image/coin.png" alt="" />
       <img className='ml-[42%] h-14 w-17 absolute top-28 ' src="/image/coin.png" alt="" />
   
+    </div>
 
-      {/* <div className=' px-5 w-full justify-between font-bold text-lg pt-3 text-white'>
-        {/* <button className='bg-orange-700 px-3 rounded-2xl'>Collect</button> */}
-        {/* <button className='bg-orange-700 px-3 rounded-2xl'>Redeem</button> */}
+    <div className='w-full flex justify-center bg-orange-50  py-5'>
+    <div className='w-full relative bg-white rounded-3xl flex flex-col overflow-hidden   pb-5 mb-16'>
+    <div className='text-zinc-700  flex-col flex w-full px-5 pt-5'>
+      <p className='font-bold text-md'>Collect More Points</p>
 
-      {/* </div> */} 
-
-
-     
-
-
+      <p className='text-xs w-[90%] '>Scan the QR code to earn points by participating in these sessions, and redeem them for delicious items at Cafe and reduction at book fair and various exhibitions</p>
       
     </div>
 
-    <div className='w-full relative bg-white rounded-3xl flex flex-col overflow-hidden  pb-5 mb-4'>
-      <div className='flex text-xs justify-between w-full'>
-      {/* <h1 className='text-zinc-800 font-bold px-5 pt-3 text-lg  flex items-center'>My Wallet </h1> */}
-      {/* <img className='h-12 px-5 pt-5 flex items-center pb-3' src="/image/qr-code-scan.svg" alt="" /> */}
-      </div>
-
-      {/* <hr className='bg-zinc-700 w-full' /> */}
-
-      <div className='text-zinc-700 font-bold flex w-full px-5 pt-5 text-md  '>
-        <p>Collect More Points</p>
-        
-      </div>
-  
-        <button className='bg-violet-200 ml-5 text-zinc-700   font-bold px-3 my-4 py-1.5 rounded-2xl flex w-fit '>Collect</button>
-        
-      <img className='ml-[70%] h-23 w-20 absolute  top-5  ' src="/image/coinInEgg.svg" alt="" />
-      {/* <img className='ml-[42%] h-14 w-17 absolute top-28 ' src="/image/coin.png" alt="" /> */}
-  
-
-      {/* <div className=' px-5 w-full justify-between font-bold text-lg pt-3 text-white'>
-        {/* <button className='bg-orange-700 px-3 rounded-2xl'>Collect</button> */}
-        {/* <button className='bg-orange-700 px-3 rounded-2xl'>Redeem</button> */}
-
-      {/* </div> */} 
-
-
-     
-
-
+      <button className='bg-violet-200 ml-5 text-zinc-700 font-bold px-3 mt-4 py-1 rounded-2xl flex w-fit '>Collect</button>
       
-    </div>
-
-   
-
+    <img className='ml-[80%] h-23 w-20 absolute top-8 ' src="/image/coinInEgg.svg" alt="" />
+    
+  </div>
+  </div>
     </div>
   )
 }

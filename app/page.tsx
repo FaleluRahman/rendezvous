@@ -15,8 +15,8 @@ export default function Home() {
       <Header />
       <Counts/>
       <ImageSlider />
-      <EvBtn/>
       <UpComing />
+      <EvBtn/>
       <Navig/>
       
     </div>

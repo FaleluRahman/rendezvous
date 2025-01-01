@@ -46,6 +46,11 @@ const ImageSlider = () => {
             </SwiperSlide>
           ))}
         </Swiper>
+        <div className="bg-white py-3 ">
+        <div className="flex flex-col">
+          <div className="h-10 w-screen bg-[url('/image/logoleft.png')] bg-repeat-x bg-contain animate-rightToLeft"></div>
+        </div>
+      </div>
     </div>
   );
 };

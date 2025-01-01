@@ -21,7 +21,7 @@ function Header() {
           className='h-[60%] pb-10'
         />
 
-<div  className='bg-white rounded-3xl mx-5 py-1 absolute top-72 z-10  '>
+<div  className='bg-white rounded-3xl mx-5 py-1 absolute top-72   '>
       <div className='text-red-500 w-full items-center flex '>  
         <h1 className='mx-auto font-gilroy font-bold text-4xl w-fit mt-10 text-red-700 text-left ml-8 mb-0 leading-[10px] animate-colorPulse'>
           LIBRATIVE<br/>SUBMISSONS
@@ -31,8 +31,8 @@ function Header() {
 
       <div className='text-black/35 m-8 flex text-justify text-xs leading-[14px] font-base'>
   <p className='font-gilroy'> <span className='font-semibold text-black/45'> Rendezvous Life Festival </span> is an annual arts and cultural event organized by Jamia Madeenathunnoor
-     to nurture and enhance the artistic talents of its students. This event not only promotes individual artistic development but also aims to build a supportive, 
-     and vibrant community around the arts at Jamia Madeenathunnoor.
+    to nurture and enhance the artistic talents of its students. This event not only promotes individual artistic development but also aims to build a supportive, 
+    and vibrant community around the arts at Jamia Madeenathunnoor.
   </p>
 </div>
 </div>

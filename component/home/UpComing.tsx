@@ -3,10 +3,12 @@ import { TbLivePhoto } from "react-icons/tb";
 
 function UpComing() {
   return (
-    <div className="bg-white  overflow-hidden  ">
-      <div className='flex justify-between ml-4 w-full mt-3 '>
-      <p className='flex  font-bold text-lg text-zinc-700 rounded-badge my-3 px-1.5 mr-2 py-0.5 '>Live Programmes</p>
-      <p className='pr-10 font-bold text-red-700 text-lg my-3 '>09</p>
+
+    
+    <div className="bg-white overflow-hidden ">
+      <div className='flex justify-between ml-4 w-full '>
+      <p className='flex  font-bold text-lg text-zinc-700 rounded-badge mb-3 px-1.5 mr-2 py-0.5 '>Live Programmes</p>
+      <p className='pr-10 font-bold text-red-700 text-lg mb-3 '>09</p>
     </div>
       <div className="w-full flex flex-col items-end">
         <nav className="h-52 flex flex-row w-full overflow-x-auto no-scrollbar  mt-2  box-border snap-x snap-mandatory touch-pan-x">
@@ -45,11 +47,7 @@ function UpComing() {
           ))}
         </nav>
       </div>
-      <div className="bg-orange-50">
-        <div className="flex flex-col">
-          <div className="h-10 w-screen bg-[url('/image/logoleft.png')] bg-repeat-x bg-contain animate-rightToLeft mb-20"></div>
-        </div>
-      </div>
+     
     </div>
   );
 }
