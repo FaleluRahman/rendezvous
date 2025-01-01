@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { BiSolidCoinStack } from "react-icons/bi";
 import { IoQrCode } from "react-icons/io5";
 import { FaMicrophoneLines } from "react-icons/fa6";
+import { TbMicrowaveFilled } from 'react-icons/tb';
 
 const Eventset = () => {
   const [currentVisible, setCurrentVisible] = useState<number | string | null>(null);
@@ -18,13 +19,16 @@ const Eventset = () => {
     location: "Conference Hall", 
     price: "05", 
     topic: "Navigating The Horizon Of Emerging Technologies", 
-    mic:"Yasir Arafath Nurani ,Yasir Arafath Nurani ,Yasir Arafath Nurani"
+    mic:"Yasir Arafath Nurani ,Yasir Arafath Nurani ,Yasir Arafath Nurani",
+    sec:"Expert Convos"
     },
     { id: 2, img: "/image/shareea seminar 2 copy.jpg",
     time: "10:30AM", location: "Auditorium", 
     price: "07",
     topic: "Navigating The Horizon Of Emerging Horizon Technologies",
-    mic:"Yasir Arafath Nurani " },
+    mic:"Yasir Arafath Nurani ",
+    sec:"write well clinic"
+  },
 
     { id: 3, img: "/image/505.jpg",
       time: "01:30PM", location: "Masjid",
@@ -33,8 +37,8 @@ const Eventset = () => {
 
     { id: 4, img: "/image/300.jpg", 
       time: "03:30PM", location: "Thaqiyaa ", 
-      price: 10, topic: "Navigating The Horizon Of Emerging Technologies",
-      mic:"Yasir Arafath Nurani " },
+      price: 10, topic: "ഇന്ത്യൻ ചരിത്രത്തിലെ മൻമോഹൻ സിങ് കാലം",
+      mic:"Yasir Arafath Nurani" },
   ];
 
   
@@ -80,19 +84,22 @@ const Eventset = () => {
       {Expo === "Events" && event.map((event, index) => (
         <div
           key={event.id}
-          className='bg-white rounded-t-3xl rounded-b-xl pb-2 w-[85%] flex flex-col mt-5 cursor-pointer'
+          className='bg-white rounded-t-3xl rounded-b-xl pb-2 w-[85%] flex flex-col mt-5 cursor-pointer font-malayalam'
           onClick={() => toggleVisibility(index)}
         >
           <div className='bg-gradient-to-r from-zinc-700 to-zinc-600 py-2 text-white px-5 rounded-t-xl text-lg flex justify-between font-bold'>
-            <p>Expert Convos</p> <IoQrCode className='py-1 text-3xl' />
+            <p>{event.sec}</p> <TbMicrowaveFilled className='py-1 text-3xl' />
           </div>
           <hr className='bg-zinc-700 w-full' />
-          <h1 className='font-bold text-lg px-5 leading-tight py-2'>{event.topic}</h1>
-          <div className='flex  px-5 gap-1 text-zinc-600'>
-            <FaMicrophoneLines className='font-bold mt-1' />
+          <h1 className='font-bold text-lg px-5 font-malayalam leading-tight py-2'>{event.topic}</h1>
+          {/* <div className='flex  px-5 gap-1 text-zinc-600'>
+            <img className='h-7' src="/image/mic.png" alt="" />
             <p className='font-bold text-md pb-2'>{event.mic}</p>
             
-          </div>
+          </div> */}
+          <div className='w-full flex-col px-5'>
+                          {/* <img className='rounded-xl h-full px-5 w-full' src={event.img} alt="event" /> */}
+</div>
           {currentVisible === index && (
             <div>
               <div className='w-full flex-col px-5'>

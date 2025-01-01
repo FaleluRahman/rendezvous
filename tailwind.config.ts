@@ -14,6 +14,7 @@ export default {
       fontFamily: {
         sans: ["Gilroy", ...fontFamily.sans],
         gilroy: ["Gilroy", "sans-serif"],
+        malayalam: ['"Noto Serif Malayalam"', 'serif'],
       },
       
       keyframes: {
