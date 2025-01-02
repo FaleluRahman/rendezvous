@@ -10,7 +10,7 @@ const Pdetails = () => {
 
       {/* Name */}
       <div className="flex justify-center w-full px-5">
-        <p className="text-orange-700 font-bold text-2xl">Shameem Ali</p>
+        <p className="text-orange-700 font-bold text-xl">Shameem Ali</p>
       </div>
 
       {/* Jamia ID */}
@@ -21,7 +21,7 @@ const Pdetails = () => {
       {/* Details Section */}
       <div className="w-[90%] bg-white rounded-xl flex flex-col text-xs ">
         {/* Campus */}
-        <div className="flex justify-between w-full px-5 py-2">
+        <div className="flex justify-between w-full px-5 py-1">
           <p className="text-zinc-700">Campus:</p>
           <p className="text-zinc-700 font-bold">Markaz Garden</p>
         </div>

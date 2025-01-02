@@ -15,7 +15,7 @@ const StudentsLogin = () => {
       <p className="text-gray-600 text-sm mb-1 leading-tight">
         Students can Login to get more details about programmes.
       </p>
-      <a href="/student/login" 
+      <a href="/login" 
         onClick={popsSign}
         className="text-white w-fit py-1 px-3 font-bold bg-orange-700 rounded-2xl  cursor-pointer hover:bg-green-700 transition-colors"
       >
