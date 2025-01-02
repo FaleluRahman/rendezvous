@@ -10,7 +10,7 @@ const EvBtn = () => {
     <div className='text-zinc-700  flex-col flex w-full px-5 pt-5'>
       <p className='font-bold text-md'>Collect More Points</p>
 
-      <p className='text-xs text-justify w-[100%] '>Scan the QR code to earn points by participating in these sessions, and redeem them for delicious items at Cafe and reduction at book fair and various exhibitions</p>
+      <p className='text-xs text-justify w-[100%] leading-[-42px]'>Scan the QR code to earn points by participating in these sessions, and redeem them for delicious items at Cafe and reduction at book fair and various exhibitions</p>
       
     </div>
 

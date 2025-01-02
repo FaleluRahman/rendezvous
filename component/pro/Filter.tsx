@@ -47,8 +47,8 @@ const Filter = () => {
 
         {/* <nav className="absolute left-1/2 transform -translate-x-1/2 w-[75%] h-[2px] bottom-[42px] bg-red-400" /> */}
 
-        <p className='px-3 font-bold text-sm'>Song Arabic</p>
-        <p className='px-3 font-bold text-sm'>Talk Master Arabic</p></div>
+        <p className='px-3 font-bold text-xs'>Song Arabic</p>
+        <p className='px-3 font-bold text-xs'>Talk Master Arabic</p></div>
         
         </div>
 
@@ -59,8 +59,8 @@ const Filter = () => {
 
         {/* <nav className="absolute left-1/2 transform -translate-x-1/2 w-[75%] h-[2px] bottom-[42px] bg-red-400" /> */}
 
-        <p className='px-3 font-bold text-sm'>Song Arabic</p>
-        <p className='px-3 font-bold text-sm'>Talk Master Arabic</p></div>
+        <p className='px-3 font-bold text-xs'>Song Arabic</p>
+        <p className='px-3 font-bold text-xs'>Talk Master Arabic</p></div>
         </div>
       </div>
       </div>
