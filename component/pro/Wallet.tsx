@@ -16,7 +16,7 @@ const Wallet = () => {
         
         <p className='bg-yellow-300 text-zinc-500 text-3xl p-2 pl-4 rounded-full border border-yellow-100' style={{ borderWidth: '1px 7px 6px 2px' }}>25</p>
       </div>
-              <button className='bg-yellow-300/65 ml-5 text-zinc-700 w-fit pr-36 font-bold px-3 py-1 rounded-2xl'>Redeem</button>
+              <button className='bg-yellow-300/65 ml-5 text-zinc-700 w-fit pr-[30%] font-bold px-3 py-1 rounded-2xl'>Redeem</button>
 
       <img className='ml-[50%] h-23 w-20 absolute top-24 ' src="/image/coin.png" alt="" />
       <img className='ml-[42%] h-14 w-17 absolute top-28 ' src="/image/coin.png" alt="" />
@@ -27,14 +27,13 @@ const Wallet = () => {
     <div className='w-full relative bg-white rounded-3xl flex flex-col overflow-hidden   pb-5 mb-16'>
     <div className='text-zinc-700  flex-col flex w-full px-5 pt-5'>
       <p className='font-bold text-md'>Collect More Points</p>
-
-      <p className='text-xs w-[95%] text-justify leading-tight '>Scan the QR code to earn points by participating in these sessions, and redeem them for delicious items at Cafe and reduction at book fair and various exhibitions</p>
+      <p className='text-xs w-[100%] text-justify'>Scan the QR code to earn points by participating in these sessions, and redeem them for delicious items at Cafe and reduction at book fair and various exhibitions</p>
       
     </div>
 
       <button className='bg-violet-200 ml-5 text-zinc-700 font-bold px-3 mt-4 py-1 rounded-2xl flex w-fit '>Collect</button>
       
-    <img className='ml-[75%] h-17 w-15 absolute top-[55%] ' src="/image/coinInEgg.svg" alt="" />
+    <img className='ml-[75%] h-13 w-11 absolute top-[65%] ' src="/image/coinInEgg.svg" alt="" />
     
   </div>
   </div>

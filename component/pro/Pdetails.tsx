@@ -19,7 +19,7 @@ const Pdetails = () => {
       </div>
 
       {/* Details Section */}
-      <div className="w-[90%] bg-white rounded-xl flex flex-col ">
+      <div className="w-[90%] bg-white rounded-xl flex flex-col text-xs ">
         {/* Campus */}
         <div className="flex justify-between w-full px-5 py-2">
           <p className="text-zinc-700">Campus:</p>
