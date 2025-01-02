@@ -47,7 +47,7 @@ const Eventset = () => {
 
 
   return (
-    <div className='bg-orange-50 flex justify-center items-center flex-col pb-20'>
+    <div className='bg-orange-50 flex justify-center items-center flex-col'>
       <div className="flex flex-col justify-between items-end w-full">
       </div>
 
@@ -61,7 +61,7 @@ const Eventset = () => {
             <p className='pt-1'>{event.sec}</p> <CgEditUnmask className=' text-3xl py-1' />
           </div>
           <hr className='bg-zinc-700 w-full' />
-          <h1 className='font-bold text-lg px-5 font-malayalam leading-tight py-2'>{event.topic}</h1>
+          <h1 className='font-bold text-md px-5 font-malayalam leading-tight py-2'>{event.topic}</h1>
       
     
           {currentVisible === index && (

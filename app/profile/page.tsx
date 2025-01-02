@@ -10,7 +10,6 @@ const page = () => {
   return (
     <div>
       <StudentsLogin/>
-      <Login />
       <Pdetails/>
       <Filter/>
       <Wallet/>
