@@ -60,7 +60,7 @@ const Eventset = () => {
           <div className='bg-gradient-to-r from-zinc-700 to-zinc-600 py-1 text-white px-5 rounded-t-xl text-md flex justify-between font-bold'>
             <p className='pt-1'>{event.sec}</p> <CgEditUnmask className=' text-3xl py-1' />
           </div>
-          <hr className='bg-zinc-700 w-full' />
+          {/* <hr className='bg-zinc-700 w-full' /> */}
           <h1 className='font-bold text-md px-5 font-malayalam leading-tight py-2'>{event.topic}</h1>
       
     

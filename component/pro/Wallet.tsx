@@ -27,13 +27,13 @@ const Wallet = () => {
     <div className='w-full relative bg-white rounded-3xl flex flex-col overflow-hidden   pb-5 mb-16'>
     <div className='text-zinc-700  flex-col flex w-full px-5 pt-5'>
       <p className='font-bold text-md'>Collect More Points</p>
-      <p className='text-xs w-[100%] text-justify leading-[-42px]'>Scan the QR code to earn points by participating in these sessions, and redeem them for delicious items at Cafe and reduction at book fair and various exhibitions</p>
+      <p className='text-[9px] w-[100%] text-justify leading-[-42px]'>Scan the QR code to earn points by participating in these sessions, and redeem them for delicious items at Cafe and reduction at book fair and various exhibitions</p>
       
     </div>
 
       <button className='bg-violet-200 ml-5 text-zinc-700 font-bold px-3 mt-4 py-1 rounded-2xl flex w-fit '>Collect</button>
       
-    <img className='ml-[75%] h-13 w-11 absolute top-[73%] ' src="/image/coinInEgg.svg" alt="" />
+    <img className='ml-[75%] h-13 w-11 absolute top-[68%] ' src="/image/coinInEgg.svg" alt="" />
     
   </div>
   </div>

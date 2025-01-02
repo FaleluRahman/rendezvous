@@ -26,7 +26,7 @@ const Pdetails = () => {
           <p className="text-zinc-700 font-bold">Markaz Garden</p>
         </div>
 
-        <hr className="bg-zinc-700 w-full my-2" />
+        <hr className="bg-zinc-700 w-full my-1" />
 
         {/* Category */}
         <div className="flex justify-between w-full px-5 pb-2">
