@@ -58,7 +58,7 @@ function Navig() {
     }`;
 
   return (
-    <div className="flex w-full text-center justify-center">
+    <div className="flex w-full text-center justify-center z-40">
     <div
       id="footer"
       className="m-0 mx-auto fixed bottom-0 z-[5] max-w-[375px] w-full flex items-center justify-center bg-white rounded-t-[15px] shadow-xl h-16"

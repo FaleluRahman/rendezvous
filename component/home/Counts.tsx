@@ -11,7 +11,7 @@ const Counts = () => {
     <div className='bg-orange-50 grid grid-cols-2  grid-rows-3 px-5 py-4 w-full mx-auto text-center   '>
 
         <div className='bg-yellow-50 mb-3  px-3 py-3 rounded-3xl relative  mx-1  overflow-hidden row-span-2'>
-            <h1 className='text-yellow-600 text-3xl text-left font-extrabold'>1.7K+</h1>
+            <h1 className='text-yellow-600 text-3xl text-left font-extrabold'>1500+</h1>
             <p className='text-zinc-700 text-md  text-left '>Participates</p>
             <PiStudentBold className='absolute w-20 h-20  bottom-[-8px] right-0 text-[#dda338] opacity-15 cursor-pointer'/>
 

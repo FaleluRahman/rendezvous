@@ -359,7 +359,7 @@ const ItemResult = () => {
             <IoIosArrowDropdown 
               className={`${
                 expandedItem === program.id ? 'rotate-180' : ''
-              } absolute text-2xl top-12 font-semibold right-10 transition-all text-red-400 z-10`} 
+              } absolute text-2xl top-12 font-semibold right-10 transition-all text-red-400`} 
             />
             
             <section className="header w-10/12 flex items-center justify-start m-0 border-t border-[#53ffd71a] py-[10px] relative border-none bg-transparent h-fit p-0 mb-[15px]">
