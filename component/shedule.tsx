@@ -1,12 +1,79 @@
 "use client";
 
 import React, {useState} from 'react'
+import { CiSearch } from "react-icons/ci";
 
 
 
 const scheduleData = [
     {
-        day: "Mon",
+        day: "Thu",
+        date:2,
+        schedule: [
+            {
+                stage: 1,
+                events: [
+                    { id: "1", time: "9:00 AM", title: "Team Meeting" },
+                    { id: "2", time: "11:00 AM", title: "Project Presentation" },
+                    { id: "3", time: "1:00 PM", title: "Lunch with Client" },
+                    { id: "4", time: "3:00 PM", title: "Code Review" },
+                    { id: "5", time: "4:00 PM", title: "Scrum Meeting" },
+                    { id: "6", time: "5:00 PM", title: "Wrap Up" },
+                    { id: "7", time: "6:00 PM", title: "Team Building Activity" },
+                    { id: "8", time: "7:00 PM", title: "Dinner" },
+                    { id: "9", time: "8:00 PM", title: "Networking Event" },
+                    { id: "10", time: "9:00 PM", title: "End of Day Review" },
+                    { id: "11", time: "10:00 PM", title: "Plan for Tomorrow" },
+                ],
+            },
+            {
+                stage: 2,
+                events: [
+                    { id: "32", time: "9:00 AM", title: "Daily Standup" },
+                    { id: "33", time: "10:00 AM", title: "Client Workshop" },
+                    { id: "34", time: "11:00 AM", title: "Code Review" },
+                    { id: "35", time: "1:00 PM", title: "Lunch Break" },
+                    { id: "36", time: "2:00 PM", title: "Sprint Planning" },
+                    { id: "37", time: "3:00 PM", title: "Development" },
+                    { id: "38", time: "4:00 PM", title: "Testing" },
+                    { id: "39", time: "5:00 PM", title: "Wrap Up" },
+                    { id: "40", time: "6:00 PM", title: "Team Dinner" },
+                ],
+            }, {
+                stage: 3,
+                events: [
+                    { id: "1", time: "9:00 AM", title: "Team Meeting" },
+                    { id: "2", time: "11:00 AM", title: "Project Presentation" },
+                    { id: "3", time: "1:00 PM", title: "Lunch with Client" },
+                    { id: "4", time: "3:00 PM", title: "Code Review" },
+                    { id: "5", time: "4:00 PM", title: "Scrum Meeting" },
+                    { id: "6", time: "5:00 PM", title: "Wrap Up" },
+                    { id: "7", time: "6:00 PM", title: "Team Building Activity" },
+                    { id: "8", time: "7:00 PM", title: "Dinner" },
+                    { id: "9", time: "8:00 PM", title: "Networking Event" },
+                    { id: "10", time: "9:00 PM", title: "End of Day Review" },
+                    { id: "11", time: "10:00 PM", title: "Plan for Tomorrow" },
+                ],
+            }, {
+                stage: 4,
+                events: [
+                    { id: "1", time: "9:00 AM", title: "Team Meeting" },
+                    { id: "2", time: "11:00 AM", title: "Project Presentation" },
+                    { id: "3", time: "1:00 PM", title: "Lunch with Client" },
+                    { id: "4", time: "3:00 PM", title: "Code Review" },
+                    { id: "5", time: "4:00 PM", title: "Scrum Meeting" },
+                    { id: "6", time: "5:00 PM", title: "Wrap Up" },
+                    { id: "7", time: "6:00 PM", title: "Team Building Activity" },
+                    { id: "8", time: "7:00 PM", title: "Dinner" },
+                    { id: "9", time: "8:00 PM", title: "Networking Event" },
+                    { id: "10", time: "9:00 PM", title: "End of Day Review" },
+                    { id: "11", time: "10:00 PM", title: "Plan for Tomorrow" },
+                ],
+            },
+        ],
+    },
+    {
+        day: "Fri",
         date:3,
         schedule: [
             {
@@ -72,7 +139,7 @@ const scheduleData = [
         ],
     },
     {
-        day: "Tue",
+        day: "Sat",
         date:4,
         schedule: [
             {
@@ -119,7 +186,7 @@ const scheduleData = [
         ],
     },
     {
-        day: "Wed",
+        day: "Sun",
         date:5,
         schedule: [
             {
@@ -183,10 +250,11 @@ const Schedule = () => {
 
             <div>
                 <div className='bg-gradient-to-r from-red-700 to-red-600 pb-1 rounded-bl-3xl rounded-br-3xl'>
-                <h1 className=' font-bold text-3xl py-2 w-11/12 text-center text-white'>Schedule</h1>
+                <h1 className=' font-bold text-3xl py-2 w-11/12 text-center text-white mx-auto'>Schedule</h1>
                 
                 <div className='flex items-center justify-evenly text-center mt-4 text-black bg-gradient-to-r from-red-600 to-red-500
                 rounded-lg w-11/12 py-2 m-auto'>
+                    
 
                     {scheduleData.map((item, i) => (
                         <div
@@ -211,6 +279,7 @@ const Schedule = () => {
 
                 <div className='flex items-center justify-center flex-col relative px-4 my-4' >
                     
+                    
                 {scheduleData.find((item, i) => item.date === date)?.schedule.find((pro, i) => pro.stage === stage)?.events.map((item) => (
 
                         <section className='text-black px-2 py-1 w-full mt-1 grid grid-cols-5'>
@@ -229,7 +298,6 @@ const Schedule = () => {
                         </section>
                     ))}
 
-                    {/* <div className='h-full absolute w-2 bg-red-700 bar rounded-lg'></div> */}
                 </div>
             </div>
         </section>
