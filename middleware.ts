@@ -20,10 +20,10 @@ let isAuthenticated = false;
     return NextResponse.next();
   }
   if (!isAuthenticated) {
-    if (["/"].includes(request.nextUrl.pathname)) {
-      return NextResponse.redirect(new URL("/login", request.url));
-    }
+    // if (["/profile"].includes(request.nextUrl.pathname)) {
+    //   return NextResponse.redirect(new URL("/login", request.url));
+    // }
     return NextResponse.next();
   }
 }
-export const config = { matcher: ["/", "/login"] };
+export const config = { matcher: ["/profile", "/login"] };

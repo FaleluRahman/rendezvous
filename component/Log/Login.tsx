@@ -1,7 +1,7 @@
 
-function Login() {
+function login() {
   return (
-    <div className=" pb-60 flex  items-center justify-center px-10">
+    <div className="flex  items-center justify-center px-10">
       <div className="bg-white shadow-md rounded-lg p-8 w-full  ">
         <h2 className="text-2xl font-bold text-gray-800 text-start mb-2">
           Hey,
@@ -10,7 +10,7 @@ function Login() {
         </h2>
         <p className="leading-tight font-bold text-zinc-400 pb-2 text-xs">
           {" "}
-          Students can Login to get more details about programmes.
+          Participants can Login to get more details about programmes.
         </p>
 
         {/* Student Login Button */}
@@ -25,7 +25,7 @@ function Login() {
           {/* Guest Login Button */}
           <a
             className="w-full bg-gray-300 text-gray-800  hover:bg-gray-700 hover:text-white py-2 rounded-lg font-semibold transition duration-200"
-            href="/guest"
+            href="/"
           >
             Guest
           </a>
@@ -77,4 +77,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default login;

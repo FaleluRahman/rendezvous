@@ -16,7 +16,6 @@ const page = async () => {
       {logged ? (
         <>
           <Logout />
-
           <Pdetails />
           <Filter />
           <Wallet />

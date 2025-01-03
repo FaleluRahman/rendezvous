@@ -30,7 +30,7 @@ export default function RootLayout({
       >
         {/* <Progressor/> */}
        
-        <div className="w-full max-w-[500px] mx-auto relative min-h-screen">
+        <div className="w-full max-w-[500px] mx-auto relative min-h-screen bg-orange-50">
         
         
         

@@ -1,23 +1,25 @@
-import Navig from "@/component/footer/Navigation";
 import Counts from "@/component/home/Counts";
 import EvBtn from "@/component/home/ev-btn";
 import Header from "@/component/home/Header";
 import ImageSlider from "@/component/home/ImageSlider";
 import UpComing from "@/component/home/UpComing";
+import { isLogged } from "@/lib/auth";
 
-
-export default function Home() {
-
+const HomePage = async () => {
+  const logged = await isLogged();
   return (
     <div>
       
-      <Header />
-      {/* <Login/> */}
-      <Counts/>
-      <ImageSlider />
-      <UpComing />
-      <EvBtn/>
+      <>
+        <Header />
+        <Counts />
+        <ImageSlider />
+        <UpComing />
+        {logged && <EvBtn />}
+      </>
       
     </div>
   );
-}
+};
+
+export default HomePage;

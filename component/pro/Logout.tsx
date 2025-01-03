@@ -15,7 +15,7 @@ const Logout = () => {
                 Cookies.remove("student");
                 router.push("/login");
             }}
-            >Logout <IoMdLogOut className='mt-1' />
+            >Logout <IoMdLogOut className='mt-1'/>
             </button>
 
     </div>
