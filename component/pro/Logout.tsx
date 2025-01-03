@@ -13,9 +13,9 @@ const Logout = () => {
               <button className="bg-gradient-to-r from-red-700 to-red-600 px-2 py-0.5 rounded-xl text-white font-bold flex"
               onClick={() => {
                 Cookies.remove("student");
-                router.push("/login");
+                router.push("/Login");
             }}
-            >Logout <IoMdLogOut className='mt-1'/>
+            >Logout <IoMdLogOut className='mt-1' />
             </button>
 
     </div>
