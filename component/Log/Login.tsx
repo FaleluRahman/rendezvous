@@ -1,5 +1,5 @@
 
-function login() {
+function Login() {
   return (
     <div className="flex  items-center justify-center px-10">
       <div className="bg-white shadow-md rounded-lg p-8 w-full  ">
@@ -77,4 +77,4 @@ function login() {
   );
 }
 
-export default login;
+export default Login;
