@@ -10,10 +10,10 @@ import Link from "next/link"; // Correct Link import for navigation
 
 const ImageSlider = () => {
   const images = [
-    "/image/301.jpg",
+    "/image/website themetalk.webg",
     "/image/website1 expert.webg",
-    "/image/712.jpg",
-    "/image/300.jpg",
+    "/image/eduloginb.webg",
+    "/image/web pro.webg",
   ];
 
   return (

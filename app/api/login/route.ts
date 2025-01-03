@@ -30,10 +30,10 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({
         status: true,
         student,
-        message: "Login Succesfull",
+        message:"Login Succesfull",
       });
     } else {
-      throw new Error("Studen not found");
+      throw new Error("Student not found");
     }
   } catch (error: any) {
     return NextResponse.json({

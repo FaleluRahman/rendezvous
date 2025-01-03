@@ -2,7 +2,7 @@ import React from 'react'
 
 const Wallet = () => {
   return (
-    <div className='bg-orange-50 pt-5 px-6 w-full flex pb-20 flex-col justify-center'>
+    <div className='bg-orange-50 pt-5 px-6 w-full flex pb-10 flex-col justify-center'>
     <div className='w-full relative bg-white rounded-3xl flex flex-col overflow-hidden  pb-5 mb-4'>
       <div className='flex text-xs justify-between w-full'>
       <h1 className='text-zinc-800 font-bold px-5 pt-3 text-lg  flex items-center'>My Wallet</h1>

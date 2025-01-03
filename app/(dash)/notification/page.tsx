@@ -1,12 +1,11 @@
 import Navig from '@/component/footer/Navigation'
-import Schedule from '@/component/shedule'
+import NotificationPage from '@/component/noti/notification'
 import React from 'react'
 
 const page = () => {
   return (
     <div>
-      <Schedule/>
-      <Navig/>
+      <NotificationPage/>
     </div>
   )
 }

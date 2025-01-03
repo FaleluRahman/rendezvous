@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Headtop from "@/component/home/Headtop";
-import Navig from "@/component/footer/Navigation";
-
+import Progressor from "@/component/common/Progressor";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -30,9 +28,10 @@ export default function RootLayout({
       <body
         className={` ${geistSans.variable} ${geistMono.variable}  antialiased`}
       >
+        {/* <Progressor/> */}
+       
+        <div className="w-full max-w-[500px] mx-auto relative min-h-screen">
         
-        <div className="w-full max-w-[500px] mx-auto relative">
-        <Headtop/>
         
         
           {children}
