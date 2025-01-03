@@ -17,7 +17,6 @@ const QrCodeScanner: React.FC = () => {
     if (!error) {
       const qrCodeRegion = qrCodeRegionRef.current;
       if (!qrCodeRegion) return;
-console.log(qrCodeRegion);
 
       const html5QrCode = new Html5Qrcode(qrCodeRegion.id);
       let isScanning = false; // Flag to track scanner state
@@ -69,7 +68,7 @@ console.log(qrCodeRegion);
         }
       };
     }
-  }, [error,]);
+  }, [error]);
 
   useEffect(() => {
     if (scanResult) {
@@ -82,6 +81,7 @@ console.log(qrCodeRegion);
             Cookies.set("student", JSON.stringify(res.data.student), {
               path: "/",
             });
+            localStorage.setItem("programs", JSON.stringify(res.data.programs));
             return router.push("/");
           } else {
             throw new Error(
@@ -92,9 +92,7 @@ console.log(qrCodeRegion);
         .catch((e) => {
           setError(e?.message || e || "Something went wrong");
           setLoading(false);
-
-        })
-        
+        });
     }
   }, [scanResult]);
   return (
@@ -102,27 +100,39 @@ console.log(qrCodeRegion);
       {loading ? (
         <>
           <h2 className="text-zinc-700">Authenticating Your Access...</h2>
-        
-        <div className="flex items-center justify-center">
-          <img className="h-20" src="/image/Loader Blobs.gif" alt="" />
-          {/* <p>Loading</p> */}
-        </div>
+
+          <div className="flex items-center justify-center">
+            <img className="h-20" src="/image/Loader Blobs.gif" alt="" />
+            {/* <p>Loading</p> */}
+          </div>
         </>
       ) : (
-        <>
-        <p><IoScanSharp className="text-xl font-bold"/></p>
+        <div className="relative h-full">
+          <p>
+            <IoScanSharp className="text-xl ml-5 font-bold" />
+          </p>
           <h2 className="font-bold text-zinc-600">Scan your Id card</h2>
           <div
             id="qr-code-region"
             ref={qrCodeRegionRef}
             style={{ width: "400px" }}
           />
-        </>
+          <a
+            href="/login"
+            className="p-2 px-5 absolute -bottom-10 -translate-x-20 translate-y-5 font-bold
+          text-zinc-50 rounded-xl bg-red-500 mt-10"
+          >
+            Back to login
+          </a>
+        </div>
       )}
 
       {error && !loading && (
         <>
-          <p className="text-red-600  flex ">{error }<MdError  className="mt-1"/></p>
+          <p className="text-red-600  flex ">
+            {error}
+            <MdError className="mt-1" />
+          </p>
           <button
             onClick={() => {
               setError(null);

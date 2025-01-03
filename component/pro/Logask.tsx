@@ -13,7 +13,7 @@ const StudentsLogin = () => {
     <div className='bg-orange-50 h-fit flex pt-10'>
     <div className="px-5 h-fit mx-5 bg-white rounded-2xl w-[90%] text-xs font-gilroy py-2 flex flex-col ">
       <p className="text-gray-600 text-sm mb-1 leading-tight">
-        Students can Login to get more details about programmes.
+        Participants can Login to get more details about programmes.
       </p>
       <a href="/login" 
         onClick={popsSign}
