@@ -1,3 +1,4 @@
+import AdSlider from "@/component/home/AdSlider";
 import Counts from "@/component/home/Counts";
 import EvBtn from "@/component/home/ev-btn";
 import Header from "@/component/home/Header";
@@ -39,6 +40,8 @@ await axios.get(
         <ImageSlider />
         <UpComing programs={ongoing} />
         {logged && <EvBtn />}
+        <AdSlider />
+
         <div className="h-20"></div>
       </>
     </div>
