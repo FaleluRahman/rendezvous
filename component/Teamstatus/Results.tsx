@@ -347,7 +347,7 @@ const ItemResult = ({ announced }: { announced: number[] }) => {
       setResult("loading");
       axios
         .get(
-          `https://malikoptics.abaqas.in/workspace-backend/results/action.php?program=${expandedItem}&action=proResult`
+          `https://malikoptics.abaqas.in/workspace-backend/results/action.php?program=${expandedItem}&action=AppResult`
         )
         .then((res) => {
           setResult(res.data.data || null);
@@ -357,6 +357,8 @@ const ItemResult = ({ announced }: { announced: number[] }) => {
       setResult(null);
     }
   }, [expandedItem]);
+  console.log("result",result);
+  
 
   const getPrizeData = (programId: string) => {
     return itemPrizes.find((prize: any) => prize.id === programId)?.data || [];
