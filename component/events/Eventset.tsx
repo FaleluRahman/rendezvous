@@ -52,12 +52,45 @@ const Eventset = () => {
       sec: "Pro Chat",
 
     },
+    {
+      id: 4,
+      img: "/image/WEB USMAN.webg",
+      time: "02:00PM",
+      location: "Cosmo sapien",
+      price: "08",
+      topic: "Al-Powered Personalized Learning: Tailoring Education to Individual Needs",
+      mic: "Yasir Arafath Nurani ",
+      sec: "Expert Convos",
+
+    },
+    {
+      id: 5,
+      img: "/image/website razi.webg",
+      time: "02:00PM",
+      location: "Cosmo sapien",
+      price: "08",
+      topic: "രിസാല ക്രിയേഷൻ: ഗവേഷണവും ക്രമീകരണ രീതിയും",
+      mic: "Yasir Arafath Nurani ",
+      sec: "Expert Convos",
+
+    },
+    {
+      id: 6,
+      img: "/image/WEB FALIL.webg",
+      time: "02:00PM",
+      location: "Cosmo sapien",
+      price: "08",
+      topic: "دروس اللغة العربية الوسائل والإمكانيات",
+      mic: "Yasir Arafath Nurani ",
+      sec: "Expert Convos",
+
+    },
 
   
   ];
 
   return (
-    <div className="bg-orange-50 flex justify-center items-center flex-col">
+    <div className="bg-orange-50 flex pb-20 justify-center items-center flex-col">
       <div className="flex flex-col justify-between items-end w-full"></div>
 
       {Expo === "Events" &&
