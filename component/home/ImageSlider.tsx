@@ -14,6 +14,7 @@ const ImageSlider = () => {
     "/image/website1 expert.webg",
     "/image/eduloginb.webg",
     "/image/web pro.webg",
+    "/image/web green theme.webg",
   ];
 
   return (
