@@ -80,7 +80,7 @@ const Eventset = () => {
               <CgEditUnmask className=" text-3xl py-1" />
             </div>
             {/* <hr className='bg-zinc-700 w-full' /> */}
-            <h1 className="font-bold text-md px-5 font-malayalam leading-tight py-2">
+            <h1 className="font-bold text-sm px-5 font-malayalam leading-tight py-2">
               {event.topic}
             </h1>
 
