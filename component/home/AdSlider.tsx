@@ -6,17 +6,18 @@ import "swiper/css"; // Core Swiper styles
 import "swiper/css/pagination"; // Pagination module styles
 import "swiper/css/autoplay"; // Autoplay module styles
 import { Autoplay, Pagination } from "swiper/modules";
-import Link from "next/link"; // Correct Link import for navigation
+
 
 const AdSlider = () => {
   const images = [
     "/image/ad1.jpg",
     "/image/ad2.jpg",
+    "/image/ad3.jpg",
     
   ];
 
   return (
-    <div className="w-full swiper-sec flex flex-col items-center bg-orange-50 overflow-hidden pb-6">
+    <div className="w-full swiper-sec flex flex-col items-center bg-orange-50 overflow-hidden pb-3">
       
         <Swiper
           modules={[Autoplay, Pagination]} // Pass modules explicitly
@@ -37,7 +38,7 @@ const AdSlider = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className="bg-white py-3 ">
+        <div className="bg-orange-50 py-3 ">
         <div className="flex flex-col">
           <div className="h-10 w-screen bg-[url('/image/logoleft.png')] bg-repeat-x bg-contain animate-rightToLeft"></div>
         </div>
