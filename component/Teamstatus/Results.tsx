@@ -342,21 +342,21 @@ const ItemResult = () => {
   const toggleItem = (id: string) => {
     setExpandedItem(expandedItem === id ? null : id);
   };
-  useEffect(() => {
-    if (expandedItem) {
-      setResult("loading");
-      axios
-        .get(
-          `https://malikoptics.abaqas.in/workspace-backend/results/action.php?program=${expandedItem}&action=proResult`
-        )
-        .then((res) => {
-          setResult(res.data.data || null);
-        })
-        .catch((err) => setResult(null));
-    } else {
-      setResult(null);
-    }
-  }, [expandedItem]);
+  // useEffect(() => {
+  //   if (expandedItem) {
+  //     setResult("loading");
+  //     axios
+  //       .get(
+  //         `https://malikoptics.abaqas.in/workspace-backend/results/action.php?program=${expandedItem}&action=proResult`
+  //       )
+  //       .then((res) => {
+  //         setResult(res.data.data || null);
+  //       })
+  //       .catch((err) => setResult(null));
+  //   } else {
+  //     setResult(null);
+  //   }
+  // }, [expandedItem]);
 
   const getPrizeData = (programId: string) => {
     return itemPrizes.find((prize: any) => prize.id === programId)?.data || [];
@@ -368,7 +368,7 @@ const ItemResult = () => {
 
   return (
     <div
-      className="result mt-0 flex flex-wrap items-center justify-center w-full gap-5 bg-white p-5 mb-20"
+      className="result mt-0 flex flex-wrap h-full items-center justify-center w-full gap-5 bg-white p-5 mb-10"
       id="result"
     >
       <div className="flex relative items-center rounded-md bg-white pl-3 outline outline-1 -outline-offset-1 outline-gray-300 focus-within:outline focus-within:outline-1 focus-within:-outline-offset-1 focus-within:outline-red-300 w-[90%]">

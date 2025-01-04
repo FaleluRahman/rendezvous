@@ -3,7 +3,7 @@ import React from "react";
 
 const NotificationPage = () => {
   const notifications = [
-    { id: 1, message: "Cultural Gala scheduled for tomorrow at 4 AM.", time: "3 mints ago"  },
+    { id: 1, message: "Cultural Gala scheduled for Today at 4 AM.", time: "3 mints ago"  },
     { id: 2, message: "Food alert:Your meal awaits! ", time: "2 hours ago" },
     // { id: 3, message: " ", time: "1 day ago" },
     // { id: 4, message: " ", time: "1 hour ago" },
