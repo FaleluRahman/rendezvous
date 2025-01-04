@@ -53,15 +53,7 @@ const Eventset = () => {
 
     },
 
-    // {
-    //   id: 4,
-    //   img: "/image/300.jpg",
-    //   time: "03:30PM",
-    //   location: "Thaqiyaa ",
-    //   price: 10,
-    //   topic: "ഇന്ത്യൻ ചരിത്രത്തിലെ മൻമോഹൻ സിങ് കാലം",
-    //   mic: "Yasir Arafath Nurani",
-    // },
+  
   ];
 
   return (
@@ -79,8 +71,7 @@ const Eventset = () => {
               <p className="pt-1">{event.sec}</p>{" "}
               <CgEditUnmask className=" text-3xl py-1" />
             </div>
-            {/* <hr className='bg-zinc-700 w-full' /> */}
-            <h1 className="font-bold text-sm px-5 font-malayalam leading-tight py-2">
+            <h1 className="font-bold text-xs px-5 font-malayalam leading-tight py-2">
               {event.topic}
             </h1>
 
