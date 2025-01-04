@@ -3,7 +3,7 @@ import axios from "axios";
 
 import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
-import BarcodeScannerComponent from "react-qr-barcode-scanner";
+import { BarcodeScannerComponent } from "react-qr-barcode-scanner";
 
 export default function QrScan({ setScan }: { setScan: any }) {
   const [data, setData] = useState<any>(null);
