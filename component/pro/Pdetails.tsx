@@ -11,9 +11,7 @@ const Pdetails = () => {
       setDetails(JSON.parse(student));
     }
   }, []);
-  console.log(
-    details
-  );
+
   
   return (
     <div className="bg-orange-50 py-5 w-full flex flex-col items-center">

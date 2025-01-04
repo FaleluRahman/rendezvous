@@ -12,10 +12,14 @@ const ImageSlider = () => {
   const images = [
     "/image/website themetalk.webg",
     "/image/website1 expert.webg",
+    "/image/20250104_174302.jpg",
     "/image/eduloginb.webg",
     "/image/web pro.webg",
     "/image/web green theme.webg",
-  ];
+    "/image/20250104_172018.jpg",
+    "/image/20250104_173205.jpg",
+    "/image/20250104_174833.jpg",
+];
 
   return (
     <div className="w-full swiper-sec flex flex-col items-center bg-white overflow-hidden pb-6 pt-5">
