@@ -1,5 +1,6 @@
 import Login from '@/component/Log/Login'
 import React from 'react'
+export const dynamic = "force-dynamic";
 
 const page = () => {
   return (

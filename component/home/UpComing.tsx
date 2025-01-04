@@ -32,7 +32,7 @@ function UpComing({ programs }: { programs: any[] }) {
 
                 {/* <nav className=" left-1/2 transform -translate-x-1/2 w-[75%] h-[2px] bottom-[42px] bg-red-400" /> */}
                 <p className="text-base font-semibold text-white  rounded-md  flex justify-between gap-1 w-full">
-                  <span>Stage {prgrm.stage}</span>
+                  <span >Stage {prgrm.stage}</span>
                   <span className="capitalize">{prgrm.status}</span>
                 </p>
                 <svg

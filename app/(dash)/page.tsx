@@ -5,6 +5,7 @@ import ImageSlider from "@/component/home/ImageSlider";
 import UpComing from "@/component/home/UpComing";
 import { isLogged } from "@/lib/auth";
 import axios from "axios";
+export const dynamic = "force-dynamic";
 
 const HomePage = async () => {
   const logged = await isLogged();
