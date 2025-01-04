@@ -15,7 +15,7 @@ const Eventset = () => {
   }, [currentVisible]);
 
   const event = [
-    { id: 1, img: "/image/debate poster copy.jpg",
+    { id: 1, img: "/image/website1 expert.webg",
     time: "09:30AM",
     location: "Conference Hall", 
     price: "05", 

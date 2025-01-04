@@ -6,7 +6,7 @@ import ItemResult from "@/component/Teamstatus/Results";
 export default function Page() { 
   return (
     <div>
-      <Campuspoints/>
+      {/* <Campuspoints/> */}
       <ItemResult/>
       <Navig/>
       

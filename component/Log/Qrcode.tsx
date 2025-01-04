@@ -108,9 +108,9 @@ const QrCodeScanner: React.FC = () => {
         </>
       ) : (
         <div className="relative h-full">
-          <p>
+          {/* <p>
             <IoScanSharp className="text-xl ml-5 font-bold" />
-          </p>
+          </p> */}
           <h2 className="font-bold text-zinc-600">Scan your Id card</h2>
           <div
             id="qr-code-region"

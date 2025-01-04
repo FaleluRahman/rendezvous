@@ -1,31 +1,30 @@
-import React from 'react';
-import { TbLivePhoto } from "react-icons/tb";
+import React from "react";
 
-function UpComing() {
+function UpComing({ programs }: { programs: any[] }) {
   return (
-
-    
     <div className="bg-white overflow-hidden ">
-      <div className='flex justify-between ml-4 w-full '>
-      <p className='flex  font-bold text-lg text-zinc-700 rounded-badge mb-3 px-1.5 mr-2 py-0.5 '>Live Programmes</p>
-      <p className='pr-10 font-bold text-red-700 text-lg mb-3 '>09</p>
-    </div>
+      <div className="flex justify-between ml-4 w-full ">
+        <p className="flex  font-bold text-lg text-zinc-700 rounded-badge mb-3 px-1.5 mr-2 py-0.5 ">
+          Live Programmes
+        </p>
+        <p className="pr-10 font-bold text-red-700 text-lg mb-3 ">{programs.length}</p>
+      </div>
       <div className="w-full flex flex-col items-end">
         <nav className="h-52 flex flex-row w-full overflow-x-auto no-scrollbar  mt-2  box-border snap-x snap-mandatory touch-pan-x">
-          {[1, 1, 1, 1,1,1,1,1,1].map((_, index) => (
+          {programs?.map((prgrm, index) => (
             <div
               key={index}
               className="w-64 h-5/6 flex-shrink-0 bg-gradient-to-r from-red-700 to-red-600 border-red-500 border-[2px] rounded-2xl flex flex-col justify-start items-start pl-8 box-border overflow-hidden relative snap-center mx-2"
             >
               <p className="text-lg bg-red-500 px-2 font-semibold text-white rounded-md mt-5">
-                Junior
+                {prgrm.category}
               </p>
-              <h6 className="text-[25px] w-[70%] pr-0 font-bold leading-[27px] text-white m-0 mt-[15px]">
-                Talk Master Arabic
+              <h6 className="text-[15px]  pr-0 font-bold leading-[27px] text-white m-0 mt-[15px]">
+                {prgrm.name}
               </h6>
               <nav className="absolute left-1/2 transform -translate-x-1/2 w-[75%] h-[2px] bottom-[42px] bg-red-400" />
               <p className="text-base font-semibold text-white absolute rounded-md bottom-3">
-                Participated 15
+                Stage {prgrm.stage}
               </p>
               <svg
                 width={46}
@@ -47,7 +46,6 @@ function UpComing() {
           ))}
         </nav>
       </div>
-     
     </div>
   );
 }

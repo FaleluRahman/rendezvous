@@ -45,7 +45,7 @@ const Pdetails = () => {
         {/* Category */}
         <div className="flex justify-between w-full px-5 pb-2">
           <p className="text-zinc-700">Category:</p>
-          <p className="text-zinc-700 font-bold">{details?.category}</p>
+          <p className="text-zinc-700 font-bold capitalize">{details?.category}</p>
         </div>
       </div>
     </div>

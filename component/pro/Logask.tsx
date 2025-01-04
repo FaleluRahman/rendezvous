@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import { AiOutlineLogin } from "react-icons/ai";
 
 const StudentsLogin = () => {
   // Function to handle the "Sign Up" action
@@ -10,17 +11,19 @@ const StudentsLogin = () => {
   };
 
   return (
-    <div className='bg-orange-50 h-fit flex pt-10'>
-    <div className="px-5 h-fit mx-5 bg-white rounded-2xl w-[90%] text-xs font-gilroy py-2 flex flex-col ">
-      <p className="text-gray-600 text-sm mb-1 leading-tight">
+    <div className='bg-orange-50 h-screen flex pt-10 mt-5'>
+    <div className="p-5 h-fit mx-auto bg-white rounded-xl w-[80%] font-gilroy flex flex-col relative">
+      <p className="text-gray-700 text-balance text-baset- w-8/12  mb-1 leading-tight">
         Participants can Login to get more details about programmes.
       </p>
       <a href="/login" 
         onClick={popsSign}
-        className="text-white w-fit py-1 px-3 font-bold bg-orange-700 rounded-2xl  cursor-pointer hover:bg-green-700 transition-colors"
+        className="text-white text-center w-2/5 mt-5 mb-2 text-base  py-2 px-3 font-bold bg-red-600 rounded-2xl  cursor-pointer hover:opacity-80 transition-colors"
       >
         Login
       </a>
+      <img src="/image/wired-outline-500-fingerprint-security-hover-pinch.gif" className='w-28 absolute top-7 right-4' alt="Login icon" />
+
     </div>
     </div>
   );
