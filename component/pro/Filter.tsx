@@ -8,7 +8,6 @@ const Filter = () => {
     const programs = JSON.parse(localStorage.getItem("programs") || "[]");
     setPrograms(programs);
   }, []);
-  console.log(programs);
  
 
   return (

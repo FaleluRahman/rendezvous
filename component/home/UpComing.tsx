@@ -19,17 +19,21 @@ function UpComing({ programs }: { programs: any[] }) {
             .map((prgrm, index) => (
               <div
                 key={index}
-                className="w-64 h-5/6 flex-shrink-0 bg-gradient-to-r from-red-700 to-red-600 border-red-500 border-[2px] rounded-2xl flex flex-col justify-start items-start pl-8 box-border overflow-hidden relative snap-center mx-2"
+                className="w-64 h-5/6 flex-shrink-0  bg-gradient-to-r from-red-700 to-red-600 border-red-500 border-[2px] rounded-2xl flex flex-col justify-start items-start p-4 box-border overflow-hidden relative snap-center mx-2"
               >
-                <p className="text-lg bg-red-500 px-2 font-semibold text-white rounded-md mt-5">
-                  {prgrm.category}
-                </p>
-                <h6 className="text-[15px]  pr-0 font-bold leading-[27px] text-white m-0 mt-[15px]">
-                  {prgrm.name}
-                </h6>
-                <nav className="absolute left-1/2 transform -translate-x-1/2 w-[75%] h-[2px] bottom-[42px] bg-red-400" />
-                <p className="text-base font-semibold text-white absolute rounded-md bottom-3">
-                  Stage {prgrm.stage}
+                <div className="border-b-2 border-red-400 flex-1 w-full">
+                  <p className="text-lg w-max capitalize bg-red-500 px-2 font-semibold text-white rounded-md">
+                    {prgrm.category}
+                  </p>
+                  <h6 className="text-[15px]  pr-0 font-bold leading-[27px] text-white m-0 mt-[15px]">
+                    {prgrm.name}
+                  </h6>
+                </div>
+
+                {/* <nav className=" left-1/2 transform -translate-x-1/2 w-[75%] h-[2px] bottom-[42px] bg-red-400" /> */}
+                <p className="text-base font-semibold text-white  rounded-md  flex justify-between gap-1 w-full">
+                  <span>Stage {prgrm.stage}</span>
+                  <span className="capitalize">{prgrm.status}</span>
                 </p>
                 <svg
                   width={46}

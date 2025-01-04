@@ -334,7 +334,7 @@ const itemPrizes: any = [
   },
 ];
 
-const ItemResult = () => {
+const ItemResult = ({ announced }: { announced: number[] }) => {
   const [expandedItem, setExpandedItem] = useState<string | null>(null);
   const [search, setSearch] = useState<string>("");
   const [result, setResult] = useState<any>(null);
@@ -342,21 +342,21 @@ const ItemResult = () => {
   const toggleItem = (id: string) => {
     setExpandedItem(expandedItem === id ? null : id);
   };
-  // useEffect(() => {
-  //   if (expandedItem) {
-  //     setResult("loading");
-  //     axios
-  //       .get(
-  //         `https://malikoptics.abaqas.in/workspace-backend/results/action.php?program=${expandedItem}&action=proResult`
-  //       )
-  //       .then((res) => {
-  //         setResult(res.data.data || null);
-  //       })
-  //       .catch((err) => setResult(null));
-  //   } else {
-  //     setResult(null);
-  //   }
-  // }, [expandedItem]);
+  useEffect(() => {
+    if (expandedItem) {
+      setResult("loading");
+      axios
+        .get(
+          `https://malikoptics.abaqas.in/workspace-backend/results/action.php?program=${expandedItem}&action=proResult`
+        )
+        .then((res) => {
+          setResult(res.data.data || null);
+        })
+        .catch((err) => setResult(null));
+    } else {
+      setResult(null);
+    }
+  }, [expandedItem]);
 
   const getPrizeData = (programId: string) => {
     return itemPrizes.find((prize: any) => prize.id === programId)?.data || [];
@@ -384,75 +384,77 @@ const ItemResult = () => {
         />
         <CiSearch className="absolute top-2 right-3 text-xl text-red-400 cursor-pointer" />
       </div>
-
-      {ProgramData.filter((program) =>
-        search
-          ? program.name.toUpperCase().includes(search.toUpperCase())
-          : program
-      ).map((program: any) => (
-        <div
-          key={program.id}
-          className="relative w-[90%] mx-auto bg-gradient-to-br from-[#ffffff] to-[#fffdee] border border-[rgba(0,0,0,0.075)] 
+<h4 className="text-lg font-bold">{announced.length} Results</h4>
+      {ProgramData.filter((program) => announced.includes(Number(program.id)))
+        .filter((program) =>
+          search
+            ? program.name.toUpperCase().includes(search.toUpperCase())
+            : program
+        )
+        .map((program: any) => (
+          <div
+            key={program.id}
+            className="relative w-[90%] mx-auto bg-gradient-to-br from-[#ffffff] to-[#fffdee] border border-[rgba(0,0,0,0.075)] 
           rounded-[14px] p-[20px_30px] box-border overflow-hidden shadow-[1px_4px_10px_rgba(0,0,0,0.082)]"
-          onClick={() => toggleItem(program.id)}
-        >
-          <div className="cursor-pointer">
-            <IoIosArrowDropdown
-              className={`${
-                expandedItem === program.id ? "rotate-180" : ""
-              } absolute text-2xl top-12 font-semibold right-10 transition-all text-red-400`}
-            />
+            onClick={() => toggleItem(program.id)}
+          >
+            <div className="cursor-pointer">
+              <IoIosArrowDropdown
+                className={`${
+                  expandedItem === program.id ? "rotate-180" : ""
+                } absolute text-2xl top-12 font-semibold right-10 transition-all text-red-400`}
+              />
 
-            <section className="header w-10/12 flex items-center justify-start m-0 border-t border-[#53ffd71a] py-[10px] relative border-none bg-transparent h-fit p-0 mb-[15px]">
-              <h6 className="text-xl text-red-400 m-0 font-semibold leading-5">
-                <span className="text-[15px] font-bold text-[#696969] m-0 mb-0.5">
-                  {program.category}
-                </span>
-                <br />
-                {program.name}
-              </h6>
-            </section>
-          </div>
-
-          {expandedItem === program.id && (
-            <div className="w-full mx-auto bg-gradient-to-br from-[#ffffff] to-[#fffdee] py-5 border-t-2 border-red-400">
-              {!result ? (
-                <p className="text-red-600 ">Results not announced yet!</p>
-              ) : result == "loading" ? (
-                <div className="grid h-14 place-content-center">
-                  <LoaderCircle className="text-red-500 animate-spin " />
-                </div>
-              ) : (
-                result
-                  .sort((a: any, b: any) => a.rank - b.rank)
-                  .filter(
-                    (rst: any) =>
-                      rst.rank == "1" || rst.rank == "2" || rst.rank == "3"
-                  )
-                  .map((prize: any) => (
-                    <section
-                      key={prize.id}
-                      className="first flex items-center justify-start m-0 border-t border-[#53ffd71a] py-[10px] relative"
-                    >
-                      <div className="bg-red-400 h-10 w-10 flex justify-center items-center text-[#ffffff] rounded-full">
-                        <p className="m-0 text-shadow-md transform text-[18px] font-semibold">
-                          {prize.rank}
-                        </p>
-                      </div>
-                      <p className="text-[18px] text-left m-0 text-[rgb(100,100,100)] ml-2 leading-[16px] shadow-[1px_1px_5px_#ffffff]">
-                        {prize.student}
-                        <br />
-                        <span className="text-[13px] m-0 text-[rgba(0,0,0,0.568)]">
-                          {prize.campus}
-                        </span>
-                      </p>
-                    </section>
-                  ))
-              )}
+              <section className="header w-10/12 flex items-center justify-start m-0 border-t border-[#53ffd71a] py-[10px] relative border-none bg-transparent h-fit p-0 mb-[15px]">
+                <h6 className="text-xl text-red-400 m-0 font-semibold leading-5">
+                  <span className="text-[15px] font-bold text-[#696969] m-0 mb-0.5">
+                    {program.category}
+                  </span>
+                  <br />
+                  {program.name}
+                </h6>
+              </section>
             </div>
-          )}
-        </div>
-      ))}
+
+            {expandedItem === program.id && (
+              <div className="w-full mx-auto bg-gradient-to-br from-[#ffffff] to-[#fffdee] py-5 border-t-2 border-red-400">
+                {!result ? (
+                  <p className="text-red-600 ">Results not announced yet!</p>
+                ) : result == "loading" ? (
+                  <div className="grid h-14 place-content-center">
+                    <LoaderCircle className="text-red-500 animate-spin " />
+                  </div>
+                ) : (
+                  result
+                    .sort((a: any, b: any) => a.rank - b.rank)
+                    .filter(
+                      (rst: any) =>
+                        rst.rank == "1" || rst.rank == "2" || rst.rank == "3"
+                    )
+                    .map((prize: any) => (
+                      <section
+                        key={prize.id}
+                        className="first flex items-center justify-start m-0 border-t border-[#53ffd71a] py-[10px] relative"
+                      >
+                        <div className="bg-red-400 h-10 w-10 flex justify-center items-center text-[#ffffff] rounded-full">
+                          <p className="m-0 text-shadow-md transform text-[18px] font-semibold">
+                            {prize.rank}
+                          </p>
+                        </div>
+                        <p className="text-[18px] text-left m-0 text-[rgb(100,100,100)] ml-2 leading-[16px] shadow-[1px_1px_5px_#ffffff]">
+                          {prize.student}
+                          <br />
+                          <span className="text-[13px] m-0 text-[rgba(0,0,0,0.568)]">
+                            {prize.campus}
+                          </span>
+                        </p>
+                      </section>
+                    ))
+                )}
+              </div>
+            )}
+          </div>
+        ))}
     </div>
   );
 };
