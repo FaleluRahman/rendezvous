@@ -35,7 +35,7 @@ const Filter = () => {
 
         </div>
       </div>
-      <div className="px-5 bg-orange-50">
+      {/* <div className="px-5 bg-orange-50">
         <div className="flex w-full bg-whit text-zinc-50 rounded-lg py-1 ">
           <div className="bg-gradient-to-r from-red-700 to-red-600  border-red-500 border-[2px] rounded-2xl  ml-2 flex-1 mr-2">
             <div className="flex text-start flex-col w-full text-zinc-50 ">
@@ -45,7 +45,7 @@ const Filter = () => {
               <hr className="bg-red-50/50 h-[1px] w-full" />
 
               {/* <nav className="absolute left-1/2 transform -translate-x-1/2 w-[75%] h-[2px] bottom-[42px] bg-red-400" /> */}
-
+{/* 
               <p className="px-3 font-bold text-xs">Song Arabic</p>
               <p className="px-3 font-bold text-xs">Talk Master Arabic</p>
             </div>
@@ -60,12 +60,12 @@ const Filter = () => {
 
               {/* <nav className="absolute left-1/2 transform -translate-x-1/2 w-[75%] h-[2px] bottom-[42px] bg-red-400" /> */}
 
-              <p className="px-3 font-bold text-xs">Song Arabic</p>
+              {/* <p className="px-3 font-bold text-xs">Song Arabic</p>
               <p className="px-3 font-bold text-xs">Talk Master Arabic</p>
             </div>
           </div>
         </div>
-      </div>
+      </div> */} 
     </div>
   );
 };
