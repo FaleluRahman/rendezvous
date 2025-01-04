@@ -17,7 +17,7 @@ function convertTo12Hour(time24: string) {
   return `${hours12}:${minutes.toString().padStart(2, "0")} ${period}`;
 }
 const Schedule = () => {
-  const [date, setDate] = useState<any>(4);
+  const [date, setDate] = useState<any>(5);
   const [stage, setStage] = useState<any>(1);
   const [schedule, setSchedule] = useState<any>([]);
 
@@ -82,7 +82,7 @@ const Schedule = () => {
           {/* {/Stage Section/} */}
 
           <div className="flex  my-4 overflow-x-auto no-scrollbar w-11/12 py-2 m-auto bg-red-500 rounded-3xl ">
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((stg) => (
+            {[1, 2, 3, 4, 5, 6, 7, 8].map((stg) => (
               <div
                 className={`${
                   stage == stg
