@@ -1,3 +1,4 @@
+import AdSlider from "@/component/home/AdSlider";
 import Counts from "@/component/home/Counts";
 import EvBtn from "@/component/home/ev-btn";
 import Header from "@/component/home/Header";
@@ -5,6 +6,7 @@ import ImageSlider from "@/component/home/ImageSlider";
 import UpComing from "@/component/home/UpComing";
 import { isLogged } from "@/lib/auth";
 import axios from "axios";
+export const dynamic = "force-dynamic";
 
 const HomePage = async () => {
   const logged = await isLogged();
@@ -38,6 +40,8 @@ await axios.get(
         <ImageSlider />
         <UpComing programs={ongoing} />
         {logged && <EvBtn />}
+        <AdSlider />
+
         <div className="h-20"></div>
       </>
     </div>

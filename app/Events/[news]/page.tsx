@@ -1,6 +1,7 @@
+export const dynamic = "force-dynamic";
+
 const page = ({ params }: { params: any }) => {
   const { news } = params;
-  console.log("news", news);
 
   return (
     <div className="bg-white pb-20   ">

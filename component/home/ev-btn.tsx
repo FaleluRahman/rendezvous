@@ -5,8 +5,8 @@ import { FaRegArrowAltCircleRight } from "react-icons/fa";
 
 const EvBtn = () => {
   return (
-<div className='w-full flex justify-center bg-orange-50 px-3 py-5'>
-    <div className='w-full relative bg-white rounded-3xl flex flex-col overflow-hidden mx-5  pb-5 mb-16'>
+<div className='w-full flex justify-center bg-orange-50 px-3 pt-5'>
+    <div className='w-full relative bg-white rounded-3xl flex flex-col overflow-hidden mx-5  pb-2 mb-16'>
     <div className='text-zinc-700  flex-col flex w-full px-5 pt-5'>
       <p className='font-bold text-sm'>Collect Glocal Points</p>
 

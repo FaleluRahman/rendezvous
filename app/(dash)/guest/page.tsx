@@ -1,5 +1,6 @@
 import StudentsLogin from '@/component/pro/Logask'
 import React from 'react'
+export const dynamic = "force-dynamic";
 
 const page = () => {
   return (

@@ -55,7 +55,7 @@ const Eventset = () => {
     {
       id: 4,
       img: "/image/WEB USMAN.webg",
-      time: "02:00PM",
+      // time: "02:00PM",
       location: "Cosmo sapien",
       price: "08",
       topic: "Al-Powered Personalized Learning: Tailoring Education to Individual Needs",
@@ -66,7 +66,7 @@ const Eventset = () => {
     {
       id: 5,
       img: "/image/website razi.webg",
-      time: "02:00PM",
+      // time: "02:00PM",
       location: "Cosmo sapien",
       price: "08",
       topic: "രിസാല ക്രിയേഷൻ: ഗവേഷണവും ക്രമീകരണ രീതിയും",
@@ -77,7 +77,7 @@ const Eventset = () => {
     {
       id: 6,
       img: "/image/WEB FALIL.webg",
-      time: "02:00PM",
+      // time: "02:00PM",
       location: "Cosmo sapien",
       price: "08",
       topic: "دروس اللغة العربية الوسائل والإمكانيات",
@@ -86,6 +86,79 @@ const Eventset = () => {
 
     },
 
+
+    {
+      id: 7,
+      img: "/image/najeeb noor.jpg",
+      // time: "02:00PM",
+      location: "Cosmo sapien",
+      price: "08",
+      topic: "ഷാഫിഈ  ഫിഖ്ഹ് : കേരളീയ ഉലമാഇന്റെ  സമീപന രീതികൾ   ",
+      mic: "Yasir Arafath Nurani ",
+      sec: "Expert Convos",
+
+    },
+
+    {
+      id: 8,
+      img: "/image/razi noor.jpg",
+      // time: "02:00PM",
+      location: "Cosmo sapien",
+      price: "08",
+      topic: "ശുറൂഹ്, ഹവാശി: വ്യാഖ്യാന വായനകളുടെ രീതിശാസ്ത്രം  ",
+      mic: "Yasir Arafath Nurani ",
+      sec: "Expert Convos",
+
+    },
+
+
+    {
+      id: 9,
+      img: "/image/yasir .jpg",
+      // time: "02:00PM",
+      location: "Cosmo sapien",
+      price: "08",
+      topic: "പുസ്തക പ്രസാധനം : സമകാലിക പ്രതിസന്ധികളും പ്രതീക്ഷകളും ",
+      mic: "Yasir Arafath Nurani ",
+      sec: "Expert Convos",
+
+    },
+
+    {
+      id: 10,
+      img: "/image/amju.jpg",
+      // time: "02:00PM",
+      location: "Cosmo sapien",
+      price: "08",
+      topic: "വായനയുടെ രസതന്ത്രവും എഴുത്തിലെ ആഖ്യാന വൈവിധ്യങ്ങളും ",
+      mic: "Yasir Arafath Nurani ",
+      sec: "Expert Convos",
+
+    },
+
+
+    {
+      id: 11,
+      img: "/image/rang.jpg",
+      // time: "02:00PM",
+      location: "Cosmo sapien",
+      price: "08",
+      topic: "A safe space open heal,and grow ",
+      mic: "Yasir Arafath Nurani ",
+      sec: "Tranquil Wellness Hub ",
+
+    },
+    {
+      id: 12,
+      img: "/image/care.jpg",
+      // time: "02:00PM",
+      location: "Cosmo sapien",
+      price: "08",
+      topic: "Dr. Care, as part of Rendezvous'25 offers free consultations, wellness workshops,and interactive sessions to empower individuals to overcome physical health challenges. ",
+      mic: "Yasir Arafath Nurani ",
+      sec: "Doctor care",
+
+    },
   
   ];
 
@@ -121,7 +194,7 @@ const Eventset = () => {
                 </p> */}
                 </div>
                 <div className="h-8 bg-white text-zinc-700 px-5 rounded-t-xl text-sm flex items-center justify-between font-bold">
-                  <div className="flex w-full justify-between">
+                  <div className="flex w-full justify-end">
                     {event.time && (
                       <div className="flex">
                         <img
