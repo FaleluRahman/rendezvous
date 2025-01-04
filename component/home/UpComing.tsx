@@ -4,7 +4,7 @@ function UpComing({ programs }: { programs: any[] }) {
   return (
     <div className="bg-white overflow-hidden ">
       <div className="flex justify-between ml-4 w-full ">
-        <p className="flex  font-bold text-lg text-zinc-700 rounded-badge mb-3 px-1.5 mr-2 py-0.5 ">
+        <p className="flex font-bold text-lg text-zinc-700 rounded-badge mb-3 px-1.5 mr-2 pt-0.5 ">
           Live Programmes
         </p>
         <p className="pr-10 font-bold text-red-700 text-lg mb-3 ">
@@ -31,7 +31,11 @@ function UpComing({ programs }: { programs: any[] }) {
                 </div>
 
                 {/* <nav className=" left-1/2 transform -translate-x-1/2 w-[75%] h-[2px] bottom-[42px] bg-red-400" /> */}
+
+{/* <!--                 <p className="text-base font-semibold text-white  rounded-md  flex justify-between pt-1 gap-1 w-full"> --> */}
+
                 <p className="text-base font-semibold text-white  rounded-md  flex justify-between gap-1 w-full pt-1.5">
+
                   <span >Stage {prgrm.stage}</span>
                   <span className="capitalize">{prgrm.status}</span>
                 </p>

@@ -159,6 +159,72 @@ const Eventset = () => {
       sec: "Doctor care",
 
     },
+    {
+      id: 13,
+      img: "/image/well english.jpeg",
+      // time: "02:00PM",
+      location: "Near Masjid",
+      price: "08",
+      topic: "Clinics to enhance writing skills in English  tailored for students.",
+      mic: "Yasir Arafath Nurani ",
+      sec: "WriteWell Clinic - English",
+
+    },
+    {
+      id: 14,
+      img: "image/well urdu.jpeg",
+      // time: "02:00PM",
+      location: "Near Masjid",
+      price: "08",
+      topic: "Clinics to enhance writing skills in Urdu  tailored for students.",
+      mic: "Yasir Arafath Nurani ",
+      sec: "WriteWell Clinic - Urdu",
+
+    },
+    {
+      id: 15,
+      img: "/image/well malayalam.jpeg",
+      // time: "02:00PM",
+      location: "Near Masjid",
+      price: "08",
+      topic: "Clinics to enhance writing skills in Malayalam  tailored for students.",
+      mic: "Yasir Arafath Nurani ",
+      sec: "WriteWell Clinic - Malayalam",
+
+    },
+    {
+      id: 16,
+      img: "/image/WhatsApp Image 2025-01-04 at 7.40.34 PM.jpeg",
+      // time: "02:00PM",
+      location: "Near Masjid",
+      price: "08",
+      topic: "Clinics to enhance writing skills in Arabic  tailored for students.",
+      mic: "Yasir Arafath Nurani ",
+      sec: "WriteWell Clinic - Arabic",
+
+    },
+    {
+      id: 17,
+      img: "/image/well polyglot.jpeg",
+      // time: "02:00PM",
+      location: "Near Masjid",
+      price: "08",
+      topic: "Clinics to enhance writing skills in Polyglot  tailored for students.",
+      mic: "Yasir Arafath Nurani ",
+      sec: "WriteWell Clinic - Polyglot",
+
+    },
+    {
+      id: 18,
+      img: "/image/well kannada.jpeg",
+      // time: "02:00PM",
+      location: "Near Masjid",
+      price: "08",
+      topic: "Clinics to enhance writing skills in Kannada  tailored for students.",
+      mic: "Yasir Arafath Nurani ",
+      sec: "WriteWell Clinic - Kannada",
+
+    },
   
   ];
 
