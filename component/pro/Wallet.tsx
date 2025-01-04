@@ -14,7 +14,7 @@ const Wallet = () => {
       <div className='text-zinc-700 font-bold text-sm flex w-full justify-between px-5 pt-1'>
         <p>Total Points Collected </p>
         
-        <p className='bg-yellow-300 text-zinc-500 text-3xl p-2 pl-4 rounded-full border border-yellow-100' style={{ borderWidth: '1px 7px 6px 2px' }}>25</p>
+        <p className='bg-yellow-300 text-zinc-500 text-3xl p-2 pl-4 rounded-full border border-yellow-100' style={{ borderWidth: '1px 7px 6px 2px' }}>0</p>
       </div>
               <button className='bg-yellow-300/65 ml-5 text-zinc-700 w-fit pr-[30%] font-bold px-3 py-1 rounded-2xl'>Redeem</button>
 
