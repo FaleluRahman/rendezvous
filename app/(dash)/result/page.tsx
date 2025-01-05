@@ -14,7 +14,7 @@ export default async function Page() {
 
   return (
     <div>
-      {/* <Campuspoints/> */}
+      <Campuspoints/>
       <ItemResult announced={programs} />
       <Navig />
     </div>
