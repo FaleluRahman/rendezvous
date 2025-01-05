@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@yudiel/react-qr-scanner": "^2.1.0",
     "@zoff-tech/zt-qr-scan": "^1.1.0",
     "axios": "^1.7.9",
     "class-variance-authority": "^0.7.1",

@@ -1,9 +1,9 @@
 "use client";
 import axios from "axios";
-
+import { Scanner } from "@yudiel/react-qr-scanner";
 import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
-import { BarcodeScannerComponent } from "react-qr-barcode-scanner";
+import BarcodeScannerComponent from "react-qr-barcode-scanner";
 
 export default function QrScan({ setScan }: { setScan: any }) {
   const [data, setData] = useState<any>(null);
@@ -17,7 +17,7 @@ export default function QrScan({ setScan }: { setScan: any }) {
       // console.log(jamiaId);
       axios
         .post(
-          "https://application.abaqus.in/qrscans/actions.php?api=b1daf1bbc7bbd214045af&" +
+          "https://application.abaqas.in/qrscans/actions.php?api=b1daf1bbc7bbd214045af&" +
             data +
             "&student=" +
             jamiaId
@@ -107,7 +107,7 @@ export default function QrScan({ setScan }: { setScan: any }) {
     <>
       <div className="fixed inset-0 h-screen w-full bg-black bg-opacity-80 grid place-content-center">
         {status == "scanning" ? (
-          <div className=" w-[300px]  aspect-sqaure p-2 bg-white rounded-md relative overflow-hidden">
+          <div className="relative ">
             {payment ? (
               <div className="flex flex-col gap-3 z-50">
                 <h3 className="text-2xl font-bold text-center">Payment</h3>
@@ -136,40 +136,36 @@ export default function QrScan({ setScan }: { setScan: any }) {
                 </form>
               </div>
             ) : (
-              <>
-                {" "}
-                <div
-                  className="absolute w-full bg-white opacity-50 border-b-4 border-red-500 h-full "
-                  style={{
-                    animation: "upDown 5s ease-in-out infinite",
-                  }}
-                ></div>
-                <BarcodeScannerComponent
-                  width={500}
-                  height={500}
-                  onUpdate={(err, result) => {
-                    if (result) setData(result.getText());
-                    else setData("Not Found");
-                  }}
-                  onError={(err) => console.log(err)}
-                  stopStream={true}
-                />
-              </>
+              <Scanner
+                onScan={(result) => setData(result[0]?.rawValue)}
+                styles={{
+                  container: { width: "150px", translate: "-25% -50%" },
+                  video: {
+                    width: "220px",
+                    translate: "0 35%",
+                    maxWidth: "300px",
+                    border: "4px white solid",
+                  },
+                  finderBorder: 10,
+                }}
+              />
             )}
           </div>
         ) : status.success ? (
           <div className="bg-zinc-50 text-green-700 px-3 py-2 rounded-md flex font-bold ">
-             <img className="h-5 w-5 pr-2" src="/image/checked.png" alt="s" /> {status.message}
+            <img className="h-5 w-5 pr-2" src="/image/checked.png" alt="s" />{" "}
+            {status.message}
           </div>
         ) : (
           <div className="bg-zinc-50 text-red-700 px-3 py-2 rounded-md flex  font-semibold ">
-             <img className="h-5 w-5 pr-2" src="/image/cancel.png" alt="s" /> {status.message}
+            <img className="h-5 w-5 pr-2" src="/image/cancel.png" alt="s" />{" "}
+            {status.message}
           </div>
         )}
       </div>
       {!payment && (
         <div
-          className="inset-0 fixed h-screen z-40"
+          className="inset-0 fixed  h-screen z-40"
           onClick={() => setScan(false)}
         ></div>
       )}
