@@ -124,9 +124,9 @@ function Campuspoints() {
           )}
         </div>
       </div>
-      {results && results.length !== 0 ? (
+      {results && results.length !== 0 ? 
         <div className=" flex flex-col gap-1">
-          <h3 className="text-2xl font-bold text-center">
+          <h3 className="text-2xl font-bold text-center text-zinc-700">
             {programs.filter((prgrm) => prgrm.category == cat).length == after
               ? "Final Result"
               : `After ${after} Results`}
@@ -134,10 +134,10 @@ function Campuspoints() {
           {results.slice(0, 3).map((item: any, index: number) => (
             <div
               key={index}
-              className="p-3 rounded-xl shadow-md bg-white flex items-center justify-between px-5"
+              className="p-3 rounded-xl shadow-md bg-white flex items-center text-zinc-700 justify-between px-5"
             >
               <img src={placeImage[index + 1]} alt="" className="h-8" />
-              <p className="font-bold">{item.campus}</p>
+              <p className="font-bold  ">{item.campus}</p>
               <p className="font-bold">{item.points}</p>
             </div>
           ))}
@@ -147,12 +147,12 @@ function Campuspoints() {
             results.slice(3).map((item: any, index: number) => (
               <div
                 key={index}
-                className="p-3 rounded-xl shadow-md bg-white flex items-center justify-between px-5"
+                className="p-3 rounded-xl shadow-md bg-white flex items-center  text-zinc-700 justify-between px-5"
               >
                 <p className="bg-red-800 text-center h-8 w-8 py-1 px-2 text-white rounded-full font-semibold">
                   {index + 4}
                 </p>
-                <p className="font-medium">{item.campus}</p>
+                <p className="font-medium text-zinc-700 ">{item.campus}</p>
                 <p className="font-medium">{item.points}</p>
               </div>
             ))}
