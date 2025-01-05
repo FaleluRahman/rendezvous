@@ -7,17 +7,18 @@ const NotificationPage = () => {
   const [notifications, setNotifications] = useState([
     {
       id: 1,
+      head: "Today’s Lunch Special",
+      message: "Chicken Mandi awaits you! Don’t miss it! ",
+      time: "Sun Jan 05 2025 13:39:40 GMT+0530 (India Standard Time)", // 1 minute ago
+    },
+    {
+      id: 2,
       head: "Attention Students",
       message: "Redeem your Glocal Points at Cafe'25 and  explore Gen Z tech at Glocal VR! Earn points via ProChat, Expert Convos, EduLogin, & more! ",
       time: "Sun Jan 05 2025 11:39:40 GMT+0530 (India Standard Time)", // 1 minute ago
     },
 
-    {
-      id: 2,
-      head: "Today’s Lunch Special",
-      message: "Chicken Mandi awaits you! Don’t miss it! ",
-      time: "Sun Jan 05 2025 13:39:40 GMT+0530 (India Standard Time)", // 1 minute ago
-    },
+   
   ]);
   const [currentTime, setCurrentTime] = useState(Date.now());
 
