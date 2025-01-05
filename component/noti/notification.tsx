@@ -45,7 +45,7 @@ const NotificationPage = () => {
                     {notification.head}
                   </p>
                   <p
-                    className="text-gray-800  text-balance text-sm mt-[10px]"
+                    className="text-gray-800 px-2 text-balance text-sm mt-[10px]"
                     dangerouslySetInnerHTML={{ __html: notification.message }}
                   ></p>
                 </div>
