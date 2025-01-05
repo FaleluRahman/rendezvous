@@ -11,6 +11,13 @@ const NotificationPage = () => {
       message: "Redeem your Glocal Points at Cafe'25 and  explore Gen Z tech at Glocal VR! Earn points via ProChat, Expert Convos, EduLogin, & more! ",
       time: "Sun Jan 05 2025 11:39:40 GMT+0530 (India Standard Time)", // 1 minute ago
     },
+
+    {
+      id: 2,
+      head: "Today’s Lunch Special",
+      message: "Chicken Mandi awaits you! Don’t miss it! ",
+      time: "Sun Jan 05 2025 13:39:40 GMT+0530 (India Standard Time)", // 1 minute ago
+    },
   ]);
   const [currentTime, setCurrentTime] = useState(Date.now());
 
@@ -34,7 +41,7 @@ const NotificationPage = () => {
               >
                 {/* Render message with HTML */}
                 <div className="w-10/12 mx-auto">
-                  <p className="text-lg font-semibold pt-2 ">
+                  <p className="text-lg font-semibold pt-2 px-2">
                     {notification.head}
                   </p>
                   <p
