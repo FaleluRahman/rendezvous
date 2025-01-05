@@ -80,6 +80,7 @@ function Campuspoints() {
   const [after, setAfter] = useState(0);
   const [results, setResults] = useState<any[] | null>(null); // State to toggle full data
   useEffect(() => {
+    
     if (cat) {
       axios
         .get(
@@ -127,7 +128,7 @@ function Campuspoints() {
       {results && results.length !== 0 ? (
         <div className=" flex flex-col gap-1">
           <h3 className="text-2xl font-bold text-center text-zinc-700">
-            {programs.filter((prgrm) => prgrm.category == cat.toLowerCase())
+            {programs.filter((prgrm) =>cat=="Premeir" ? prgrm.category == "premier": prgrm.category == cat.toLowerCase())
               .length >= after
               ? "Final Result"
               : `After ${after} Results`}
