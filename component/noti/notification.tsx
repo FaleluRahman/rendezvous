@@ -8,7 +8,7 @@ const NotificationPage = () => {
     {
       id: 1,
       head: "Attention Students",
-      message: " Redeem your Glocal points @ Cafe'25 and Glocal Vr ",
+      message: "Redeem your Glocal Points at Cafe'25 and  explore Gen Z tech at Glocal VR! Earn points via ProChat, Expert Convos, EduLogin, & more! ",
       time: "Sun Jan 05 2025 11:39:40 GMT+0530 (India Standard Time)", // 1 minute ago
     },
   ]);
@@ -23,14 +23,7 @@ const NotificationPage = () => {
 
   return (
     <div className="bg-orange-50 h-screen pt-5">
-      {/* Header */}
-      {/* `  <div className="w-full flex justify-center">
-        <header className="bg-zinc-600 text-white w-fit px-2 rounded-3xl shadow-md">
-          <h1 className="text-center text-xl font-bold">Notifications</h1>
-        </header>
-      </div>` */}
-
-      {/* Notification List */}
+  
       <main className="px-4 py-4">
         {notifications.length > 0 ? (
           <ul className="space-y-4">
