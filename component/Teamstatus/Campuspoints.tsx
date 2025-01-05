@@ -124,10 +124,11 @@ function Campuspoints() {
           )}
         </div>
       </div>
-      {results && results.length !== 0 ? 
+      {results && results.length !== 0 ? (
         <div className=" flex flex-col gap-1">
           <h3 className="text-2xl font-bold text-center text-zinc-700">
-            {programs.filter((prgrm) => prgrm.category == cat).length == after
+            {programs.filter((prgrm) => prgrm.category == cat.toLowerCase())
+              .length >= after
               ? "Final Result"
               : `After ${after} Results`}
           </h3>
