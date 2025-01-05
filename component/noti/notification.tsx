@@ -1,22 +1,34 @@
-// pages/notification.js
-import React from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
+import { getRelativeTime } from "../common/DateConvert";
 
 const NotificationPage = () => {
-  const notifications = [
-    { id: 1, message: "Cultural Gala scheduled for Today at 4 AM.", time: "3 mints ago"  },
-    { id: 2, message: "Food alert:Your meal awaits! ", time: "2 hours ago" },
-    // { id: 3, message: " ", time: "1 day ago" },
-    // { id: 4, message: " ", time: "1 hour ago" },
-  ];
+  const [notifications, setNotifications] = useState([
+    {
+      id: 1,
+      head: "Attention Students",
+      message: " Redeem your Glocal points @ Cafe'25 and Glocal Vr ",
+      time: "Sun Jan 05 2025 11:39:40 GMT+0530 (India Standard Time)", // 1 minute ago
+    },
+  ]);
+  const [currentTime, setCurrentTime] = useState(Date.now());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(Date.now());
+    }, 60000); // Update every 1 minute
+    return () => clearInterval(timer);
+  }, []);
 
   return (
-    <div className=" bg-orange-50 h-screen pt-5">
+    <div className="bg-orange-50 h-screen pt-5">
       {/* Header */}
-      {/* <div className="w-full  flex justify-center">
-      <header className= "  bg-zinc-600 text-white w-fit px-2 rounded-3xl shadow-md">
-        <h1 className="text-center text-xl font-bold">Notifications</h1>
-      </header>
-      </div> */}
+      {/* `  <div className="w-full flex justify-center">
+        <header className="bg-zinc-600 text-white w-fit px-2 rounded-3xl shadow-md">
+          <h1 className="text-center text-xl font-bold">Notifications</h1>
+        </header>
+      </div>` */}
 
       {/* Notification List */}
       <main className="px-4 py-4">
@@ -25,15 +37,28 @@ const NotificationPage = () => {
             {notifications.map((notification) => (
               <li
                 key={notification.id}
-                className="flex justify-between items-center bg-white shadow-sm rounded-lg p-4 border border-gray-200"
+                className="flex justify-between items-center bg-white shadow-sm rounded-lg p-4  pt-2 border border-gray-200"
               >
-                <p className="text-gray-800">{notification.message}</p>
-                <span className="text-sm text-gray-500">{notification.time}</span>
+                {/* Render message with HTML */}
+                <div className="w-10/12 mx-auto">
+                  <p className="text-lg font-semibold pt-2 ">
+                    {notification.head}
+                  </p>
+                  <p
+                    className="text-gray-800  text-balance text-sm mt-[10px]"
+                    dangerouslySetInnerHTML={{ __html: notification.message }}
+                  ></p>
+                </div>
+                <span className="text-sm text-gray-500 ">
+                  {getRelativeTime(currentTime, notification.time)}
+                </span>
               </li>
             ))}
           </ul>
         ) : (
-          <p className="text-center text-gray-600">No notifications available.</p>
+          <p className="text-center text-gray-600">
+            No notifications available.
+          </p>
         )}
       </main>
     </div>

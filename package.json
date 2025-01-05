@@ -15,6 +15,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "daisyui": "^4.12.22",
+    "date-fns": "^4.1.0",
     "html5-qrcode": "^2.3.8",
     "js-cookie": "^3.0.5",
     "lucide-react": "^0.469.0",
@@ -34,6 +35,7 @@
     "tailwindcss-bg-patterns": "^0.3.0"
   },
   "devDependencies": {
+    "@types/date-fns": "^2.5.3",
     "@types/js-cookie": "^3.0.6",
     "@types/node": "^20",
     "@types/react": "^19",
