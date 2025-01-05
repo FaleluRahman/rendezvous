@@ -130,7 +130,7 @@ function Campuspoints() {
           <h3 className="text-2xl font-bold text-center text-zinc-700">
             {programs.filter((prgrm) =>cat=="Premeir" ? prgrm.category == "premier": prgrm.category == cat.toLowerCase())
               .length >= after
-              ? "Final Result"
+              ? "Final Status"
               : `After ${after} Results`}
           </h3>
           {results.slice(0, 3).map((item: any, index: number) => (
