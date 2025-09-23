@@ -9,3 +9,7 @@ export function cn(...inputs: ClassValue[]) {
 export const axiosInstance = axios.create({
   baseURL: "/api",
 });
+
+export const phpInstance = axios.create({
+  baseURL: "https://rendezvous.abaqas.in/",
+});

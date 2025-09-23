@@ -14,7 +14,7 @@ function UpComing({ programs }: { programs: any[] }) {
       <div className="w-full flex flex-col items-end">
         <nav className="h-52 flex flex-row w-full overflow-x-auto no-scrollbar  mt-2  box-border snap-x snap-mandatory touch-pan-x">
           {programs
-            ?.sort((a, b) => a.stage - b.stage)
+             ?.sort((a, b) => a.stage - b.stage)
             .filter((prgrmm) => prgrmm.stage)
             .map((prgrm, index) => (
               <div
@@ -30,9 +30,6 @@ function UpComing({ programs }: { programs: any[] }) {
                   </h6>
                 </div>
 
-                {/* <nav className=" left-1/2 transform -translate-x-1/2 w-[75%] h-[2px] bottom-[42px] bg-red-400" /> */}
-
-{/* <!--                 <p className="text-base font-semibold text-white  rounded-md  flex justify-between pt-1 gap-1 w-full"> --> */}
 
                 <p className="text-base font-semibold text-white  rounded-md  flex justify-between gap-1 w-full pt-1.5">
 

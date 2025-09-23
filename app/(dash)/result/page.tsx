@@ -7,10 +7,18 @@ export default async function Page() {
   let programs: any = [];
   await axios
     .get(
-      "https://malikoptics.abaqas.in/workspace-backend/programs/action.php?action=pagination&all=1&status=announced"
+      "https://rendezvous.abaqas.in/campusprograms/action.php?status=announced&campusId=JM003&action=pagination&page=1&limit=18t"
     )
-    .then((res) => (programs = res?.data?.data || []))
-    .catch((err) => (programs = []));
+    
+    .then((res) => {
+      programs = res?.data?.data || [];
+      console.log(res.data.data);
+      
+    })
+    .catch((err) => {
+      console.log(err);
+      programs = [];
+    });
 
   return (
     <div>

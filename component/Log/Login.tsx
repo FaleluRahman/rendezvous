@@ -22,13 +22,6 @@ function Login() {
             Participant
           </a>
 
-          {/* Guest Login Button */}
-          {/* <a
-            className="w-full bg-gray-300 text-gray-800  hover:bg-gray-700 hover:text-white py-2 rounded-lg font-semibold transition duration-200"
-            href="/"
-          >
-            Guest
-          </a> */}
         </div>
 
         <div className="mt-6 text-center">

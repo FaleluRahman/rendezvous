@@ -1,10 +1,9 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import { Html5Qrcode, Html5QrcodeScanner } from "html5-qrcode";
+import { Html5Qrcode } from "html5-qrcode";
 import { axiosInstance } from "@/lib/utils";
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
-import { IoScanSharp } from "react-icons/io5";
 import { MdError } from "react-icons/md";
 
 const QrCodeScanner: React.FC = () => {
@@ -13,40 +12,49 @@ const QrCodeScanner: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
   const [loading, setLoading] = useState<boolean>(false);
+
   useEffect(() => {
     if (!error) {
       const qrCodeRegion = qrCodeRegionRef.current;
       if (!qrCodeRegion) return;
 
       const html5QrCode = new Html5Qrcode(qrCodeRegion.id);
-      let isScanning = false; // Flag to track scanner state
+      let isScanning = false;
 
-      const onScanSuccess = (decodedText: string, decodedResult: any) => {
-        console.log("Decoded text:", decodedText);
-        setScanResult(decodedText);
+   const onScanSuccess = (decodedText: string) => {
+  console.log("Raw scanned text:", decodedText);
 
-        if (isScanning) {
-          html5QrCode
-            .stop()
-            .then(() => {
-              console.log("Scanner stopped successfully.");
-              isScanning = false;
-            })
-            .catch((err) => console.error("Error stopping scanner:", err));
-        }
-      };
 
-      const onScanError = (error: string) => {
-        console.warn("Error scanning:", error);
+  let finalData = decodedText;
+  try {
+    finalData = atob(decodedText); 
+    console.log("Decoded to original:", finalData);
+  } catch (err) {
+    console.warn("Not Base64, using raw text");
+  }
+
+  setScanResult(finalData);
+
+  if (isScanning) {
+    html5QrCode
+      .stop()
+      .then(() => {
+        console.log("Scanner stopped successfully.");
+        isScanning = false;
+      })
+      .catch((err) => console.error("Error stopping scanner:", err));
+  }
+};
+
+
+      const onScanError = (errMsg: string) => {
+        console.warn("Error scanning:", errMsg);
       };
 
       html5QrCode
         .start(
           { facingMode: "environment" },
-          {
-            fps: 10, // Frames per second
-            qrbox: { width: 250, height: 250 }, // Scanning area size
-          },
+          { fps: 10, qrbox: { width: 250, height: 250 } },
           onScanSuccess,
           onScanError
         )
@@ -61,7 +69,7 @@ const QrCodeScanner: React.FC = () => {
         if (isScanning) {
           html5QrCode
             .stop()
-            .then(() => console.log("Scanner stopped successfully on cleanup."))
+            .then(() => console.log("Scanner stopped on cleanup."))
             .catch((err) =>
               console.error("Error stopping scanner on cleanup:", err)
             );
@@ -75,42 +83,41 @@ const QrCodeScanner: React.FC = () => {
       setLoading(true);
 
       axiosInstance
-        .post("/login", { jamiaId: scanResult })
+        .post("/login", { jamiaId: scanResult }) // send encoded value
         .then((res) => {
-          if (res && res.data && res.data.status) {
+          if (res?.data?.status) {
             Cookies.set("student", JSON.stringify(res.data.student), {
               path: "/",
             });
-            localStorage.setItem("programs", JSON.stringify(res.data.programs));
-            return router.push("/");
+            localStorage.setItem(
+              "programs",
+              JSON.stringify(res.data.programs)
+            );
+            router.push("/");
           } else {
             throw new Error(
-              res?.data?.message || res?.data || res || "Something went wrong"
+              res?.data?.message || "Something went wrong"
             );
           }
         })
         .catch((e) => {
-          setError(e?.message || e || "Something went wrong");
+          setError(e?.message || "Something went wrong");
           setLoading(false);
         });
     }
-  }, [scanResult]);
+  }, [scanResult, router]);
+
   return (
     <div className="bg-orange-50 flex items-center justify-center flex-col py-10 min-h-screen text-center">
       {loading ? (
         <>
           <h2 className="text-zinc-700">Authenticating Your Access...</h2>
-
           <div className="flex items-center justify-center">
             <img className="h-20" src="/image/Loader Blobs.gif" alt="" />
-            {/* <p>Loading</p> */}
           </div>
         </>
       ) : (
         <div className="relative h-full">
-          {/* <p>
-            <IoScanSharp className="text-xl ml-5 font-bold" />
-          </p> */}
           <h2 className="font-bold text-zinc-600">Scan your Id card</h2>
           <div
             id="qr-code-region"
@@ -129,14 +136,12 @@ const QrCodeScanner: React.FC = () => {
 
       {error && !loading && (
         <>
-          <p className="text-red-600  flex ">
+          <p className="text-red-600 flex">
             {error}
             <MdError className="mt-1" />
           </p>
           <button
-            onClick={() => {
-              setError(null);
-            }}
+            onClick={() => setError(null)}
             className="bg-red-600 py-0.5 px-2 w-fit font-bold hover:bg-red-700 rounded-xl text-white mt-2"
           >
             Scan Again
