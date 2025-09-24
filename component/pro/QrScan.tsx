@@ -14,10 +14,10 @@ export default function QrScan({ setScan }: { setScan: any }) {
     const student = Cookies.get("student");
     if (student) {
       const jamiaId = JSON.parse(student).jamiaNo;
-      // console.log(jamiaId);
+      console.log(jamiaId);
       axios
         .post(
-          "https://application.abaqas.in/qrscans/actions.php?api=b1daf1bbc7bbd214045af&" +
+          "http://localhost/students_backend/qrscans/actions.php?api=b1daf1bbc7bbd214045af&" +
             data +
             "&student=" +
             jamiaId
@@ -74,7 +74,7 @@ export default function QrScan({ setScan }: { setScan: any }) {
       try {
         const points = e.target.amount.value;
         const res = await axios.post(
-          "https://application.abaqas.in/qrscans/payment.php?api=b1daf1bbc7bbd214045af&" +
+          "http://localhost/students_backend/qrscans/payment.php?api=b1daf1bbc7bbd214045af&" +
             data +
             "&student=" +
             jamiaId +

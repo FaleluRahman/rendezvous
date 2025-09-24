@@ -7,7 +7,7 @@ export default async function Page() {
   let programs: any = [];
   await axios
     .get(
-      "https://rendezvous.abaqas.in/campusprograms/action.php?status=announced&campusId=JM003&action=pagination&page=1&limit=18t"
+      // "https://rendezvous.abaqas.in/campusprograms/action.php?status=announced&campusId=JM003&action=pagination&page=1&limit=18t"
     )
     
     .then((res) => {
