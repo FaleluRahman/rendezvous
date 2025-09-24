@@ -11,6 +11,7 @@ export default function DashLayout({
     <>
       <Headtop />
       {children}
+       <SpeedInsights />
       <Navig/>
 
     </>
