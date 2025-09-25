@@ -10,6 +10,32 @@ export const axiosInstance = axios.create({
   baseURL: "/api",
 });
 
+
 export const phpInstance = axios.create({
-  baseURL: "https://rendezvous.abaqas.in/",
+  baseURL: "https://rend-application.abaqas.in"
+      
 });
+
+export const phpInstances = axios.create({
+  baseURL: "https://rendezvous.abaqas.in/"
+      
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

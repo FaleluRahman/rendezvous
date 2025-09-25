@@ -1,336 +1,320 @@
-// "use client";
-// import axios from "axios";
-// import { Scanner } from "@yudiel/react-qr-scanner";
-// import Cookies from "js-cookie";
-// import { useEffect, useState } from "react";
-// import BarcodeScannerComponent from "react-qr-barcode-scanner";
-
-// export default function QrScan({ setScan }: { setScan: any }) {
-//   const [data, setData] = useState<any>(null);
-//   const [status, setStatus] = useState<any>("scanning");
-//   const [payment, setPayment] = useState(false);
-
-//   function collect() {
-//     const student = Cookies.get("student");
-//     if (student) {
-//       const jamiaId = JSON.parse(student).jamiaNo;
-//       console.log(jamiaId);
-//       axios
-//         .post(
-//           "http://localhost/students_backend/qrscans/actions.php?api=b1daf1bbc7bbd214045af&" +
-//             data +
-//             "&student=" +
-//             jamiaId
-//         )
-//         .then((res: any) => {
-//           if (res?.data?.success) {
-//             setStatus({
-//               success: true,
-//               message: ` Congratulations, You got ${res.data.points} points.`,
-//             });
-//           } else {
-//             throw new Error(
-//               res?.data?.message || res?.data || "failed scanning"
-//             );
-//           }
-//         })
-//         .catch((err) => {
-//           setStatus({
-//             success: false,
-//             message: err?.message || err || "Somomething went wrong",
-//           });
-//         })
-//         .finally(() => {
-//           setTimeout(() => {
-//             setScan(false);
-//           }, 2000);
-//         });
-//     }
-//   }
-//   function redeem() {
-//     if (!["pay=vr", "pay=cafe"].includes(data)) {
-//       setStatus({ success: false, message: "Merchant not found" });
-//       setTimeout(() => {
-//         setScan(false);
-//       }, 3000);
-//       return;
-//     }
-
-//     setPayment(true);
-//   }
-//   useEffect(() => {
-//     if (data && data.startsWith("event=")) {
-//       collect();
-//     }
-//     if (data && data.startsWith("pay=")) {
-//       redeem();
-//     }
-//   }, [data]);
-//   const handlePay = async (e: any) => {
-//     e.preventDefault();
-//     const student = Cookies.get("student");
-//     if (student) {
-//       const jamiaId = JSON.parse(student).jamiaNo;
-//       try {
-//         const points = e.target.amount.value;
-//         const res = await axios.post(
-//           "http://localhost/students_backend/qrscans/payment.php?api=b1daf1bbc7bbd214045af&" +
-//             data +
-//             "&student=" +
-//             jamiaId +
-//             "&points=" +
-//             points
-//         );
-//         if (res?.data?.success) {
-//           setStatus({
-//             success: true,
-//             message: `${points} points transferred successfully`,
-//           });
-//         } else {
-//           throw new Error(
-//             res?.data?.message || res.data || "Something went wrong"
-//           );
-//         }
-//       } catch (error: any) {
-//         setStatus({
-//           success: false,
-//           message: error?.message || error || "Something went wrong",
-//         });
-//       } finally {
-//         setTimeout(() => {
-//           setScan(false);
-//         }, 2000);
-//       }
-//     }
-//   };
-//   return (
-//     <>
-//       <div className="fixed inset-0 h-screen w-full bg-black bg-opacity-80 grid place-content-center">
-//         {status == "scanning" ? (
-//           <div className="relative ">
-//             {payment ? (
-//               <div className="flex flex-col gap-3 z-50">
-//                 <h3 className="text-2xl font-bold text-center">Payment</h3>
-//                 <form onSubmit={handlePay}>
-//                   <div className="flex flex-col gap-2">
-//                     <input
-//                       type="number"
-//                       placeholder="Enter points count.."
-//                       name="amount"
-//                       className="px-1 py-2 rounded w-full border-2 border-slate-200"
-//                       required
-//                     />
-//                   </div>
-//                   <div className="flex justify-between gap-2 items-center">
-//                     <button
-//                       type="button"
-//                       className="px-3 py-1 mt-3 text-sm  rounded-md bg-gray-500 hover:bg-opacity-80 duration-300 text-white font-semibold"
-//                       onClick={() => setScan(false)}
-//                     >
-//                       Close
-//                     </button>
-//                     <button className="px-3 py-1 mt-3 text-sm  rounded-md bg-green-500 hover:bg-opacity-80 duration-300 text-white font-semibold">
-//                       Pay
-//                     </button>
-//                   </div>
-//                 </form>
-//               </div>
-//             ) : (
-//               <Scanner
-//                 onScan={(result) => setData(result[0]?.rawValue)}
-//                 styles={{
-//                   container: { width: "150px", translate: "-25% -50%" },
-//                   video: {
-//                     width: "220px",
-//                     translate: "0 35%",
-//                     maxWidth: "300px",
-//                     border: "4px white solid",
-//                   },
-//                   finderBorder: 10,
-//                 }}
-//               />
-//             )}
-//           </div>
-//         ) : status.success ? (
-//           <div className="bg-zinc-50 text-green-700 px-3 py-2 rounded-md flex font-bold ">
-//             <img className="h-5 w-5 pr-2" src="/image/checked.png" alt="s" />{" "}
-//             {status.message}
-//           </div>
-//         ) : (
-//           <div className="bg-zinc-50 text-red-700 px-3 py-2 rounded-md flex  font-semibold ">
-//             <img className="h-5 w-5 pr-2" src="/image/cancel.png" alt="s" />{" "}
-//             {status.message}
-//           </div>
-//         )}
-//       </div>
-//       {!payment && (
-//         <div
-//           className="inset-0 fixed  h-screen z-40"
-//           onClick={() => setScan(false)}
-//         ></div>
-//       )}
-//     </>
-//   );
-// }
-
-
 "use client";
 import axios from "axios";
 import { Scanner } from "@yudiel/react-qr-scanner";
 import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
 
-export default function QrScan({ setScan }: { setScan: any }) {
+interface QrScanProps {
+  setScan: (value: boolean) => void;
+}
+
+interface StatusState {
+  success: boolean;
+  message: string;
+}
+
+export default function QrScan({ setScan }: QrScanProps) {
   const [data, setData] = useState<string | null>(null);
-  const [status, setStatus] = useState<"scanning" | { success: boolean; message: string }>("scanning");
+  const [status, setStatus] = useState<"scanning" | StatusState>("scanning");
   const [payment, setPayment] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   /** ---------- COLLECT POINTS ---------- **/
-  function collect() {
+  const collect = async () => {
     const student = Cookies.get("student");
-    if (!student) return;
+    if (!student) {
+      setStatus({ success: false, message: "Student data not found" });
+      return;
+    }
 
-    const jamiaId = JSON.parse(student).jamiaNo;
-
-    setStatus("scanning");
-    axios
-      .get(
-        `http://localhost/students_backend/qrscans/actions.php?api=b1daf1bbc7bbd214045af&${data}&student=${jamiaId}`
-      )
-      .then((res: any) => {
-        if (res?.data?.success) {
-          setStatus({
-            success: true,
-            message: `Congratulations, You got ${res.data.points} points.`,
-          });
-        } else {
-          throw new Error(res?.data?.message || res?.data || "Failed scanning");
-        }
-      })
-      .catch((err) => {
+    try {
+      const jamiaId = JSON.parse(student).jamiaNo;
+      setLoading(true);
+      
+      const response = await axios.get(
+        `https://rend-application.abaqas.in//qrscans/actions.php?api=b1daf1bbc7bbd214045af&${data}&student=${jamiaId}`
+      );
+      
+      if (response?.data?.success) {
         setStatus({
-          success: false,
-          message: err?.message || "Something went wrong",
+          success: true,
+          message: `Congratulations! You earned ${response.data.points} points.`,
         });
-      })
-      .finally(() => {
-        setTimeout(() => setScan(false), 2000);
+      } else {
+        throw new Error(response?.data?.message || "Failed to scan QR code");
+      }
+    } catch (error: any) {
+      setStatus({
+        success: false,
+        message: error?.message || "Something went wrong while collecting points",
       });
-  }
+    } finally {
+      setLoading(false);
+      setTimeout(() => setScan(false), 3000);
+    }
+  };
 
   /** ---------- REDEEM / PAYMENT ---------- **/
-  function redeem() {
-    if (!["pay=vr", "pay=cafe"].includes(data || "")) {
-      setStatus({ success: false, message: "Merchant not found" });
+  const redeem = () => {
+    const validMerchants = ["pay=vr", "pay=cafe"];
+    
+    if (!data || !validMerchants.includes(data)) {
+      setStatus({ 
+        success: false, 
+        message: "Invalid merchant QR code. Please scan a valid payment QR." 
+      });
       setTimeout(() => setScan(false), 3000);
       return;
     }
+    
     setPayment(true);
-  }
+  };
 
   /** ---------- WHEN QR DATA CHANGES ---------- **/
   useEffect(() => {
-    if (data?.startsWith("event=")) collect();
-    if (data?.startsWith("pay=")) redeem();
+    if (!data) return;
+    
+    if (data.startsWith("event=")) {
+      collect();
+    } else if (data.startsWith("pay=")) {
+      redeem();
+    } else {
+      setStatus({
+        success: false,
+        message: "Invalid QR code format. Please scan a valid QR code."
+      });
+      setTimeout(() => setScan(false), 3000);
+    }
   }, [data]);
 
   /** ---------- HANDLE PAYMENT SUBMIT ---------- **/
   const handlePay = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    
     const student = Cookies.get("student");
-    if (!student) return;
+    if (!student) {
+      setStatus({ success: false, message: "Student data not found" });
+      return;
+    }
 
-    const jamiaId = JSON.parse(student).jamiaNo;
     const form = e.target as HTMLFormElement;
-    const points = (form.elements.namedItem("amount") as HTMLInputElement).value;
+    const pointsInput = form.elements.namedItem("amount") as HTMLInputElement;
+    const points = parseInt(pointsInput.value);
+    
+    if (!points || points <= 0) {
+      setStatus({ success: false, message: "Please enter a valid points amount" });
+      return;
+    }
 
     try {
-      const res = await axios.get(
-        `http://localhost/students_backend/qrscans/payment.php?api=b1daf1bbc7bbd214045af&${data}&student=${jamiaId}&points=${points}`
+      setLoading(true);
+      const jamiaId = JSON.parse(student).jamiaNo;
+      
+      const response = await axios.get(
+        `https://rend-application.abaqas.in/qrscans/payment.php?api=b1daf1bbc7bbd214045af&${data}&student=${jamiaId}&points=${points}`
       );
-      if (res?.data?.success) {
+      
+      if (response?.data?.success) {
         setStatus({
           success: true,
-          message: `${points} points transferred successfully`,
+          message: `Payment successful! ${points} points transferred.`,
         });
       } else {
-        throw new Error(res?.data?.message || res.data || "Something went wrong");
+        throw new Error(response?.data?.message || "Payment failed");
       }
     } catch (error: any) {
       setStatus({
         success: false,
-        message: error?.message || "Something went wrong",
+        message: error?.message || "Payment processing failed. Please try again.",
       });
     } finally {
-      setTimeout(() => setScan(false), 2000);
+      setLoading(false);
+      setTimeout(() => setScan(false), 3000);
     }
   };
 
+  const handleClose = () => {
+    setScan(false);
+  };
+
+  const handleScanError = (error: unknown) => {
+    if (error instanceof Error) {
+      console.error("QR Scan Error:", error);
+    } else {
+      console.error("QR Scan Error:", String(error));
+    }
+    setStatus({
+      success: false,
+      message: "Camera access failed. Please check permissions and try again."
+    });
+  };
+
   return (
-    <>
-      <div className="fixed inset-0 h-screen w-full bg-black bg-opacity-80 grid place-content-center">
+    <div className="fixed inset-0 h-screen w-full bg-black bg-opacity-80 flex items-center justify-center z-50 p-4">
+      <div className="relative max-w-md w-full">
         {status === "scanning" ? (
-          <div className="relative">
+          <div className="bg-white rounded-xl shadow-2xl overflow-hidden">
             {payment ? (
-              <div className="flex flex-col gap-3 z-50 bg-white p-4 rounded-md shadow-md">
-                <h3 className="text-2xl font-bold text-center">Payment</h3>
-                <form onSubmit={handlePay}>
-                  <div className="flex flex-col gap-2">
+              // Payment Form
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-6">
+                  <h3 className="text-2xl font-bold text-gray-800">Make Payment</h3>
+                  <button
+                    onClick={handleClose}
+                    className="text-gray-500 hover:text-gray-700 text-2xl leading-none"
+                    disabled={loading}
+                  >
+                    ×
+                  </button>
+                </div>
+                
+                <form onSubmit={handlePay} className="space-y-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Points Amount
+                    </label>
                     <input
                       type="number"
-                      placeholder="Enter points count.."
+                      placeholder="Enter points to transfer..."
                       name="amount"
-                      className="px-1 py-2 rounded w-full border-2 border-slate-200"
+                      min="1"
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none transition-colors"
                       required
+                      disabled={loading}
                     />
                   </div>
-                  <div className="flex justify-between gap-2 items-center mt-3">
+                  
+                  <div className="flex gap-3 pt-4">
                     <button
                       type="button"
-                      className="px-3 py-1 text-sm rounded-md bg-gray-500 hover:bg-opacity-80 duration-300 text-white font-semibold"
-                      onClick={() => setScan(false)}
+                      className="flex-1 px-4 py-3 text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-lg font-medium transition-colors disabled:opacity-50"
+                      onClick={handleClose}
+                      disabled={loading}
                     >
-                      Close
+                      Cancel
                     </button>
-                    <button className="px-3 py-1 text-sm rounded-md bg-green-500 hover:bg-opacity-80 duration-300 text-white font-semibold">
-                      Pay
+                    <button 
+                      type="submit"
+                      className="flex-1 px-4 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                      disabled={loading}
+                    >
+                      {loading ? "Processing..." : "Pay Now"}
                     </button>
                   </div>
                 </form>
               </div>
             ) : (
-              <Scanner
-                onScan={(result) => {
-                  if (result?.[0]?.rawValue) setData(result[0].rawValue);
-                }}
-                styles={{
-                  container: { width: "150px", translate: "-25% -50%" },
-                  video: {
-                    width: "220px",
-                    translate: "0 35%",
-                    maxWidth: "300px",
-                    border: "4px white solid",
-                  },
-                  finderBorder: 10,
-                }}
-              />
+              // QR Scanner
+              <div className="relative">
+                <div className="p-6 text-center border-b border-gray-200">
+                  <h3 className="text-xl font-bold text-gray-800 mb-2">Scan QR Code</h3>
+                  <p className="text-gray-600 text-sm">
+                    Position the QR code within the frame to scan
+                  </p>
+                </div>
+                
+                <div className="p-6 bg-gray-50">
+                  <div className="relative bg-white rounded-lg border-2 border-dashed border-gray-300 overflow-hidden">
+                    <Scanner
+                      onScan={(result) => {
+                        if (result?.[0]?.rawValue) {
+                          setData(result[0].rawValue);
+                        }
+                      }}
+                      onError={handleScanError}
+                      styles={{
+                        container: { 
+                          width: "300px", 
+                          height: "300px",
+                          margin: "0 auto",
+                          position: "relative"
+                        },
+                        video: {
+                          width: "300px",
+                          height: "300px",
+                          objectFit: "cover"
+                        },
+                        finderBorder: 20
+                      }}
+                    />
+                    
+                   
+                  </div>
+                  
+                  <div className="mt-6 flex justify-center">
+                    <button
+                      type="button"
+                      onClick={handleClose}
+                      className="px-8 py-3 bg-red-500 hover:bg-red-600 text-white rounded-lg font-semibold transition-colors "
+                      disabled={loading}
+                    >
+                      Cancel Scan
+                    </button>
+                  </div>
+                </div>
+                
+                {loading && (
+                  <div className="absolute inset-0 bg-white bg-opacity-90 flex items-center justify-center rounded-xl">
+                    <div className="text-center">
+                      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-2"></div>
+                      <p className="text-gray-600">Processing...</p>
+                    </div>
+                  </div>
+                )}
+              </div>
             )}
           </div>
-        ) : status.success ? (
-          <div className="bg-zinc-50 text-green-700 px-3 py-2 rounded-md flex font-bold">
-            <img className="h-5 w-5 pr-2" src="/image/checked.png" alt="ok" />{" "}
-            {status.message}
-          </div>
         ) : (
-          <div className="bg-zinc-50 text-red-700 px-3 py-2 rounded-md flex font-semibold">
-            <img className="h-5 w-5 pr-2" src="/image/cancel.png" alt="err" />{" "}
-            {status.message}
+          // Status Messages
+          <div className={`bg-white rounded-xl shadow-2xl p-6 text-center ${
+            status.success ? 'border-l-4 border-green-500' : 'border-l-4 border-red-500'
+          }`}>
+            <div className="flex items-center justify-center mb-4">
+              {status.success ? (
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
+                  <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </div>
+              ) : (
+                <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center">
+                  <svg className="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+                  </svg>
+                </div>
+              )}
+            </div>
+            
+            <h3 className={`text-xl font-bold mb-2 ${
+              status.success ? 'text-green-800' : 'text-red-800'
+            }`}>
+              {status.success ? 'Success!' : 'Error'}
+            </h3>
+            
+            <p className={`text-sm ${
+              status.success ? 'text-green-700' : 'text-red-700'
+            }`}>
+              {status.message}
+            </p>
+            
+            <button
+              onClick={handleClose}
+              className="mt-4 px-6 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg font-medium transition-colors"
+            >
+              Close
+            </button>
           </div>
         )}
       </div>
-      {!payment && (
-        <div className="inset-0 fixed h-screen z-40" onClick={() => setScan(false)}></div>
+      
+      {/* Background overlay - only closeable when not in payment mode and not loading */}
+      {!payment && !loading && status === "scanning" && (
+        <div 
+          className="absolute inset-0 -z-10" 
+          onClick={handleClose}
+          aria-label="Close scanner"
+        />
       )}
-    </>
+    </div>
   );
 }

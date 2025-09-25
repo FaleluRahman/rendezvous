@@ -1,91 +1,111 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { RiFunctionAddLine, RiFunctionAddFill, RiHome5Fill, RiCalendarScheduleLine, RiCalendarScheduleFill } from "react-icons/ri";
+import { usePathname } from "next/navigation";
+import { 
+  RiFunctionAddLine, 
+  RiFunctionAddFill, 
+  RiHome5Fill, 
+  RiCalendarScheduleLine, 
+  RiCalendarScheduleFill,
+  RiHome5Line,
+  RiUserLine,
+  RiUserFill
+} from "react-icons/ri";
 import { BsTrophy, BsTrophyFill } from "react-icons/bs";
-import { RiHome5Line } from "react-icons/ri";
 
-const navItems = [
+interface NavItem {
+  id: string;
+  label: string;
+  href: string;
+  icon: React.ReactNode;
+  activeIcon: React.ReactNode;
+}
+
+const navItems: NavItem[] = [
   {
-    id: "icon-a",
+    id: "events",
     label: "Events",
     href: "/Events",
-    // left: "15px",
-    png: <RiFunctionAddLine className="bg-white w-fit p-0.5 rounded-2xl" />,
-    png1: <RiFunctionAddFill className="bg-red-100 w-fit p-0.5 rounded-2xl" />,
+    icon: <RiFunctionAddLine size={24} />,
+    activeIcon: <RiFunctionAddFill size={24} />,
   },
   {
-    id: "icon-b",
+    id: "results",
     label: "Results",
     href: "/result",
-    // left: "87px",
-    png: <BsTrophy className="bg-white w-fit p-0.5 rounded-2xl"  />,
-    png1: <BsTrophyFill className="bg-red-100 w-fit p-0.5 rounded-2xl" />,
+    icon: <BsTrophy size={24} />,
+    activeIcon: <BsTrophyFill size={24} />,
   },
   {
-    id: "icon-c",
+    id: "home",
     label: "Home",
     href: "/",
-    // left: "158px",
-    png: <RiHome5Line className="bg-white w-fit p-0.5 rounded-2xl"/>,
-    png1: <RiHome5Fill className="bg-red-100 w-fit p-0.5 rounded-2xl"/>,
+    icon: <RiHome5Line size={24} />,
+    activeIcon: <RiHome5Fill size={24} />,
   },
   {
-    id: "icon-d",
+    id: "schedule",
     label: "Schedule",
     href: "/schedule",
-    // left: "230px",
-    png: <RiCalendarScheduleLine  className="bg-white w-fit p-0.5 ml-1.5 rounded-2xl"/>,
-    png1: <RiCalendarScheduleFill className="bg-red-100 w-fit p-0.5 ml-1.5 rounded-2xl" />,
+    icon: <RiCalendarScheduleLine size={24} />,
+    activeIcon: <RiCalendarScheduleFill size={24} />,
   },
   {
-    id: "icon-e",
+    id: "profile",
     label: "Profile",
     href: "/profile",
-    // left: "300px",
-    png: <img className="bg-white w-fit p-0.5 rounded-2xl" src="/image/bx-user-circle.svg" alt="" />,
-    png1: <img className="bg-red-100 w-fit p-0.5 rounded-2xl" src="/image/bxs-user-circle.svg" alt="" />,
+    icon: <RiUserLine size={24} />,
+    activeIcon: <RiUserFill size={24} />,
   },
 ];
 
-
 function Navig() {
-  const [activeIcon, setActiveIcon] = useState("icon-c"); 
+  const pathname = usePathname();
+  const [activeIcon, setActiveIcon] = useState<string>("home");
 
-  const getNavClass = (id: string) =>
-    `flex flex-col items-center justify-center w-[19%] h-[40px] ${
-      activeIcon === id ? "text-red-900 font-bold" : "text-zinc-500"
-    }`;
+  // Update active icon based on current pathname
+  useEffect(() => {
+    const currentNavItem = navItems.find(item => item.href === pathname);
+    if (currentNavItem) {
+      setActiveIcon(currentNavItem.id);
+    }
+  }, [pathname]);
+
+  const handleNavClick = (id: string) => {
+    setActiveIcon(id);
+  };
 
   return (
-    <div className="flex w-full text-center justify-center z-40">
-    <div
-      id="footer"
-      className="m-0 mx-auto fixed bottom-0 z-[5] max-w-[375px] w-full flex items-center justify-center bg-white rounded-t-[15px] shadow-xl h-16"
-    >
-      {/* Render each navigation item separately */}
-      {navItems.map((item) => (
-        <nav
-          key={item.id}
-          className={getNavClass(item.id)}
-          onClick={() => setActiveIcon(item.id)}
-          aria-label={item.label}
-        >
-          <Link href={item.href}>
-            <p
-              className={`text-2xl transition duration-300 ${
-                activeIcon === item.id ? "text-white" : ""
-              }`}
+    <div className="fixed bottom-0 left-0 right-0 z-50 flex justify-center">
+      <div className="w-full max-w-md mx-4 mb-4 bg-white/95 backdrop-blur-md rounded-2xl shadow-lg border border-gray-200/50">
+        <nav className="flex items-center justify-around px-2 py-3">
+          {navItems.map((item) => (
+            <Link
+              key={item.id}
+              href={item.href}
+              onClick={() => handleNavClick(item.id)}
+              className={`
+                flex flex-col items-center justify-center
+                px-3 py-2 rounded-xl transition-all duration-200 ease-in-out
+                min-w-0 flex-1 max-w-[80px]
+                ${
+                  activeIcon === item.id
+                    ? "bg-red-500 text-white shadow-md"
+                    : "text-gray-500 hover:text-gray-700 hover:bg-gray-50"
+                }
+              `}
             >
-              {activeIcon === item.id ? item.png1 : item.png}
-            </p>
-            <p className="text-[10px] mt-[4px] flex justify-center text-center opacity-100  w-full">
-              {item.label}
-            </p>
-          </Link>
+              <div className="mb-1">
+                {activeIcon === item.id ? item.activeIcon : item.icon}
+              </div>
+              <span className="text-xs font-medium text-center leading-tight">
+                {item.label}
+              </span>
+            </Link>
+          ))}
         </nav>
-      ))}
-    </div>
+      </div>
     </div>
   );
 }
