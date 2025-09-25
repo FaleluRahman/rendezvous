@@ -5,7 +5,7 @@ import Header from "@/component/home/Header";
 import ImageSlider from "@/component/home/ImageSlider";
 import UpComing from "@/component/home/UpComing";
 import { isLogged } from "@/lib/auth";
-import { phpInstance } from "@/lib/utils";
+import { phpInstance, phpInstances } from "@/lib/utils";
 import axios from "axios";
 export const dynamic = "force-dynamic";
 
@@ -22,11 +22,12 @@ const HomePage = async () => {
 
   //     programs = [];
   //   });
-  await phpInstance
+  await phpInstances
     .get("/campusprograms/action.php", {
       params: { campusId: "JM001",status: "pending", action: "pagination",limit: 10,page: 1 },
     })
     .then((res) => (programs = res.data.data));
+    // console.log(programs);
 
   // await fetch(
   //   "https://rendezvous.abaqas.in/campusprograms/action.php?status=campusId=JM001&action=getOngoingPrograms"
