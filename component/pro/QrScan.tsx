@@ -32,47 +32,24 @@ export default function QrScan({ setScan }: QrScanProps) {
 
       console.log("Raw QR Data:", data);
 
+      // Simple parsing for event=123 format
       let eventId: string | null = null;
-      let token: string | null = null;
-
-      if (typeof data === "string" && data.includes("=")) {
-        try {
-          const decodedData = decodeURIComponent(data);
-          console.log("Decoded QR Data:", decodedData);
-
-          const urlParams = new URLSearchParams(decodedData);
-          eventId = urlParams.get("event");
-          token = urlParams.get("token");
-
-          if (!eventId) {
-            const params = decodedData.split("&");
-            for (const param of params) {
-              const [key, value] = param.split("=");
-              if (key === "event") eventId = value;
-              if (key === "token") token = value;
-            }
-          }
-        } catch (parseError) {
-          console.error("Parsing error:", parseError);
-          throw new Error("Invalid QR code format");
-        }
+      
+      if (typeof data === "string" && data.startsWith("event=")) {
+        eventId = data.replace("event=", "").trim();
+        console.log("Extracted Event ID:", eventId);
       }
-
-      console.log("Parsed - Event ID:", eventId, "Token:", token);
 
       if (!eventId) {
-        throw new Error("Invalid QR code format. Missing event ID.");
+        throw new Error("Invalid QR code format. Expected format: event=123");
       }
 
+      // Validate event ID is numeric
       if (!/^\d+$/.test(eventId)) {
-        throw new Error("Invalid event ID format");
+        throw new Error("Invalid event ID format. Must be numeric.");
       }
 
-      let apiUrl = `https://rend-application.abaqas.in/qrscans/actions.php?api=b1daf1bbc7bbd214045af&event=${eventId}&student=${jamiaId}`;
-      if (token) {
-        apiUrl += `&token=${token}`;
-      }
-
+      const apiUrl = `https://rend-application.abaqas.in/qrscans/actions.php?api=b1daf1bbc7bbd214045af&event=${eventId}&student=${jamiaId}`;
       console.log("API URL:", apiUrl);
 
       const response = await axios.get(apiUrl, {
@@ -92,16 +69,13 @@ export default function QrScan({ setScan }: QrScanProps) {
           message += ` for ${response.data.event_type}`;
         }
 
-        if (response.data.token_regenerated) {
-          message += `. QR code has been refreshed for security.`;
-        } else if (response.data.scan_count) {
-          message += `. (Scan ${response.data.scan_count}/10 for this QR)`;
-        }
-
         setStatus({
           success: true,
           message: message + ".",
         });
+
+        // Wait longer before closing to ensure database transaction completes
+        setTimeout(() => setScan(false), 2000);
       } else {
         throw new Error(response?.data?.message || "Failed to scan QR code");
       }
@@ -113,16 +87,13 @@ export default function QrScan({ setScan }: QrScanProps) {
       if (error?.response?.status === 401) {
         errorMessage = "Unauthorized access. Please check API configuration.";
       } else if (error?.response?.status === 404) {
-        errorMessage =
-          "API endpoint not found. Check if your backend server is running.";
+        errorMessage = "API endpoint not found. Check if your backend server is running.";
       } else if (error?.response?.status >= 500) {
         errorMessage = "Server error. Please try again later.";
       } else if (error?.code === "ECONNABORTED") {
-        errorMessage =
-          "Request timeout. Please check your internet connection.";
+        errorMessage = "Request timeout. Please check your internet connection.";
       } else if (error?.code === "ERR_NETWORK") {
-        errorMessage =
-          "Network error. Make sure your backend server is running on localhost.";
+        errorMessage = "Network error. Make sure your backend server is running.";
       } else if (error?.response?.data?.message) {
         errorMessage = error.response.data.message;
       } else if (error?.message) {
@@ -133,9 +104,10 @@ export default function QrScan({ setScan }: QrScanProps) {
         success: false,
         message: errorMessage,
       });
+      
+      setTimeout(() => setScan(false), 3000);
     } finally {
       setLoading(false);
-      setTimeout(() => setScan(false), 4000);
     }
   };
 
@@ -145,8 +117,7 @@ export default function QrScan({ setScan }: QrScanProps) {
     if (!data || !validMerchants.includes(data)) {
       setStatus({
         success: false,
-        message:
-          "Invalid merchant QR code. Please scan a valid payment QR.",
+        message: "Invalid merchant QR code. Please scan a valid payment QR.",
       });
       setTimeout(() => setScan(false), 3000);
       return;
@@ -167,8 +138,7 @@ export default function QrScan({ setScan }: QrScanProps) {
     } else {
       setStatus({
         success: false,
-        message:
-          "Invalid QR code format. Please scan a valid event or payment QR code.",
+        message: "Invalid QR code format. Please scan a valid event or payment QR code.",
       });
       setTimeout(() => setScan(false), 3000);
     }
@@ -195,9 +165,14 @@ export default function QrScan({ setScan }: QrScanProps) {
     try {
       setLoading(true);
       const jamiaId = JSON.parse(student).jamiaNo;
+      
+      // Extract merchant from data (pay=vr -> vr)
+      const merchant = data?.replace("pay=", "");
 
-      const response = await axios.get(
-        `https://rend-application.abaqas.in/qrscans/payment.php?api=b1daf1bbc7bbd214045af&${data}&student=${jamiaId}&points=${points}`,
+      // Use POST method as expected by payment.php
+      const response = await axios.post(
+        `https://rend-application.abaqas.in/qrscans/payment.php?api=b1daf1bbc7bbd214045af&pay=${merchant}&student=${jamiaId}&points=${points}`,
+        {}, // Empty body for POST
         {
           timeout: 10000,
           headers: {
@@ -207,11 +182,14 @@ export default function QrScan({ setScan }: QrScanProps) {
         }
       );
 
+      console.log("Payment Response:", response.data);
+
       if (response?.data?.success) {
         setStatus({
           success: true,
           message: `Payment successful! ${points} points transferred.`,
         });
+        setTimeout(() => setScan(false), 2000);
       } else {
         throw new Error(response?.data?.message || "Payment failed");
       }
@@ -229,9 +207,9 @@ export default function QrScan({ setScan }: QrScanProps) {
         success: false,
         message: errorMessage,
       });
+      setTimeout(() => setScan(false), 3000);
     } finally {
       setLoading(false);
-      setTimeout(() => setScan(false), 3000);
     }
   };
 

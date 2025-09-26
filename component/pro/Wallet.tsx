@@ -47,10 +47,8 @@ const Wallet = () => {
           <h1 className="text-zinc-800 font-bold px-5 pt-3 text-lg  flex items-center">
             My Wallet
           </h1>
-          {/* <img className='h-12 px-5 pt-5 flex items-center pb-3' src="/image/qr-code-scan.svg" alt="" /> */}
         </div>
 
-        {/* <hr className='bg-zinc-700 w-full' /> */}
 
         <div className="text-zinc-700 font-bold text-sm flex w-full justify-between px-5 pt-1">
           <p>Total Points Collected </p>
