@@ -347,7 +347,7 @@ const ItemResult = ({ announced }: { announced: number[] }) => {
       setResult("loading");
       axios
         .get(
-          `https://malikoptics.abaqas.in/workspace-backend/results/action.php?program=${expandedItem}&action=AppResult`
+          `https://rendezvous.abaqas.in/programs/action.php?status=announced&action=pagination&page=1&limit=18&program=${expandedItem}`
         )
         .then((res) => {
           setResult(res.data.data || null);
@@ -370,7 +370,7 @@ const ItemResult = ({ announced }: { announced: number[] }) => {
 
   return (
     <div
-      className="result mt-0 flex flex-wrap h-full items-center justify-center w-full gap-5 bg-white p-5 mb-10"
+      className="result mt-0 flex flex-wrap h-full items-center justify-center w-full gap-5 bg-white p-5 mb-10 pb-28"
       id="result"
     >
       <div className="flex relative items-center rounded-md bg-white pl-3 outline outline-1 -outline-offset-1 outline-gray-300 focus-within:outline focus-within:outline-1 focus-within:-outline-offset-1 focus-within:outline-red-300 w-[90%]">
@@ -386,7 +386,7 @@ const ItemResult = ({ announced }: { announced: number[] }) => {
         />
         <CiSearch className="absolute top-2 right-3 text-xl text-red-400 cursor-pointer" />
       </div>
-<h4 className="text-lg font-bold">{announced.length} Results</h4>
+{/* <h4 className="text-lg font-bold">{announced.length} Results</h4>
       {ProgramData.filter((program) => announced.includes(Number(program.id)))
         .filter((program) =>
           search
@@ -399,7 +399,18 @@ const ItemResult = ({ announced }: { announced: number[] }) => {
             className="relative w-[90%] mx-auto bg-gradient-to-br from-[#ffffff] to-[#fffdee] border border-[rgba(0,0,0,0.075)] 
           rounded-[14px] p-[20px_30px] box-border overflow-hidden shadow-[1px_4px_10px_rgba(0,0,0,0.082)]"
             onClick={() => toggleItem(program.id)}
+          > */}
+
+
+
+          {ProgramData.map((program: any) => (
+          <div
+            key={program.id}
+            className="relative w-[90%] mx-auto bg-gradient-to-br from-[#ffffff] to-[#fffdee] border border-[rgba(0,0,0,0.075)] 
+          rounded-[14px] p-[20px_30px] box-border overflow-hidden shadow-[1px_4px_10px_rgba(0,0,0,0.082)]"
+            onClick={() => toggleItem(program.id)}
           >
+
             <div className="cursor-pointer">
               <IoIosArrowDropdown
                 className={`${
