@@ -21,7 +21,7 @@ const Wallet = () => {
         const jamiaId = JSON.parse(student).jamiaNo;
         axios
           .get(
-            "http://localhost/students_backend/qrscans/actions.php?api=b1daf1bbc7bbd214045af&ID=" +
+            "https://rend-application.abaqas.in/qrscans/actions.php?api=b1daf1bbc7bbd214045af&ID=" +
               jamiaId
           )
           .then((res: any) => {

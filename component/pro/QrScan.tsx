@@ -68,7 +68,7 @@ export default function QrScan({ setScan }: QrScanProps) {
         throw new Error("Invalid event ID format");
       }
 
-      let apiUrl = `http://localhost/students_backend/qrscans/actions.php?api=b1daf1bbc7bbd214045af&event=${eventId}&student=${jamiaId}`;
+      let apiUrl = `https://rend-application.abaqas.in/qrscans/actions.php?api=b1daf1bbc7bbd214045af&event=${eventId}&student=${jamiaId}`;
       if (token) {
         apiUrl += `&token=${token}`;
       }
@@ -197,7 +197,7 @@ export default function QrScan({ setScan }: QrScanProps) {
       const jamiaId = JSON.parse(student).jamiaNo;
 
       const response = await axios.get(
-        `http://localhost/students_backend/qrscans/payment.php?api=b1daf1bbc7bbd214045af&${data}&student=${jamiaId}&points=${points}`,
+        `https://rend-application.abaqas.in/qrscans/payment.php?api=b1daf1bbc7bbd214045af&${data}&student=${jamiaId}&points=${points}`,
         {
           timeout: 10000,
           headers: {
