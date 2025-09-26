@@ -307,9 +307,9 @@ import { useRouter } from "next/navigation";
 import { MdError } from "react-icons/md";
 
 const QrCodeScanner = () => {
-  const [scanResult, setScanResult] = useState(null);
-  const qrCodeRegionRef = useRef(null);
-  const [error, setError] = useState(null);
+  const [scanResult, setScanResult] = useState<string | null>(null);
+  const qrCodeRegionRef = useRef<HTMLDivElement>(null);
+  const [error, setError] = useState<string | null>(null);
   const router = useRouter();
   const [loading, setLoading] = useState(false);
 
@@ -321,7 +321,7 @@ const QrCodeScanner = () => {
       const html5QrCode = new Html5Qrcode(qrCodeRegion.id);
       let isScanning = false;
 
-      const onScanSuccess = (decodedText) => {
+      const onScanSuccess = (decodedText: string) => {
         console.log("Scanned text:", decodedText);
 
         // ✅ Use raw text directly (no decoding)
@@ -337,7 +337,7 @@ const QrCodeScanner = () => {
           .catch((err) => console.error("Error stopping scanner:", err));
       };
 
-      const onScanError = (errMsg) => {
+      const onScanError = (errMsg: any) => {
         console.warn("Error scanning:", errMsg);
       };
 
