@@ -21,7 +21,7 @@ const Wallet = () => {
         const jamiaId = JSON.parse(student).jamiaNo;
         axios
           .get(
-            "https://rend-application.abaqas.in/qrscans/actions.php?api=b1daf1bbc7bbd214045af&ID=" +
+            "http://localhost/appadmin-backend/qrscans/actions.php?api=b1daf1bbc7bbd214045af&ID=" +
               jamiaId
           )
           .then((res: any) => {
@@ -105,8 +105,8 @@ const Wallet = () => {
         </div>
       </div>
       {scan && <QrScan setScan={setScan} />}
-    </div>
-  );
-};
+      </div>
+    );
+  }
 
-export default Wallet;
+  export default Wallet;

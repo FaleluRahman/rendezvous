@@ -298,6 +298,8 @@
 // };
 
 // export default QrCodeScanner;
+
+
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import { Html5Qrcode } from "html5-qrcode";

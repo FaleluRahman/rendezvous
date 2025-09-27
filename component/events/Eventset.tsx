@@ -297,7 +297,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Clock, MapPin, MoreVertical, ChevronDown, ChevronUp, Sparkles, Users, GraduationCap, PenTool, MessageCircle, Heart, Calendar, Coins } from "lucide-react";
+import { Clock, MapPin, MoreVertical, ChevronDown, ChevronUp, Sparkles, Users, GraduationCap, PenTool, MessageCircle, Heart, Calendar, Coins, PencilLine } from "lucide-react";
 
 import { phpInstance } from "@/lib/utils";
 
@@ -367,7 +367,7 @@ export default function Eventset() {
       case "Edu Login":
         return <GraduationCap className={iconProps} />;
       case "WriteWell Clinic":
-        return <PenTool className={iconProps} />;
+        return <PencilLine  className={iconProps} />;
       case "Pro Chat":
         return <MessageCircle className={iconProps} />;
       case "Tranquil Wellness Hub":
@@ -384,41 +384,31 @@ export default function Eventset() {
     <>
       <div className="min-h-screen pb-28 bg-white py-6 px-4 relative overflow-hidden">
         {/* Background Effects */}
-        <div
+        {/* <div
           className="absolute inset-0 opacity-40"
           style={{
             backgroundImage:
               "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f97316' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")"
           }}
-        ></div>
+        ></div> */}
         <div className="absolute top-0 right-0 w-72 h-72 bg-gradient-to-br from-orange-300/20 to-pink-300/20 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-72 h-72 bg-gradient-to-tr from-purple-300/20 to-orange-300/20 rounded-full blur-3xl"></div>
 
-        <div className="max-w-2xl mx-auto relative z-10">
+        <div className="max-w-2xl mx-auto relative z-10 ">
           {/* Professional Header */}
-          <div className="text-center mb-8">
+          <div className="text-center mb-8  bg-red-700 py-8 rounded-b-3xl">
          
-            <h1 className="text-3xl font-bold text-gray-800 mb-2">Events</h1>
-            <p className="text-gray-600 font-medium">Discover and join exciting events</p>
-            <div className="w-20 h-1 bg-gradient-to-r from-zinc-800 to-red-600 rounded-full mx-auto mt-3"></div>
+            <h1 className="text-3xl font-bold text-white mb-2">Events</h1>
+            <p className="text-amber-50 font-medium">Discover and join exciting events</p>
           </div>
 
           {/* Empty State - Updated Design */}
           {events.length === 0 && (
             <div className="text-center py-12">
-              <div className="relative w-24 h-24 mx-auto mb-6">
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-400 to-pink-500 rounded-3xl shadow-xl transform rotate-12"></div>
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-400 to-orange-500 rounded-3xl shadow-xl transform -rotate-6"></div>
-                <div className="relative bg-gradient-to-br from-orange-400 to-pink-500 rounded-3xl flex items-center justify-center shadow-xl h-full w-full">
-                  <Sparkles className="w-12 h-12 text-white animate-pulse" />
-                </div>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-3">Something Amazing is Coming!</h3>
-              <p className="text-gray-600 font-semibold mb-4">Our team is crafting incredible events just for you.</p>
+         
+              <h3 className="text-2xl font-bold text-gray-800 mb-3">Something  is Coming!</h3>
               <div className="flex justify-center items-center gap-2 text-sm text-gray-500">
-                <div className="w-2 h-2 bg-orange-400 rounded-full animate-bounce"></div>
-                <div className="w-2 h-2 bg-pink-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                <div className="w-2 h-2 bg-purple-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                
                 <span className="ml-2 font-medium">Stay tuned for updates</span>
               </div>
             </div>

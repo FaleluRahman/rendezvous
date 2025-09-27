@@ -17,7 +17,7 @@ const AdSlider = () => {
   ];
 
   return (
-    <div className="w-full swiper-sec flex flex-col items-center bg-orange-50 overflow-hidden pb-3">
+    <div className="w-full swiper-sec flex flex-col items-center bg-white overflow-hidden pb-3">
       
         <Swiper
           modules={[Autoplay, Pagination]} // Pass modules explicitly
@@ -38,7 +38,7 @@ const AdSlider = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className="bg-orange-50 py-3 ">
+        <div className="bg-white py-3 ">
         <div className="flex flex-col">
           <div className="h-8 w-screen bg-[url('/image/Logomark.png')] bg-repeat-x bg-contain animate-rightToLeft"></div>
         </div>

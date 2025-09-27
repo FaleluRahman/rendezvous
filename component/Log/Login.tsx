@@ -19,13 +19,13 @@ function Login() {
             className="w-full bg-orange-200 text-gray-800 hover:bg-orange-600 hover:text-white py-2 rounded-lg mb-2 font-semibold transition duration-200"
             href="/qrcode"
           >
-            Participant
+            Students Login
           </a>
 
         </div>
 
         <div className="mt-6 text-center">
-          <p className="text-sm text-gray-600">
+          <p className="text-xs font-semibold text-gray-600">
             Having Problem to Login?
             <a
               href="https://wa.me/+918289882240"

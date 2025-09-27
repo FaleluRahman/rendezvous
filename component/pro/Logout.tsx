@@ -2,6 +2,7 @@
 
 
 import Cookies from 'js-cookie'
+import { LogOut } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import React from 'react'
 import { IoMdLogOut } from 'react-icons/io'
@@ -16,7 +17,7 @@ const Logout = () => {
                 localStorage.removeItem('programsF')
                 router.push("/login");
             }}
-            >Logout <IoMdLogOut className='mt-1' />
+            >Logout <LogOut className='w-4 h-4 mt-1 font-bold' />
             </button>
 
     </div>

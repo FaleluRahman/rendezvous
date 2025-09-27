@@ -4,23 +4,23 @@ import React from 'react';
 
 function Header() {
   return (
-    <div className='bg-orange-50 overflow-hidden'>
+    <div className='bg-white overflow-hidden'>
       <div className='bg-none'>
         <div className='max-w-auto h-80 flex flex-col justify-center items-center relative rounded-bl-3xl rounded-br-3xl'
-             style={{
-               background: `
-                 radial-gradient(ellipse 800px 1200px at -200px 50%, rgba(255, 120, 60, 0.4) 0%, transparent 70%),
-                 radial-gradient(ellipse 800px 1200px at calc(100% + 200px) 50%, rgba(60, 120, 255, 0.5) 0%, transparent 70%),
-                 radial-gradient(ellipse 600px 800px at 85% 85%, rgba(120, 80, 200, 0.3) 0%, transparent 60%),
-                 radial-gradient(ellipse 400px 600px at 50% 45%, rgba(15, 15, 25, 0.95) 0%, rgba(25, 20, 35, 0.8) 50%, transparent 100%),
-                 linear-gradient(145deg, 
-                   rgba(25, 15, 20, 1) 0%,
-                   rgba(15, 15, 30, 1) 30%,
-                   rgba(20, 20, 35, 1) 60%,
-                   rgba(15, 25, 40, 1) 100%
-                 )
-               `
-             }}>
+           style={{
+  background: `
+    radial-gradient(ellipse 800px 1200px at -200px 50%, rgba(50, 0, 0, 0.6) 0%, transparent 70%),
+    radial-gradient(ellipse 800px 1200px at calc(100% + 200px) 50%, rgba(0, 0, 50, 0.7) 0%, transparent 70%),
+    radial-gradient(ellipse 600px 800px at 85% 85%, rgba(25, 0, 25, 0.5) 0%, transparent 60%),
+    radial-gradient(ellipse 400px 600px at 50% 45%, rgba(5, 5, 10, 0.95) 0%, rgba(10, 0, 15, 0.8) 50%, transparent 100%),
+    linear-gradient(145deg, 
+      rgba(10, 0, 0, 1) 0%,
+      rgba(5, 5, 15, 1) 30%,
+      rgba(0, 0, 20, 1) 60%,
+      rgba(15, 0, 25, 1) 100%
+    )
+  `
+}}>
           
           {/* Additional gradient layers */}
           <div className="absolute inset-0 rounded-bl-3xl rounded-br-3xl"
@@ -51,7 +51,7 @@ function Header() {
             />
           </div>
 
-          <div className='bg-white rounded-3xl mx-5 py-1 absolute top-72 z-20'>
+          <div className='bg-amber-50 rounded-3xl mx-5 py-1 absolute top-72 z-20'>
             <div className='text-red-500 w-full items-center flex'>  
               <h1 className='mx-auto font-gilroy font-bold text-4xl w-fit mt-10 text-red-700 text-left ml-8 mb-0 leading-[10px] animate-colorPulse'>
                 Transcending<br/> the illusions
@@ -59,9 +59,9 @@ function Header() {
               </h1> 
             </div>
 
-            <div className='text-black/35 m-8 flex text-justify text-xs leading-[14px] font-base'>
+            <div className='text-black/45 m-8 flex text-justify text-xs leading-[14px] font-base'>
               <p className='font-gilroy'>
-                <span className='font-semibold text-black/45'>Rendezvous Life Festival</span> is an annual arts and cultural event organized by Jamia Madeenathunnoor
+                <span className='font-semibold text-black/55'>Rendezvous Life Festival</span> is an annual arts and cultural event organized by Jamia Madeenathunnoor
                 to nurture and enhance the artistic talents of its students. This event not only promotes individual artistic development but also aims to build a supportive, 
                 and vibrant community around the arts at Jamia Madeenathunnoor.
               </p>
@@ -70,7 +70,7 @@ function Header() {
         </div>
       </div>
 
-      <div className='bg-orange-50 pt-64'>
+      <div className='bg-white pt-48'>
         <div className="flex flex-col">
           <div className="h-8 w-screen bg-[url('/image/Logomark.png.png')] bg-repeat-x bg-contain animate-move"></div>
         </div>
