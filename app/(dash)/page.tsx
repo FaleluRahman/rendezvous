@@ -22,11 +22,20 @@ const HomePage = async () => {
 
   //     programs = [];
   //   });
+
+
+
+
   await phpInstances
     .get("/campusprograms/action.php", {
-      params: { campusId: "JM001",status: "pending", action: "pagination",limit: 10,page: 1 },
+      params: { campusId: "JM001",status: "reporting", action: "pagination",limit: 10,page: 1 },
     })
     .then((res) => (programs = res.data.data));
+
+
+
+
+
     // console.log(programs);
 
   // await fetch(
@@ -42,6 +51,8 @@ const HomePage = async () => {
   //     console.log(err);
   //     programs = [];
   //   });
+
+  
 
   const programIds = programs?.map((program: any) => program.id) || [];
   let schedule: any[] = [];
@@ -67,7 +78,7 @@ const HomePage = async () => {
         <Counts />
         <ImageSlider />
         <UpComing programs={ongoing} />
-        {logged && <EvBtn />}
+        {/* {logged && <EvBtn />} */}
         <AdSlider />
 
         <div className="h-20"></div>

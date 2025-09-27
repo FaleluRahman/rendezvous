@@ -30,7 +30,7 @@
     "react-qr-barcode-scanner": "^2.0.0",
     "react-qr-code": "^2.0.15",
     "react-qrcode-scanner": "^1.2.4",
-    "swiper": "^11.1.15",
+    "swiper": "^11.2.10",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
     "tailwindcss-bg-patterns": "^0.3.0"

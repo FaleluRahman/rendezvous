@@ -12,8 +12,8 @@ export const axiosInstance = axios.create({
 
 
 export const phpInstance = axios.create({
-  baseURL: "https://rend-application.abaqas.in/"
-  // baseURL: "http://localhost/appadmin-backend/"
+  // baseURL: "https://rend-application.abaqas.in/"
+  baseURL: "http://localhost/appadmin-backend/"
 
       
 });

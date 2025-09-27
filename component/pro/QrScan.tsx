@@ -49,7 +49,7 @@ export default function QrScan({ setScan }: QrScanProps) {
         throw new Error("Invalid event ID format. Must be numeric.");
       }
 
-      const apiUrl = `https://rend-application.abaqas.in/qrscans/actions.php?api=b1daf1bbc7bbd214045af&event=${eventId}&student=${jamiaId}`;
+      const apiUrl = `http://localhost/appadmin-backend/qrscans/actions.php?api=b1daf1bbc7bbd214045af&event=${eventId}&student=${jamiaId}`;
       console.log("API URL:", apiUrl);
 
       const response = await axios.get(apiUrl, {
@@ -60,9 +60,12 @@ export default function QrScan({ setScan }: QrScanProps) {
         },
       });
 
-      console.log("API Response:", response.data);
+      console.log("Full API Response:", response);
+      console.log("Response Data:", response.data);
+      console.log("Response Status:", response.status);
 
-      if (response?.data?.success) {
+      // Fixed: Check response.data.success properly
+      if (response.data && response.data.success === true) {
         let message = `Congratulations! You earned ${response.data.points} points`;
 
         if (response.data.event_type) {
@@ -76,14 +79,19 @@ export default function QrScan({ setScan }: QrScanProps) {
 
         setTimeout(() => setScan(false), 2000);
       } else {
-        throw new Error(response?.data?.message || "Failed to scan QR code");
+        // Handle API returning success: false
+        throw new Error(response.data?.message || "Failed to scan QR code");
       }
     } catch (error: any) {
       console.error("Collection Error:", error);
+      console.error("Error Response:", error.response);
 
       let errorMessage = "Something went wrong while collecting points";
 
-      if (error?.response?.status === 401) {
+      // Check for specific HTTP status codes
+      if (error?.response?.status === 400) {
+        errorMessage = error?.response?.data?.message || "Bad request. Please check QR code format.";
+      } else if (error?.response?.status === 401) {
         errorMessage = "Unauthorized access. Please check API configuration.";
       } else if (error?.response?.status === 404) {
         errorMessage = "API endpoint not found. Check if your backend server is running.";
@@ -110,8 +118,8 @@ export default function QrScan({ setScan }: QrScanProps) {
     }
   };
 
-    const redeem = () => {
-    const validMerchants = ["pay=vr", "pay=cafe", "pay=papyrus", "pay=tajammul"];
+  const redeem = () => {
+    const validMerchants = ["pay=vr", "pay=cafe", "pay=papyrus", "pay=tajammol"];
 
     if (!data || !validMerchants.includes(data)) {
       setStatus({
@@ -167,10 +175,9 @@ export default function QrScan({ setScan }: QrScanProps) {
       
       const merchant = data?.replace("pay=", "");
 
-      // Use POST method as expected by payment.php
       const response = await axios.post(
-        `https://rend-application.abaqas.in/qrscans/payment.php?api=b1daf1bbc7bbd214045af&pay=${merchant}&student=${jamiaId}&points=${points}`,
-        {}, // Empty body for POST
+        `http://localhost/appadmin-backend/qrscans/payment.php?api=b1daf1bbc7bbd214045af&pay=${merchant}&student=${jamiaId}&points=${points}`,
+        {},
         {
           timeout: 10000,
           headers: {
@@ -285,9 +292,7 @@ export default function QrScan({ setScan }: QrScanProps) {
                     Scan Secure QR Code
                   </h3>
                   <p className="text-gray-600 text-sm">
-                    Position the QR code within the frame to scan. Event QR
-                    codes can be simple (event=12) or secure
-                    (event=12&token=...).
+                    Position the QR code within the frame to scan.
                   </p>
                 </div>
 
@@ -335,7 +340,7 @@ export default function QrScan({ setScan }: QrScanProps) {
                     <div className="text-center">
                       <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-2"></div>
                       <p className="text-gray-600">
-                        Processing secure QR code...
+                        Processing QR code...
                       </p>
                     </div>
                   </div>
