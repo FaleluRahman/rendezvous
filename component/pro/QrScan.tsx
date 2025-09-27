@@ -74,7 +74,6 @@ export default function QrScan({ setScan }: QrScanProps) {
           message: message + ".",
         });
 
-        // Wait longer before closing to ensure database transaction completes
         setTimeout(() => setScan(false), 2000);
       } else {
         throw new Error(response?.data?.message || "Failed to scan QR code");
@@ -111,8 +110,8 @@ export default function QrScan({ setScan }: QrScanProps) {
     }
   };
 
-  const redeem = () => {
-    const validMerchants = ["pay=vr", "pay=cafe"];
+    const redeem = () => {
+    const validMerchants = ["pay=vr", "pay=cafe", "pay=papyrus", "pay=tajammul"];
 
     if (!data || !validMerchants.includes(data)) {
       setStatus({
@@ -166,7 +165,6 @@ export default function QrScan({ setScan }: QrScanProps) {
       setLoading(true);
       const jamiaId = JSON.parse(student).jamiaNo;
       
-      // Extract merchant from data (pay=vr -> vr)
       const merchant = data?.replace("pay=", "");
 
       // Use POST method as expected by payment.php
