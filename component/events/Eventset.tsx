@@ -293,10 +293,12 @@
 
 // export default Eventset;
 
+
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Clock, MapPin, MoreVertical, ChevronDown, ChevronUp, Sparkles } from "lucide-react";
+import { Clock, MapPin, MoreVertical, ChevronDown, ChevronUp, Sparkles, Users, GraduationCap, PenTool, MessageCircle, Heart, Calendar, Coins } from "lucide-react";
+
 import { phpInstance } from "@/lib/utils";
 
 interface Event {
@@ -306,6 +308,7 @@ interface Event {
   image?: string;
   time?: string;
   place?: string;
+  description?: string;
 }
 
 export default function Eventset() {
@@ -334,12 +337,52 @@ export default function Eventset() {
     [currentVisible]
   );
 
+  // Get points based on event type
+  const eventTypes = [
+    "Expert Convos",
+    "Edu Login",
+    "WriteWell Clinic",
+    "Pro Chat",
+    "Tranquil Wellness Hub"
+  ] as const;
+  type EventType = typeof eventTypes[number];
+
+  const getEventPoints = (type: string): number => {
+    const points: Record<EventType, number> = {
+      "Expert Convos": 14,
+      "Edu Login": 14,
+      "WriteWell Clinic": 10,
+      "Pro Chat": 6,
+      "Tranquil Wellness Hub": 10,
+    };
+    return (type in points ? points[type as EventType] : 0);
+  };
+
+  // Get icon based on event type
+  const getEventTypeIcon = (type: string) => {
+    const iconProps = "w-5 h-5 opacity-80";
+    switch (type) {
+      case "Expert Convos":
+        return <Users className={iconProps} />;
+      case "Edu Login":
+        return <GraduationCap className={iconProps} />;
+      case "WriteWell Clinic":
+        return <PenTool className={iconProps} />;
+      case "Pro Chat":
+        return <MessageCircle className={iconProps} />;
+      case "Tranquil Wellness Hub":
+        return <Heart className={iconProps} />;
+      default:
+        return <Sparkles className={iconProps} />;
+    }
+  };
+
   // Single consistent gradient for all events
   const eventGradient = "from-zinc-800 to-red-600";
 
   return (
     <>
-      <div className="min-h-screen pb-28 bg-gradient-to-br from-orange-50 via-orange-100 to-pink-50 py-6 px-4 relative overflow-hidden">
+      <div className="min-h-screen pb-28 bg-white py-6 px-4 relative overflow-hidden">
         {/* Background Effects */}
         <div
           className="absolute inset-0 opacity-40"
@@ -352,14 +395,32 @@ export default function Eventset() {
         <div className="absolute bottom-0 left-0 w-72 h-72 bg-gradient-to-tr from-purple-300/20 to-orange-300/20 rounded-full blur-3xl"></div>
 
         <div className="max-w-2xl mx-auto relative z-10">
-          {/* Empty State */}
+          {/* Professional Header */}
+          <div className="text-center mb-8">
+         
+            <h1 className="text-3xl font-bold text-gray-800 mb-2">Events</h1>
+            <p className="text-gray-600 font-medium">Discover and join exciting events</p>
+            <div className="w-20 h-1 bg-gradient-to-r from-zinc-800 to-red-600 rounded-full mx-auto mt-3"></div>
+          </div>
+
+          {/* Empty State - Updated Design */}
           {events.length === 0 && (
             <div className="text-center py-12">
-              <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-orange-400 to-pink-500 rounded-3xl flex items-center justify-center shadow-xl">
-                <Sparkles className="w-10 h-10 text-white" />
+              <div className="relative w-24 h-24 mx-auto mb-6">
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-400 to-pink-500 rounded-3xl shadow-xl transform rotate-12"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-400 to-orange-500 rounded-3xl shadow-xl transform -rotate-6"></div>
+                <div className="relative bg-gradient-to-br from-orange-400 to-pink-500 rounded-3xl flex items-center justify-center shadow-xl h-full w-full">
+                  <Sparkles className="w-12 h-12 text-white animate-pulse" />
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-2">No Events Yet</h3>
-              <p className="text-gray-60 font-semibold"> events are coming soon! </p>
+              <h3 className="text-2xl font-bold text-gray-800 mb-3">Something Amazing is Coming!</h3>
+              <p className="text-gray-600 font-semibold mb-4">Our team is crafting incredible events just for you.</p>
+              <div className="flex justify-center items-center gap-2 text-sm text-gray-500">
+                <div className="w-2 h-2 bg-orange-400 rounded-full animate-bounce"></div>
+                <div className="w-2 h-2 bg-pink-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                <div className="w-2 h-2 bg-purple-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                <span className="ml-2 font-medium">Stay tuned for updates</span>
+              </div>
             </div>
           )}
 
@@ -368,7 +429,7 @@ export default function Eventset() {
             {events.map((event, index) => {
               const imageUrl = event.image
                 ? `${phpInstance.defaults.baseURL}/${event.image}`
-                : "/fallback.png";
+                : "/api/placeholder/400/300";
 
               const isExpanded = currentVisible === index;
 
@@ -383,7 +444,7 @@ export default function Eventset() {
                 >
                   <div className={`bg-gradient-to-r ${eventGradient} py-3 px-5 rounded-t-3xl text-white flex justify-between items-center shadow-md`}>
                     <div className="flex items-center gap-2">
-                      <Sparkles className="w-5 h-5 opacity-80" />
+                      {getEventTypeIcon(event.type)}
                       <span className="font-bold text-sm sm:text-base truncate">
                         {event.type}
                       </span>
@@ -398,53 +459,72 @@ export default function Eventset() {
                     </div>
                   </div>
 
-                  {/* Title */}
+                  {/* First View - Always Visible */}
                   <div className="px-5 py-3">
-                    <h2 className="font-bold text-gray-800 text-sm sm:text-base leading-tight  transition-all duration-300">
+                    {/* Event Title */}
+                    <h2 className="font-bold text-gray-800 text-sm sm:text-base leading-tight mb-3 transition-all duration-300">
                       {event.title}
                     </h2>
+
+                    {/* Event Details - Location and Time */}
+                    <div className="flex flex-wrap gap-4 justify-between items-center text-sm">
+                      {event.time && (
+                        <div className="flex items-center gap-2">
+                          <div className="w-8 h-8 bg-blue-500/10 rounded-full flex items-center justify-center">
+                            <Clock className="w-4 h-4 text-blue-600" />
+                          </div>
+                          <span className="font-semibold">{event.time}</span>
+                        </div>
+                      )}
+                      
+                      {event.place && (
+                        <div className="flex items-center gap-2">
+                          <div className="w-8 h-8 bg-red-500/10 rounded-full flex items-center justify-center">
+                            <MapPin className="w-4 h-4 text-red-600" />
+                          </div>
+                          <span className="font-semibold truncate">{event.place}</span>
+                        </div>
+                      )}
+                    </div>
                   </div>
 
-                  {/* Expanded Content */}
+                  {/* Expanded Content - Image and Description */}
                   {isExpanded && (
                     <div className="px-5 pb-4 animate-in slide-in-from-top-2 duration-300">
                       {/* Image */}
-                      <div className="relative mb-4 group-hover:scale-[1.02] transition-transform duration-500">
-                        <img
-                          className="rounded-xl w-full h-48 sm:h-56 object-cover shadow-lg"
-                          src={imageUrl}
-                          alt={event.title}
-                          onError={(e) => {
-                            e.currentTarget.src = "/fallback.png";
-                          }}
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-xl"></div>
-                        <div className="absolute top-3 right-3 bg-white/20 backdrop-blur-sm rounded-full p-2">
+                      {event.image && (
+                        <div className="relative mb-4 group-hover:scale-[1.02] transition-transform duration-500">
+                          <img
+                            className="rounded-xl w-full h-48 sm:h-56 object-cover shadow-lg"
+                            src={imageUrl}
+                            alt={event.title}
+                            onError={(e) => {
+                              e.currentTarget.src = "/api/placeholder/400/300";
+                            }}
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-xl"></div>
                         </div>
-                      </div>
+                      )}
 
-                      {/* Details */}
-                      <div className="bg-gradient-to-r from-gray-50 to-orange-50 text-gray-700 px-4 py-3 rounded-xl border border-gray-200/50">
-                        <div className="flex flex-wrap gap-4 justify-between items-center text-sm">
-                          
-                          {event.time && (
-                            <div className="flex items-center gap-2">
-                              <div className="w-8 h-8 bg-blue-500/10 rounded-full flex items-center justify-center">
-                                <Clock className="w-4 h-4 text-blue-600" />
-                              </div>
-                              <span className="font-semibold">{event.time}</span>
-                            </div>
-                          )}
-                          
-                          {event.place && (
-                            <div className="flex items-center gap-2">
-                              <div className="w-8 h-8 bg-red-500/10 rounded-full flex items-center justify-center">
-                                <MapPin className="w-4 h-4 text-red-600" />
-                              </div>
-                              <span className="font-semibold truncate">{event.place}</span>
-                            </div>
-                          )}
+                      {/* Description */}
+                      {event.description && (
+                        <div className="bg-gradient-to-r from-gray-50 to-orange-50 text-gray-700 px-4 py-3 rounded-xl border border-gray-200/50 mb-4">
+                          <p className="text-sm leading-relaxed">{event.description}</p>
+                        </div>
+                      )}
 
+                     
+
+                      {/* Points Display */}
+                      <div className="bg-gradient-to-r from-green-50 to-emerald-50 px-4 py-3 rounded-xl border border-green-200/50">
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-2">
+                            <div className="w-8 h-8 bg-green-500/10 rounded-full flex items-center justify-center">
+                              <Coins className="w-4 h-4 text-green-600" />
+                            </div>
+                            <span className="font-semibold text-green-800 text-sm">Event Points</span>
+                          </div>
+                          <span className="font-bold text-green-700 text-lg">{getEventPoints(event.type)}</span>
                         </div>
                       </div>
                     </div>
