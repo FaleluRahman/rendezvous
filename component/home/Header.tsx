@@ -54,7 +54,7 @@ function Header() {
           <div className='bg-amber-50 rounded-3xl mx-5 py-1 absolute top-72 z-20'>
             <div className='text-red-500 w-full items-center flex'>  
               <h1 className='mx-auto font-gilroy font-bold text-4xl w-fit mt-10 text-red-700 text-left ml-8 mb-0 leading-[10px] animate-colorPulse'>
-                Transcending<br/> the illusions
+                Transcending<br/> illusions
                 <span className='text-stone-800 text-5xl h-fit'>.</span>
               </h1> 
             </div>

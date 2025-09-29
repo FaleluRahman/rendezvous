@@ -35,10 +35,14 @@ export default function QrScan({ setScan }: QrScanProps) {
       // Simple parsing for event=123 format
       let eventId: string | null = null;
       
-      if (typeof data === "string" && data.startsWith("event=")) {
-        eventId = data.replace("event=", "").trim();
-        console.log("Extracted Event ID:", eventId);
-      }
+    if (typeof data === "string") {
+  const normalized = data.replace(/\s*=\s*/, "=").trim();
+
+  if (normalized.startsWith("event=")) {
+    eventId = normalized.replace("event=", "").trim();
+    console.log("Extracted Event ID:", eventId);
+  }
+}
 
       if (!eventId) {
         throw new Error("Invalid QR code format. Expected format: event=123");
@@ -49,7 +53,7 @@ export default function QrScan({ setScan }: QrScanProps) {
         throw new Error("Invalid event ID format. Must be numeric.");
       }
 
-      const apiUrl = `http://localhost/appadmin-backend/qrscans/actions.php?api=b1daf1bbc7bbd214045af&event=${eventId}&student=${jamiaId}`;
+      const apiUrl = `https://rend-application.abaqas.in/qrscans/actions.php?api=b1daf1bbc7bbd214045af&event=${eventId}&student=${jamiaId}`;
       console.log("API URL:", apiUrl);
 
       const response = await axios.get(apiUrl, {
@@ -176,7 +180,7 @@ export default function QrScan({ setScan }: QrScanProps) {
       const merchant = data?.replace("pay=", "");
 
       const response = await axios.post(
-        `http://localhost/appadmin-backend/qrscans/payment.php?api=b1daf1bbc7bbd214045af&pay=${merchant}&student=${jamiaId}&points=${points}`,
+        `https://rend-application.abaqas.in/payment.php?api=b1daf1bbc7bbd214045af&pay=${merchant}&student=${jamiaId}&points=${points}`,
         {},
         {
           timeout: 10000,

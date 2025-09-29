@@ -382,24 +382,14 @@ export default function Eventset() {
 
   return (
     <>
-      <div className="min-h-screen pb-28 bg-white py-6 px-4 relative overflow-hidden">
-        {/* Background Effects */}
-        {/* <div
-          className="absolute inset-0 opacity-40"
-          style={{
-            backgroundImage:
-              "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f97316' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")"
-          }}
-        ></div> */}
-        <div className="absolute top-0 right-0 w-72 h-72 bg-gradient-to-br from-orange-300/20 to-pink-300/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-72 h-72 bg-gradient-to-tr from-purple-300/20 to-orange-300/20 rounded-full blur-3xl"></div>
-
+      <div className="min-h-screen pb-28 bg-amber-50 relative overflow-hidden">
+       
         <div className="max-w-2xl mx-auto relative z-10 ">
           {/* Professional Header */}
           <div className="text-center mb-8  bg-red-700 py-8 rounded-b-3xl">
          
-            <h1 className="text-3xl font-bold text-white mb-2">Events</h1>
-            <p className="text-amber-50 font-medium">Discover and join exciting events</p>
+            <h1 className="text-3xl font-bold text-white mb-2">Explore Events</h1>
+            <p className="text-amber-50 font-medium text-xl"> Join exciting events</p>
           </div>
 
           {/* Empty State - Updated Design */}
@@ -415,7 +405,7 @@ export default function Eventset() {
           )}
 
           {/* Events List */}
-          <div className="space-y-4">
+          <div className="space-y-4 px-5">
             {events.map((event, index) => {
               const imageUrl = event.image
                 ? `${phpInstance.defaults.baseURL}/${event.image}`

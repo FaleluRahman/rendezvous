@@ -19,7 +19,7 @@ function convertTo12Hour(time24: string) {
 }
 
 const Schedule = () => {
-  const [date, setDate] = useState<string>("05"); // Changed to string to match the date options
+  const [date, setDate] = useState<string>("02"); 
   const [stage, setStage] = useState<number>(1);
   const [schedule, setSchedule] = useState<any>([]);
   const [loading, setLoading] = useState<boolean>(false);
@@ -27,14 +27,17 @@ const Schedule = () => {
   // Fixed date mapping function
   const getDate = (dt: string) => {
     switch (dt) {
+      
+      case "02":
+        return "2025-10-02";
       case "03":
-        return "2025-10-03"; // Fixed to match October dates like in first file
+        return "2025-10-03"; 
       case "04":
         return "2025-10-04";
       case "05":
         return "2025-10-05";
       default:
-        return "2025-10-05";
+        return "2025-10-02";
     }
   };
 
@@ -78,6 +81,7 @@ const Schedule = () => {
                 rounded-lg w-11/12 py-2 m-auto"
           >
             {[
+              { date: "02", day: "Thu" },
               { date: "03", day: "Fri" },
               { date: "04", day: "Sat" },
               { date: "05", day: "Sun" },
@@ -100,7 +104,7 @@ const Schedule = () => {
 
           {/* Stage Section */}
           <div className="flex my-4 overflow-x-auto no-scrollbar w-11/12 py-2 m-auto bg-red-500 rounded-3xl">
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((stg) => ( // Added stages 9 and 10 to match first file
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((stg) => ( 
               <div
                 className={`${
                   stage === stg
