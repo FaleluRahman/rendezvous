@@ -12,7 +12,7 @@ const Filter = () => {
 
   return (
     <div>
-      <div className="bg-orange-50 py-5 w-full flex  justify-center font-gilroy">
+      <div className="bg-amber-50 py-5 w-full flex  justify-center font-gilroy">
         <div className="w-[90%] bg-white rounded-3xl flex flex-col pb-5">
           <div className="flex text-xs justify-between w-full">
             <h1 className="text-zinc-700 font-bold px-3 mt-1 pt-3 text-lg py-2 flex items-center">

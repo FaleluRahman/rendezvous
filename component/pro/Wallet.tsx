@@ -21,7 +21,7 @@ const Wallet = () => {
         const jamiaId = JSON.parse(student).jamiaNo;
         axios
           .get(
-            "http://localhost/appadmin-backend/qrscans/actions.php?api=b1daf1bbc7bbd214045af&ID=" +
+            "https://rend-application.abaqas.in/qrscans/actions.php?api=b1daf1bbc7bbd214045af&ID=" +
               jamiaId
           )
           .then((res: any) => {
@@ -41,7 +41,7 @@ const Wallet = () => {
     }
   }, [scan]);
   return (
-    <div className="bg-orange-50 pt-5 px-6 w-full flex pb-10 flex-col justify-center" id="collect">
+    <div className="bg-amber-50 pt-5 px-6 w-full flex pb-28 flex-col justify-center" id="collect">
       <div className="w-full relative bg-white rounded-3xl flex flex-col overflow-hidden  pb-5 mb-4">
         <div className="flex text-xs justify-between w-full">
           <h1 className="text-zinc-800 font-bold px-5 pt-3 text-lg  flex items-center">
@@ -79,7 +79,7 @@ const Wallet = () => {
         />
       </div>
 
-      <div className="w-full flex justify-center bg-orange-50  py-5">
+      {/* <div className="w-full flex justify-center bg-orange-50  py-5">
         <div className="w-full relative bg-white rounded-3xl flex flex-col overflow-hidden   pb-5 mb-16">
           <div className="text-zinc-700  flex-col flex w-full px-5 pt-5">
             <p className="font-bold text-[14px]">Collect More Points</p>
@@ -103,7 +103,7 @@ const Wallet = () => {
             alt=""
           />
         </div>
-      </div>
+      </div> */}
       {scan && <QrScan setScan={setScan} />}
       </div>
     );
