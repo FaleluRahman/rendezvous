@@ -104,7 +104,7 @@ function Campuspoints() {
     }
   }, [cat]);
   return (
-    <div className="bg-orange-50 flex flex-col h-fit pt-5 pb-10 ">
+    <div className="bg-amber-50 flex flex-col h-fit pt-5 pb-10 ">
       <div className="flex flex-col  justify-between items-end  w-full">
         {/* <h1 className="bg-red-700  rounded-lg w-fit px-2 font-semibold  text-white mb-5">Junior</h1> */}
         <div className="flex  gap-1 w-11/12 mx-auto overflow-x-auto">

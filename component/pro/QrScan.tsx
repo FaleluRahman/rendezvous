@@ -35,14 +35,14 @@ export default function QrScan({ setScan }: QrScanProps) {
       // Simple parsing for event=123 format
       let eventId: string | null = null;
       
-    if (typeof data === "string") {
-  const normalized = data.replace(/\s*=\s*/, "=").trim();
+      if (typeof data === "string") {
+        const normalized = data.replace(/\s*=\s*/, "=").trim();
 
-  if (normalized.startsWith("event=")) {
-    eventId = normalized.replace("event=", "").trim();
-    console.log("Extracted Event ID:", eventId);
-  }
-}
+        if (normalized.startsWith("event=")) {
+          eventId = normalized.replace("event=", "").trim();
+          console.log("Extracted Event ID:", eventId);
+        }
+      }
 
       if (!eventId) {
         throw new Error("Invalid QR code format. Expected format: event=123");
@@ -68,7 +68,6 @@ export default function QrScan({ setScan }: QrScanProps) {
       console.log("Response Data:", response.data);
       console.log("Response Status:", response.status);
 
-      // Fixed: Check response.data.success properly
       if (response.data && response.data.success === true) {
         let message = `Congratulations! You earned ${response.data.points} points`;
 
@@ -83,7 +82,6 @@ export default function QrScan({ setScan }: QrScanProps) {
 
         setTimeout(() => setScan(false), 2000);
       } else {
-        // Handle API returning success: false
         throw new Error(response.data?.message || "Failed to scan QR code");
       }
     } catch (error: any) {
@@ -92,7 +90,6 @@ export default function QrScan({ setScan }: QrScanProps) {
 
       let errorMessage = "Something went wrong while collecting points";
 
-      // Check for specific HTTP status codes
       if (error?.response?.status === 400) {
         errorMessage = error?.response?.data?.message || "Bad request. Please check QR code format.";
       } else if (error?.response?.status === 401) {
@@ -123,7 +120,8 @@ export default function QrScan({ setScan }: QrScanProps) {
   };
 
   const redeem = () => {
-    const validMerchants = ["pay=vr", "pay=cafe", "pay=papyrus", "pay=tajammol"];
+    // Updated valid merchants based on shops table
+    const validMerchants = ["pay=cafe", "pay=vr", "pay=papyrus", "pay=tajammul"];
 
     if (!data || !validMerchants.includes(data)) {
       setStatus({
@@ -177,13 +175,23 @@ export default function QrScan({ setScan }: QrScanProps) {
       setLoading(true);
       const jamiaId = JSON.parse(student).jamiaNo;
       
-      const merchant = data?.replace("pay=", "");
+      const merchant = data?.replace("pay=", "").trim().toLowerCase();
+
+      console.log("Payment Request Details:", {
+        rawData: data,
+        extractedMerchant: merchant,
+        student: jamiaId,
+        points
+      });
+
+      const apiUrl = `https://rend-application.abaqas.in/qrscans/payment.php?api=b1daf1bbc7bbd214045af&pay=${merchant}&student=${jamiaId}&points=${points}`;
+      console.log("Payment API URL:", apiUrl);
 
       const response = await axios.post(
-        `https://rend-application.abaqas.in/payment.php?api=b1daf1bbc7bbd214045af&pay=${merchant}&student=${jamiaId}&points=${points}`,
+        apiUrl,
         {},
         {
-          timeout: 10000,
+          timeout: 15000,
           headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
@@ -191,7 +199,9 @@ export default function QrScan({ setScan }: QrScanProps) {
         }
       );
 
-      console.log("Payment Response:", response.data);
+      console.log("Payment Response:", response);
+      console.log("Payment Response Data:", response.data);
+      console.log("Payment Response Status:", response.status);
 
       if (response?.data?.success) {
         setStatus({
@@ -204,9 +214,25 @@ export default function QrScan({ setScan }: QrScanProps) {
       }
     } catch (error: any) {
       console.error("Payment Error:", error);
+      console.error("Payment Error Response:", error.response);
+      console.error("Payment Error Message:", error.message);
+      console.error("Payment Error Code:", error.code);
+
       let errorMessage = "Payment processing failed. Please try again.";
 
-      if (error?.response?.data?.message) {
+      if (error?.response?.status === 400) {
+        errorMessage = error?.response?.data?.message || "Invalid payment request.";
+      } else if (error?.response?.status === 401) {
+        errorMessage = "Unauthorized. Please check API configuration.";
+      } else if (error?.response?.status === 404) {
+        errorMessage = "Payment endpoint not found. Check backend server.";
+      } else if (error?.response?.status >= 500) {
+        errorMessage = "Server error. Please try again later.";
+      } else if (error?.code === "ECONNABORTED") {
+        errorMessage = "Request timeout. Check your internet connection.";
+      } else if (error?.code === "ERR_NETWORK") {
+        errorMessage = "Network error. Ensure backend server is running at https://rend-application.abaqas.in";
+      } else if (error?.response?.data?.message) {
         errorMessage = error.response.data.message;
       } else if (error?.message) {
         errorMessage = error.message;
@@ -216,7 +242,7 @@ export default function QrScan({ setScan }: QrScanProps) {
         success: false,
         message: errorMessage,
       });
-      setTimeout(() => setScan(false), 3000);
+      setTimeout(() => setScan(false), 4000);
     } finally {
       setLoading(false);
     }
