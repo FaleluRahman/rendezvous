@@ -8,7 +8,7 @@ function Login() {
           <br />
           Login Now!
         </h2>
-        <p className="leading-tight font-bold text-zinc-400 pb-2 text-xs">
+        <p className="leading-tight font-bold text-zinc-800 pb-2 text-xs">
           {" "}
           Participants can Login to get more details about programmes.
         </p>
@@ -16,7 +16,7 @@ function Login() {
         {/* Student Login Button */}
         <div className="flex flex-col  text-center">
           <a
-            className="w-full bg-orange-200 text-gray-800 hover:bg-orange-600 hover:text-white py-2 rounded-lg mb-2 font-semibold transition duration-200"
+            className="w-full bg-blue-700 text-gray-50 hover:bg-blue-800 hover:text-white py-2 rounded-lg mb-2 font-semibold transition duration-200"
             href="/qrcode"
           >
             Students Login
@@ -29,7 +29,7 @@ function Login() {
             Having Problem to Login?
             <a
               href="https://wa.me/+918289882240"
-              className="text-blue-500 hover:underline ml-0.5"
+              className="text-blue-500 hover:underline ml-0.5 font-xl"
             >
               Contact
             </a>
@@ -37,35 +37,6 @@ function Login() {
         </div>
       </div>
 
-      {/* <section className='w-9/12 mx-auto flex   flex-col '>
-        
-        <div className='pt-40 pb-4'>
-            <p className='text-black text-left text-3xl font-bold'>Hey,<br/>
-            Login Now!</p>
-            <p className='opacity-80 w-10/12'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, rerum!</p>
-        </div>
-        <div  className='text-left px-1'>
-            <p className='text-sm font-medium '>login as a</p>
-                <div className='w-full  '>
-
-                    <a href="/qrcode"><div className='bg-white w-10/12 h-12 mb-1 flex items-center justify-center rounded-md cursor-pointer'>
-                        <PiStudentFill className='text-2xl' />
-                        <p className='px-1'>Student</p>
-        
-                    </div></a>
-                    <div id="reader" style={{ marginTop: "20px" }}></div>
-                    <div className='bg-white w-10/12 h-12 my-4 flex items-center justify-center rounded-md cursor-pointer'>
-                        
-                        <FaRegUser className='text-xl' />
-                        <p className='px-1'>Guest</p>
-
-        
-                    </div>
-                    
-                    
-                </div>
-        </div>
-      </section> */}
     </div>
   );
 }

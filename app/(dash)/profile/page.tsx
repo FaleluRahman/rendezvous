@@ -1,8 +1,10 @@
+
 import Navig from "@/component/footer/Navigation";
 import Login from "@/component/Log/Login";
 import Filter from "@/component/pro/Filter";
 import StudentsLogin from "@/component/pro/Logask";
 import Logout from "@/component/pro/Logout";
+import StudentProfilePage from "@/component/pro/Pdetails";
 import Pdetails from "@/component/pro/Pdetails";
 import Wallet from "@/component/pro/Wallet";
 import { isLogged } from "@/lib/auth";
@@ -16,9 +18,8 @@ const page = async () => {
       {/* <StudentsLogin/> */}
       {logged ? (
         <>
-          <Logout />
-          <Pdetails />
-          <Filter />
+          <StudentProfilePage/>
+          {/* <Filter /> */}
           <Wallet />
         </>
       ) : (

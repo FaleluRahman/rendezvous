@@ -104,16 +104,16 @@ function Campuspoints() {
     }
   }, [cat]);
   return (
-    <div className="bg-amber-50 flex flex-col h-fit pt-5 pb-10 ">
+    <div className="bg-gray-50 flex flex-col h-fit pt-5 pb-10 ">
       <div className="flex flex-col  justify-between items-end  w-full">
         {/* <h1 className="bg-red-700  rounded-lg w-fit px-2 font-semibold  text-white mb-5">Junior</h1> */}
         <div className="flex  gap-1 w-11/12 mx-auto overflow-x-auto">
-          {["Minor", "Premeir", "Subjunior", "Junior", "Senior"].map(
+          {["Minor", "Premeir", "SubJunior", "Junior", "Senior"].map(
             (item: any) => (
               <div
                 onClick={() => setCat(item)}
                 key={item}
-                className={` py-1 rounded-lg text-white text-xs text-center  w-full  my-4 ${
+                className={` py-1 px-2 rounded-lg text-white text-xs text-center  w-full  my-4 ${
                   cat == item
                     ? "bg-red-700 text-xs font-bold"
                     : " bg-zinc-500 font-sans"
@@ -168,8 +168,8 @@ function Campuspoints() {
           </button>
         </div>
       ) : (
-        <div className="text-2xl font-bold text-center text-red-500">
-          nothing found
+        <div className="text-xs font-semibold text-center text-gray-500">
+         Campus Points Not announced Yet
         </div>
       )}
 
