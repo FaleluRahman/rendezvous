@@ -120,7 +120,6 @@ export default function QrScan({ setScan }: QrScanProps) {
   };
 
   const redeem = () => {
-    // Updated valid merchants based on shops table
     const validMerchants = ["pay=cafe", "pay=vr", "pay=papyrus", "pay=tajammul"];
 
     if (!data || !validMerchants.includes(data)) {
