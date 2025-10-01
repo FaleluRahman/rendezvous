@@ -19,7 +19,7 @@ function convertTo12Hour(time24: string) {
 }
 
 const Schedule = () => {
-  const [date, setDate] = useState<string>("02"); 
+  const [date, setDate] = useState<string>("03"); 
   const [stage, setStage] = useState<number>(1);
   const [schedule, setSchedule] = useState<any>([]);
   const [loading, setLoading] = useState<boolean>(false);
@@ -28,8 +28,7 @@ const Schedule = () => {
   const getDate = (dt: string) => {
     switch (dt) {
       
-      case "02":
-        return "2025-10-02";
+     
       case "03":
         return "2025-10-03"; 
       case "04":
@@ -81,7 +80,6 @@ const Schedule = () => {
                 rounded-lg w-11/12 py-2 m-auto"
           >
             {[
-              { date: "02", day: "Thu" },
               { date: "03", day: "Fri" },
               { date: "04", day: "Sat" },
               { date: "05", day: "Sun" },
