@@ -398,9 +398,8 @@ const QrCodeScanner = () => {
   }, [scanResult, router]);
 
   return (
-    <div className="bg-orange-50 flex items-center justify-center flex-col py-10 min-h-screen text-center">
+    <div className="bg-gray-50 flex items-center justify-center flex-col py-10 min-h-screen text-center">
       {loading ? (
-        // Loading State - Clean Design
         <div className="bg-white rounded-3xl shadow-lg p-8 text-center max-w-md w-full mx-4">
           <h2 className="text-zinc-700 text-xl font-semibold mb-4">Authenticating Your Access...</h2>
           <div className="flex items-center justify-center">
@@ -408,11 +407,10 @@ const QrCodeScanner = () => {
           </div>
         </div>
       ) : (
-        // Scanner State - Clean Design
         <div className="relative max-w-md w-full mx-4">
           <div className="bg-white rounded-3xl shadow-lg overflow-hidden">
             {/* Header */}
-            <div className="bg-gradient-to-r from-black to-red-700 p-6 text-white text-center">
+            <div className="bg-gradient-to-r from-violet-900 to-blue-700 p-6 text-white text-center">
               <h2 className="font-bold text-zinc-50 text-xl">Scan your Id card</h2>
             </div>
             
@@ -430,7 +428,7 @@ const QrCodeScanner = () => {
             <div className="p-6 pt-0">
               <a
                 href="/login"
-                className="p-2 px-5 font-bold text-zinc-50 rounded-xl bg-red-500 hover:bg-red-600 transition-colors inline-block"
+                className="p-2 px-5 font-bold text-zinc-50 rounded-xl bg-blue-800 hover:bg-blue-800 transition-colors inline-block"
               >
                 Back to login
               </a>

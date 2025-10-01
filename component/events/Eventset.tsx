@@ -382,14 +382,14 @@ export default function Eventset() {
 
   return (
     <>
-      <div className="min-h-screen pb-28 bg-amber-50 relative overflow-hidden">
+      <div className="min-h-screen pb-28 bg-gray-50 relative overflow-hidden">
        
         <div className="max-w-2xl mx-auto relative z-10 ">
           {/* Professional Header */}
-          <div className="text-center mb-8  bg-red-700 py-8 rounded-b-3xl">
+          <div className="text-center mb-8  bg-gradient-to-r from-red-800 to-red-600 py-8 rounded-b-3xl">
          
             <h1 className="text-3xl font-bold text-white mb-2">Explore Events</h1>
-            <p className="text-amber-50 font-medium text-xl"> Join exciting events</p>
+            {/* <p className="text-amber-50 font-medium text-xl"> Join exciting events</p> */}
           </div>
 
           {/* Empty State - Updated Design */}

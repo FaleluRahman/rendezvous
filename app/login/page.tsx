@@ -4,7 +4,7 @@ export const dynamic = "force-dynamic";
 
 const page = () => {
   return (
-    <div className='flex  items-center justify-center h-screen bg-orange-50'>
+    <div className='flex  items-center justify-center h-screen bg-gray-50'>
         <Login />
     </div>
   )

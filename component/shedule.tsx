@@ -23,12 +23,11 @@ const Schedule = () => {
   const [stage, setStage] = useState<number>(1);
   const [schedule, setSchedule] = useState<any>([]);
   const [loading, setLoading] = useState<boolean>(false);
+  const [availableStages, setAvailableStages] = useState<number[]>([]);
 
   // Fixed date mapping function
   const getDate = (dt: string) => {
     switch (dt) {
-      
-     
       case "03":
         return "2025-10-03"; 
       case "04":
@@ -64,19 +63,51 @@ const Schedule = () => {
     }
   }, [date, stage]);
 
+  // Fetch available stages for the selected date
+  useEffect(() => {
+    if (date) {
+      const fetchStagesPromises = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((stg) =>
+        axios
+          .get(
+            "https://rend-application.abaqas.in/schedule/actions.php?api=b1daf1bbc7bbd214045af&stage=" +
+              stg +
+              "&date=" +
+              getDate(date)
+          )
+          .then((res) => {
+            if (res?.data?.data && res.data.data.length > 0) {
+              return stg;
+            }
+            return null;
+          })
+          .catch(() => null)
+      );
+
+      Promise.all(fetchStagesPromises).then((stages) => {
+        const validStages = stages.filter((s) => s !== null) as number[];
+        setAvailableStages(validStages);
+        
+        // If current stage is not available, switch to first available stage
+        if (validStages.length > 0 && !validStages.includes(stage)) {
+          setStage(validStages[0]);
+        }
+      });
+    }
+  }, [date]);
+
   return (
     <section
-      className="w-full h-full bg-zinc-50 min-h-screen shadow-[0_2px_10px_rgba(0,0,0,0.13)] box-border
+      className="w-full h-full bg-gray-50 min-h-screen shadow-[0_2px_10px_rgba(0,0,0,0.13)] box-border
             transition-all ease-in-out duration-500 pb-20"
     >
       <div>
-        <div className="bg-gradient-to-r from-red-700 to-red-600 pb-1 rounded-bl-3xl rounded-br-3xl">
-          <h1 className="font-bold text-3xl py-2 w-11/12 text-center text-white">
-            Schedule
+        <div className="bg-gradient-to-r from-red-700 to-red-800 pb-1 rounded-bl-3xl rounded-br-3xl">
+          <h1 className="font-bold font-sans text-3xl  py-2 text-center text-white">
+            Program Schedule
           </h1>
 
           <div
-            className="flex items-center justify-evenly text-center mt-4 text-black bg-gradient-to-r from-red-600 to-red-500
+            className="flex items-center justify-evenly text-center mt-4 text-black bg-gradient-to-r from-red-800 to-red-700
                 rounded-lg w-11/12 py-2 m-auto"
           >
             {[
@@ -101,8 +132,8 @@ const Schedule = () => {
           </div>
 
           {/* Stage Section */}
-          <div className="flex my-4 overflow-x-auto no-scrollbar w-11/12 py-2 m-auto bg-red-500 rounded-3xl">
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((stg) => ( 
+          <div className="flex my-4 overflow-x-auto no-scrollbar w-11/12 py-2 m-auto bg-red-700 rounded-3xl">
+            {availableStages.map((stg) => ( 
               <div
                 className={`${
                   stage === stg

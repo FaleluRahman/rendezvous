@@ -21,7 +21,7 @@ const Navbar = () => {
 
     ]
   return (
-    <div className=' h-20 bg-red-500 fixed bottom-0 '>
+    <div className=' h-20 bg-red-700 fixed bottom-0 '>
       
     </div>
   )
