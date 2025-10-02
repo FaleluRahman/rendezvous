@@ -110,7 +110,7 @@ const Schedule = () => {
   return (
     <section
       className="w-full h-full bg-gray-50 min-h-screen shadow-[0_2px_10px_rgba(0,0,0,0.13)] box-border
-            transition-all ease-in-out duration-500 pb-20"
+            transition-all ease-in-out duration-500 pb-28"
     >
       <div>
         <div className="bg-gradient-to-br from-red-700 via-rose-600 to-rose-700 pb-1 rounded-bl-3xl rounded-br-3xl">
