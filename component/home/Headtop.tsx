@@ -5,8 +5,8 @@ import Link from "next/link"; // Import the Link component for navigation
 
 const Headtop = () => {
   return (
-    <div className="overflow-hidden flex w-full z-20 sticky top-0">
-      <div className="flex w-full justify-between h-10  bg-white items-center">
+    <div className="overflow-hidden flex w-full z-20 sticky top-0 shadow-md">
+      <div className="flex w-full justify-between h-20  bg-white items-center">
         {/* Logo */}
         <img className="h-10 py-1.5 px-5" src="/image/Primary_Logo.png" alt="Logo 1" />
 
