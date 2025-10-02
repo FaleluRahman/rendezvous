@@ -17,14 +17,15 @@ const HomePage = () => {
   
   // Stage name mapping
   const stageNames: { [key: number]: string } = {
-    1: "Habitus",
-    2: "Veritas",
-    3: "Zenith",
+ 1: "Zenith",
+    2: "Habitus",
+    3: "Chrysalis",
     4: "Satori",
-    5: "Haqiqat",
-    6: "Falah",
-    7: "Noor",
-    8: "Sabr",
+    5: "Oblivion",
+    6: "Lumora",
+    7: "Vertex",
+    8: "Nexora",
+    9: "Auralith",
   };
   
   // Helper function to format stage
@@ -98,14 +99,14 @@ const HomePage = () => {
             // Format the stage (will return empty string if no data)
             const formattedStage = formatStage(stage);
 
-            console.log(`✅ Stage extracted for ${program.name}: ${formattedStage || '(blank)'}`);
+            console.log(` Stage extracted for ${program.name}: ${formattedStage || '(blank)'}`);
 
             return {
               ...program,
               stage: formattedStage,
             };
           } catch (err) {
-            console.error(`❌ Error fetching schedule for ${program.name}:`, err);
+            console.error(` Error fetching schedule for ${program.name}:`, err);
             return {
               ...program,
               stage: "", // Empty string for errors
