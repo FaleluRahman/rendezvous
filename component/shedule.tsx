@@ -27,14 +27,15 @@ const Schedule = () => {
   const [availableStages, setAvailableStages] = useState<number[]>([]);
 
   const stageNames: { [key: number]: string } = {
-    1: "Habitus",
-    2: "Veritas",
-    3: "Zenith",
+    1: "Zenith",
+    2: "Habitus",
+    3: "Chrysalis",
     4: "Satori",
-    5: "Haqiqat",
-    6: "Falah",
-    7: "Noor",
-    8: "Sabr",
+    5: "Oblivion",
+    6: "Lumora",
+    7: "Vertex",
+    8: "Nexora",
+    9: "Auralith",
   };
 
   // Fixed date mapping function
@@ -119,7 +120,7 @@ const Schedule = () => {
           </h1>
 
           <div
-            className="flex items-center justify-evenly text-center mt-4 text-black bg-gradient-to-r from-red-800 to-red-700
+            className="flex items-center justify-evenly text-center mt-4 text-black bg-gradient-to-br from-rose-700 via-rose-600 to-red-700
                 rounded-lg w-11/12 py-2 m-auto"
           >
             {[
@@ -144,7 +145,7 @@ const Schedule = () => {
           </div>
 
           {/* Stage Section */}
-      <div className="flex my-4 overflow-x-auto no-scrollbar w-11/12 py-2 m-auto bg-red-700 rounded-3xl">
+      <div className="flex my-4 overflow-x-auto no-scrollbar w-11/12 py-2 m-auto bg-gradient-to-br from-rose-700 via-rose-600 to-red-700 rounded-3xl">
             {availableStages.map((stg) => ( 
               <div
                 className={`${
@@ -195,8 +196,16 @@ const Schedule = () => {
                 <p className="text-xs font-medium uppercase">{item.category}</p>
                 <p className="text-sm font-semibold text-zinc-600">{item.program_name}</p>
               </div>
+
+             
             </section>
+
+           
           ))}
+
+            <div className="col-span-5 px-10 py-2  text-xs text-center text-red-800">
+                <p><span className="font-semibold">NB:</span>The Schedule is subject to change and the complete authority rests under the jurisdiction of the <span className="font-semibold">Festival Collective</span>.</p>
+              </div>
         </div>
       </div>
     </section>
