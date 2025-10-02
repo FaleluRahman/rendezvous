@@ -35,7 +35,7 @@ function UpComing({ programs }: { programs: any[] }) {
 
                 <p className="text-base font-semibold text-white  rounded-md  flex justify-between gap-1 w-full pt-1.5">
 
-                  <span >Stage {prgrm.stage}</span>
+                  <span > {prgrm.stage}</span>
                   <span className="capitalize">{prgrm.status}</span>
                 </p>
                 <svg

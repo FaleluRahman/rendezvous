@@ -23,7 +23,19 @@ const Schedule = () => {
   const [stage, setStage] = useState<number>(1);
   const [schedule, setSchedule] = useState<any>([]);
   const [loading, setLoading] = useState<boolean>(false);
+  
   const [availableStages, setAvailableStages] = useState<number[]>([]);
+
+  const stageNames: { [key: number]: string } = {
+    1: "Habitus",
+    2: "Veritas",
+    3: "Zenith",
+    4: "Satori",
+    5: "Haqiqat",
+    6: "Falah",
+    7: "Noor",
+    8: "Sabr",
+  };
 
   // Fixed date mapping function
   const getDate = (dt: string) => {
@@ -98,7 +110,7 @@ const Schedule = () => {
   return (
     <section
       className="w-full h-full bg-gray-50 min-h-screen shadow-[0_2px_10px_rgba(0,0,0,0.13)] box-border
-            transition-all ease-in-out duration-500 pb-20"
+            transition-all ease-in-out duration-500 pb-28"
     >
       <div>
         <div className="bg-gradient-to-br from-red-700 via-rose-600 to-rose-700 pb-1 rounded-bl-3xl rounded-br-3xl">
@@ -132,7 +144,7 @@ const Schedule = () => {
           </div>
 
           {/* Stage Section */}
-          <div className="flex my-4 overflow-x-auto no-scrollbar w-11/12 py-2 m-auto bg-red-700 rounded-3xl">
+      <div className="flex my-4 overflow-x-auto no-scrollbar w-11/12 py-2 m-auto bg-red-700 rounded-3xl">
             {availableStages.map((stg) => ( 
               <div
                 className={`${
@@ -143,7 +155,7 @@ const Schedule = () => {
                 onClick={() => setStage(stg)}
                 key={stg}
               >
-                Stage {stg}
+                {stageNames[stg] || `Stage ${stg}`}
               </div>
             ))}
           </div>
