@@ -14,8 +14,8 @@ function UpComing({ programs }: { programs: any[] }) {
       <div className="w-full flex flex-col items-end">
         <nav className="h-52 flex flex-row w-full overflow-x-auto no-scrollbar  mt-2  box-border snap-x snap-mandatory touch-pan-x">
           {programs
-            //  ?.sort((a, b) => a.stage - b.stage)
-            // .filter((prgrmm) => prgrmm.Stage)
+             ?.sort((a, b) => a.stage - b.stage)
+            .filter((prgrmm) => prgrmm.Stage)
             .map((prgrm, index) => (
               <div
                 key={index}

@@ -16,10 +16,10 @@ function Login() {
         {/* Student Login Button */}
         <div className="flex flex-col  text-center">
           <a
-            className="w-full bg-blue-700 text-gray-50 hover:bg-blue-800 hover:text-white py-2 rounded-lg mb-2 font-semibold transition duration-200"
+            className="w-full bg-red-700 text-gray-50 hover:bg-red-800 hover:text-white py-2 rounded-lg mb-2 font-semibold transition duration-200"
             href="/qrcode"
           >
-            Students Login
+            Login
           </a>
 
         </div>
@@ -29,7 +29,7 @@ function Login() {
             Having Problem to Login?
             <a
               href="https://wa.me/+918289882240"
-              className="text-blue-500 hover:underline ml-0.5 font-xl"
+              className="text-red-500 hover:underline ml-0.5 font-xl"
             >
               Contact
             </a>

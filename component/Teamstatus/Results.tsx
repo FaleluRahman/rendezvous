@@ -188,6 +188,7 @@
 // };
 
 // export default ItemResult;
+
 "use client";
 import React, { useEffect, useState } from "react";
 import { IoIosArrowDropdown } from "react-icons/io";
@@ -245,33 +246,13 @@ const ItemResult = () => {
       : true
   );
 
-  const getRankStyle = (rank: number) => {
-    switch (rank) {
-      case 1:
-        return {
-          bg: "bg-gradient-to-br from-yellow-400 via-amber-400 to-orange-400",
-          cardBg: "bg-white/80",
-          text: "text-gray-900"
-        };
-      case 2:
-        return {
-          bg: "bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500",
-          cardBg: "bg-white/80",
-          text: "text-gray-900"
-        };
-      case 3:
-        return {
-          bg: "bg-gradient-to-br from-green-500 via-emerald-500 to-teal-500",
-          cardBg: "bg-white/80",
-          text: "text-gray-900"
-        };
-      default:
-        return {
-          bg: "bg-gradient-to-br from-gray-600 to-gray-800",
-          cardBg: "bg-white/80",
-          text: "text-gray-900"
-        };
-    }
+  const getRankImage = (rank: any) => {
+    const placeImage: any = {
+      1: "/image/1.png",
+      2: "/image/2.png",
+      3: "/image/3.png",
+    };
+    return placeImage[Number(rank)] || null;
   };
 
   if (loading) {
@@ -307,7 +288,7 @@ const ItemResult = () => {
         </div>
       </div>
 
-      {/* Results Count */}
+      {/* Results Count
       <div className="w-full max-w-md mb-6">
         <div className="flex items-center justify-between">
           <h2 className="text-xl font-bold text-gray-900">
@@ -317,7 +298,7 @@ const ItemResult = () => {
             {filteredPrograms.length} {filteredPrograms.length === 1 ? 'result' : 'results'}
           </span>
         </div>
-      </div>
+      </div> */}
 
       {/* Programs List - Professional Cards */}
       <div className="w-full max-w-md space-y-3">
@@ -332,10 +313,10 @@ const ItemResult = () => {
             >
               <div className="flex items-start justify-between gap-3">
                 <div className="flex-1 min-w-0">
-                  <span className="inline-block text-[10px] font-semibold text-red-600 uppercase tracking-wider bg-red-50 px-2.5 py-1 rounded-md mb-2.5">
+                  <span className="inline-block text-[10px] font-semibold text-gray-600 uppercase tracking-wider bg-gray-50 px-2.5 py-1 rounded-md mb-2.5">
                     {program.category}
                   </span>
-                  <h3 className="text-base font-semibold leading-snug text-gray-900 break-words">
+                  <h3 className="text-base font-semibold leading-snug text-red-800 break-words">
                     {program.name}
                   </h3>
                 </div>
@@ -351,16 +332,11 @@ const ItemResult = () => {
 
             {/* Expanded Results Section */}
             {expandedItem === program.id && (
-              <div className="relative px-5 pb-5 bg-gradient-to-br from-pink-100 via-purple-100 to-indigo-100 overflow-hidden">
-                {/* Decorative Elements */}
-                <div className="absolute top-0 left-0 w-32 h-32 bg-pink-200/30 rounded-full blur-3xl"></div>
-                <div className="absolute bottom-0 right-0 w-40 h-40 bg-purple-200/30 rounded-full blur-3xl"></div>
-                <div className="absolute top-1/2 right-1/4 w-24 h-24 bg-indigo-200/20 rounded-full blur-2xl"></div>
-                
+              <div className="relative px-5 pb-5 bg-white overflow-hidden">
                 <div className="relative pt-4">
                   {!result ? (
-                    <div className="text-center py-10 px-4 bg-white/60 backdrop-blur-sm rounded-xl">
-                      <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-white/80 shadow-sm flex items-center justify-center">
+                    <div className="text-center py-10 px-4 bg-white backdrop-blur-sm rounded-xl">
+                      <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-white shadow-sm flex items-center justify-center">
                         <Award className="w-8 h-8 text-gray-400" />
                       </div>
                       <p className="text-gray-900 font-semibold text-base mb-1">Results pending</p>
@@ -379,21 +355,25 @@ const ItemResult = () => {
                             rst.rank == "1" || rst.rank == "2" || rst.rank == "3"
                         )
                         .map((prize: any, index: number) => {
-                          const style = getRankStyle(prize.rank);
+                          const rankImage = getRankImage(prize.rank);
                           return (
                             <div
                               key={`${prize.id}-${index}`}
-                              className={`flex items-center gap-3.5 p-4 rounded-xl ${style.cardBg} shadow-sm`}
+                              className="flex items-center gap-3.5 p-4 rounded-xl bg-white shadow-sm"
                             >
-                              <div className={`${style.bg} w-12 h-12 rounded-xl flex items-center justify-center text-base font-bold shadow-md flex-shrink-0`}>
-                                <span className="text-white">{prize.rank}</span>
-                              </div>
+                              {rankImage && (
+                                <img 
+                                  src={rankImage} 
+                                  alt={`Rank ${prize.rank}`}
+                                  className="w-12 h-12 rounded-xl object-contain flex-shrink-0"
+                                />
+                              )}
                               
                               <div className="flex-1 min-w-0">
-                                <p className="text-sm font-semibold text-gray-900 leading-tight mb-1">
+                                <p className="text-sm font-semibold text-gray-900 leading-tight ">
                                   {prize.student}
                                 </p>
-                                <p className="text-xs text-gray-600 font-medium">
+                                <p className="text-xs text-gray-600 font-semibold">
                                   {prize.team}
                                 </p>
                               </div>

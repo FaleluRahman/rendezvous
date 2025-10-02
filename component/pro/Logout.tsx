@@ -11,7 +11,7 @@ const Logout = () => {
     const router=useRouter()
   return (
     <div className=' bg-gray-50 flex w-full justify-end pr-5 pt-5'>
-              <button className="bg-gradient-to-r from-red-700 to-red-600 px-2 py-0.5 rounded-xl text-white font-bold flex"
+              <button className="bg-gradient-to-br from-red-700 via-rose-600 to-rose-700 px-2 py-0.5 rounded-xl text-white font-bold flex"
               onClick={() => {
                 Cookies.remove("student");
                 localStorage.removeItem('programsF')
