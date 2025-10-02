@@ -5,118 +5,85 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 function Campuspoints() {
-  const minor = [
-    { rank: 1, campus: "Markaz Garden", point: 120 },
-    { rank: 2, campus: "Markaz Garden", point: 100 },
-    { rank: 3, campus: "Markaz Garden", point: 90 },
-    { rank: 4, campus: "Darul Hidaya Campus", point: 80 },
-    { rank: "05", campus: "Isra Vatanappally", point: 70 },
-    { rank: "06", campus: "Ashabul Badr", point: 50 },
-    { rank: "07", campus: "Baithul Izza Narikkuni", point: 40 },
-    { rank: "08", campus: "Shuhada Edu", point: 30 },
-    { rank: "09", campus: "Markaz Al Munawara", point: 20 },
-    { rank: 10, campus: "Markazunnajath", point: 10 },
-  ];
-
-  const premeir = [
-    { rank: 1, campus: "Imam Rabbani Kanthapuram", point: 140 },
-    { rank: 2, campus: "Imam Rabbani Kanthapuram", point: 120 },
-    { rank: 3, campus: "Imam Rabbani Kanthapuram", point: 100 },
-    { rank: "04", campus: "Darul Hidaya Campus", point: 80 },
-    { rank: "05", campus: "Isra Vatanappally", point: 70 },
-    { rank: "06", campus: "Ashabul Badr", point: 50 },
-    { rank: "07", campus: "Baithul Izza Narikkuni", point: 40 },
-    { rank: "08", campus: "Shuhada Edu", point: 30 },
-    { rank: "09", campus: "Markaz Al Munawara", point: 20 },
-    { rank: 10, campus: "Markazunnajath", point: 10 },
-  ];
-
-  const Subjunior = [
-    { rank: 1, campus: "Imam Shafi Busthanabad", point: 140 },
-    { rank: 2, campus: "Imam Shafi Busthanabad", point: 120 },
-    { rank: 3, campus: "Imam Shafi Busthanabad", point: 100 },
-    { rank: "4", campus: "Imam Shafi Busthanabad", point: 80 },
-    { rank: "05", campus: "Isra Vatanappally", point: 70 },
-    { rank: "06", campus: "Ashabul Badr", point: 50 },
-    { rank: "07", campus: "Baithul Izza Narikkuni", point: 40 },
-    { rank: "08", campus: "Shuhada Edu", point: 30 },
-    { rank: "09", campus: "Markaz Al Munawara", point: 20 },
-    { rank: 10, campus: "Markazunnajath", point: 10 },
-  ];
-
-  const Junior = [
-    { rank: 1, campus: "Isra Vatanappally", point: 140 },
-    { rank: 2, campus: "Isra Vatanappally", point: 120 },
-    { rank: 3, campus: "Isra Vatanappally", point: 100 },
-    { rank: "04", campus: "Imam Shafi Busthanabad", point: 80 },
-    { rank: "05", campus: "Isra Vatanappally", point: 70 },
-    { rank: "06", campus: "Ashabul Badr", point: 50 },
-    { rank: "07", campus: "Baithul Izza Narikkuni", point: 40 },
-    { rank: "08", campus: "Shuhada Edu", point: 30 },
-    { rank: "09", campus: "Markaz Al Munawara", point: 20 },
-    { rank: 10, campus: "Markazunnajath", point: 10 },
-  ];
-
-  const senior = [
-    { rank: 1, campus: "Baithul Izza Narikkuni", point: 140 },
-    { rank: 2, campus: "Baithul Izza Narikkuni", point: 120 },
-    { rank: 3, campus: "Baithul Izza Narikkuni", point: 100 },
-    { rank: "04", campus: "Imam Shafi Busthanabad", point: 80 },
-    { rank: "05", campus: "Isra Vatanappally", point: 70 },
-    { rank: "06", campus: "Ashabul Badr", point: 50 },
-    { rank: "07", campus: "Baithul Izza Narikkuni", point: 40 },
-    { rank: "08", campus: "Shuhada Edu", point: 30 },
-    { rank: "09", campus: "Markaz Al Munawara", point: 20 },
-    { rank: 10, campus: "Markazunnajath", point: 10 },
-  ];
-
   const placeImage: any = {
     1: "/image/1.png",
     2: "/image/2.png",
     3: "/image/3.png",
   };
+  
   const [cat, setCat] = useState("Minor");
   const [view, setView] = useState(false);
   const [after, setAfter] = useState(0);
-  const [results, setResults] = useState<any[] | null>(null); // State to toggle full data
+  const [results, setResults] = useState<any[] | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
   useEffect(() => {
-    
     if (cat) {
+      setLoading(true);
+      setError(null);
+      
       axios
         .get(
-          "https://malikoptics.abaqas.in/workspace-backend/programs/syncCampusResult.php?category=" +
-            cat
+          `https://rend-application.abaqas.in/campus_points/actions.php?category=${cat}`
         )
         .then((res) => {
-          if (res?.data?.data) {
-            setAfter(res.data.data.after);
-            setResults(JSON.parse(res.data.data.result ?? "[]"));
+          if (res?.data?.success && res?.data?.data) {
+            setAfter(res.data.data.after || 0);
+            setResults(res.data.data.results || []);
           } else {
             setAfter(0);
             setResults([]);
+            setError(res.data.message || "No data available");
           }
         })
         .catch((err) => {
           setAfter(0);
           setResults([]);
-          console.log(err);
+          setError("Failed to fetch data. Please try again.");
+          console.error(err);
+        })
+        .finally(() => {
+          setLoading(false);
         });
     }
   }, [cat]);
+
+  // Get total programs count for the current category
+  const getTotalProgramsCount = () => {
+    return programs.filter((prgrm) =>
+      cat === "premier"
+        ? prgrm.category === "premier"
+        : prgrm.category === cat.toLowerCase()
+    ).length;
+  };
+
+  // Determine if it's final status or showing partial results
+  const getStatusText = () => {
+    const totalPrograms = getTotalProgramsCount();
+    if (after === 0 || totalPrograms <= after) {
+      return "Final Status";
+    }
+    return `After ${after} Results`;
+  };
+
   return (
-    <div className="bg-gray-50 flex flex-col h-fit pt-5 pb-10 ">
-      <div className="flex flex-col  justify-between items-end  w-full">
-        {/* <h1 className="bg-red-700  rounded-lg w-fit px-2 font-semibold  text-white mb-5">Junior</h1> */}
-        <div className="flex  gap-1 w-11/12 mx-auto overflow-x-auto">
-          {["Minor", "Premeir", "SubJunior", "Junior", "Senior"].map(
+    <div className="bg-gray-50 flex flex-col h-fit pt-4 pb-10 px-5">
+      <div className="flex flex-col justify-between items-end w-full">
+        {/* Category Selection Buttons */}
+        <div className="flex gap-1 w-11/12 mx-auto overflow-x-auto">
+          {["Minor", "Premier", "SubJunior", "Junior", "Senior"].map(
             (item: any) => (
               <div
-                onClick={() => setCat(item)}
+                onClick={() => {
+                  setCat(item);
+                  setView(false); // Reset view when changing category
+                }}
                 key={item}
-                className={` py-1 px-2 rounded-lg text-white text-xs text-center  w-full  my-4 ${
-                  cat == item
+                className={`py-1 px-2 rounded-lg text-white text-xs text-center w-full my-4 cursor-pointer ${
+                  cat === item
                     ? "bg-red-700 text-xs font-bold"
-                    : " bg-zinc-500 font-sans"
+                    : "bg-zinc-500 font-sans"
                 }`}
               >
                 {item}
@@ -125,60 +92,72 @@ function Campuspoints() {
           )}
         </div>
       </div>
-      {results && results.length !== 0 ? (
-        <div className=" flex flex-col gap-1">
-          <h3 className="text-2xl font-bold text-center text-zinc-700">
-            {programs.filter((prgrm) =>cat=="Premeir" ? prgrm.category == "premier": prgrm.category == cat.toLowerCase())
-              .length >= after
-              ? "Final Status"
-              : `After ${after} Results`}
+
+      {/* Loading State */}
+      {loading && (
+        <div className="text-center text-gray-600 font-semibold py-8">
+          Loading...
+        </div>
+      )}
+
+      {/* Error State */}
+      {error && !loading && (
+        <div className="text-center text-red-600 font-semibold py-8">
+          {error}
+        </div>
+      )}
+
+      {/* Results Display */}
+      {!loading && results && results.length !== 0 ? (
+        <div className="flex flex-col gap-1">
+          <h3 className="text-2xl font-bold text-center text-red-700">
+            {getStatusText()}
           </h3>
+
+          {/* Top 3 Results */}
           {results.slice(0, 3).map((item: any, index: number) => (
             <div
               key={index}
               className="p-3 rounded-xl shadow-md bg-white flex items-center text-zinc-700 justify-between px-5"
             >
               <img src={placeImage[index + 1]} alt="" className="h-8" />
-              <p className="font-bold  ">{item.campus}</p>
+              <p className="font-bold align-middle text-center">{item.campus}</p>
               <p className="font-bold">{item.points}</p>
             </div>
           ))}
 
-          {/* Toggle Button */}
+          {/* Remaining Results (when expanded) */}
           {view &&
             results.slice(3).map((item: any, index: number) => (
               <div
                 key={index}
-                className="p-3 rounded-xl shadow-md bg-white flex items-center  text-zinc-700 justify-between px-5"
+                className="p-3 rounded-xl shadow-md bg-white flex items-center text-zinc-700 justify-between px-5"
               >
                 <p className="bg-red-800 text-center h-8 w-8 py-1 px-2 text-white rounded-full font-semibold">
                   {index + 4}
                 </p>
-                <p className="font-medium text-zinc-700 ">{item.campus}</p>
-                <p className="font-medium">{item.points}</p>
+                <p className="font-semibold text-zinc-700 align-middle text-center">{item.campus}</p>
+                <p className="font-semibold">{item.points}</p>
               </div>
             ))}
 
-          {/* Toggle Button */}
-          <button
-            className="bg-red-700 rounded-xl text-white font-bold font-sans py-2 mt-2"
-            onClick={() => setView(!view)}
-          >
-            {!view ? "View More" : "View Less"}
-          </button>
+          {/* Toggle Button - Only show if more than 3 results */}
+          {results.length > 3 && (
+            <button
+              className="bg-red-700 rounded-xl text-white font-bold font-sans py-2 mt-2"
+              onClick={() => setView(!view)}
+            >
+              {!view ? "View More" : "View Less"}
+            </button>
+          )}
         </div>
       ) : (
-        <div className="text-xs font-semibold text-center text-gray-500">
-         Campus Points Not announced Yet
-        </div>
+        !loading && !error && (
+          <div className="text-xs font-semibold text-center text-gray-500">
+            Campus Points Not announced Yet
+          </div>
+        )
       )}
-
-      {/* {cat} */}
-      {/* <div className=" flex w-full justify-end px-1">
-        <h1 className="bg-red-700 mt-5 flex rounded-lg w-fit px-2 items-end font-semibold text-white mb-5">
-          After 50
-        </h1>
-        </div> */}
     </div>
   );
 }

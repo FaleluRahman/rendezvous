@@ -101,7 +101,7 @@ const Schedule = () => {
             transition-all ease-in-out duration-500 pb-20"
     >
       <div>
-        <div className="bg-gradient-to-r from-red-700 to-red-800 pb-1 rounded-bl-3xl rounded-br-3xl">
+        <div className="bg-gradient-to-br from-red-700 via-rose-600 to-rose-700 pb-1 rounded-bl-3xl rounded-br-3xl">
           <h1 className="font-bold font-sans text-3xl  py-2 text-center text-white">
             Program Schedule
           </h1>

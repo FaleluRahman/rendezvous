@@ -343,17 +343,19 @@ export default function Eventset() {
     "Edu Login",
     "WriteWell Clinic",
     "Pro Chat",
-    "Tranquil Wellness Hub"
+    "Mind Wellness Cliinic",
+    "Science Orbit"
   ] as const;
   type EventType = typeof eventTypes[number];
 
   const getEventPoints = (type: string): number => {
     const points: Record<EventType, number> = {
-      "Expert Convos": 14,
-      "Edu Login": 14,
-      "WriteWell Clinic": 10,
-      "Pro Chat": 6,
-      "Tranquil Wellness Hub": 10,
+    "Expert Convos": 7,
+        "Edu Login": 7,
+        "WriteWell Clinic": 5,
+        "Pro Chat": 3,
+        "Mind Wellness Cliinic": 5,
+"Science Orbit":7 ,
     };
     return (type in points ? points[type as EventType] : 0);
   };
@@ -378,7 +380,7 @@ export default function Eventset() {
   };
 
   // Single consistent gradient for all events
-  const eventGradient = "from-zinc-800 to-red-600";
+  const eventGradient = "bg-gradient-to-br from-red-700 via-rose-600 to-rose-700";
 
   return (
     <>
@@ -386,7 +388,7 @@ export default function Eventset() {
        
         <div className="max-w-2xl mx-auto relative z-10 ">
           {/* Professional Header */}
-          <div className="text-center mb-8  bg-gradient-to-r from-red-800 to-red-600 py-8 rounded-b-3xl">
+          <div className="text-center mb-8  bg-gradient-to-br from-red-700 via-rose-600 to-rose-700 py-8 rounded-b-3xl">
          
             <h1 className="text-3xl font-bold text-white mb-2">Explore Events</h1>
             {/* <p className="text-amber-50 font-medium text-xl"> Join exciting events</p> */}
@@ -472,17 +474,17 @@ export default function Eventset() {
                   {isExpanded && (
                     <div className="px-5 pb-4 animate-in slide-in-from-top-2 duration-300">
                       {/* Image */}
-                      {event.image && (
+                     {event.image && (
                         <div className="relative mb-4 group-hover:scale-[1.02] transition-transform duration-500">
                           <img
-                            className="rounded-xl w-full h-48 sm:h-56 object-cover shadow-lg"
+                            className="rounded-xl w-full h-auto object-contain shadow-lg"
                             src={imageUrl}
                             alt={event.title}
                             onError={(e) => {
                               e.currentTarget.src = "/api/placeholder/400/300";
                             }}
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-xl"></div>
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-xl pointer-events-none"></div>
                         </div>
                       )}
 
@@ -502,7 +504,7 @@ export default function Eventset() {
                             <div className="w-8 h-8 bg-green-500/10 rounded-full flex items-center justify-center">
                               <Coins className="w-4 h-4 text-green-600" />
                             </div>
-                            <span className="font-semibold text-green-800 text-sm">Event Points</span>
+                            <span className="font-semibold text-green-800 text-sm"> Glocal Points</span>
                           </div>
                           <span className="font-bold text-green-700 text-lg">{getEventPoints(event.type)}</span>
                         </div>
