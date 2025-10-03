@@ -34,7 +34,7 @@ function Campuspoints() {
           } else {
             setAfter(0);
             setResults([]);
-            setError(res.data.message || "No data available");
+            setError(null); // Don't set error, just empty results
           }
         })
         .catch((err) => {
@@ -107,8 +107,8 @@ function Campuspoints() {
         </div>
       )}
 
-      {/* Results Display */}
-      {!loading && results && results.length !== 0 ? (
+      {/* Results Display - Only show if we have data with points */}
+      {!loading && !error && results && results.length > 0 && results.some((item: any) => item.points > 0) && (
         <div className="flex flex-col gap-1">
           <h3 className="text-2xl font-bold text-center text-red-700">
             {getStatusText()}
@@ -151,12 +151,13 @@ function Campuspoints() {
             </button>
           )}
         </div>
-      ) : (
-        !loading && !error && (
-          <div className="text-xs font-semibold text-center text-gray-500">
-            Campus Points Not announced Yet
-          </div>
-        )
+      )}
+
+      {/* Show "Not announced" message when no data or all points are 0 */}
+      {!loading && !error && (!results || results.length === 0 || !results.some((item: any) => item.points > 0)) && (
+        <div className="text-xs font-semibold text-center text-gray-500">
+          Campus Points Not announced Yet
+        </div>
       )}
     </div>
   );

@@ -21,7 +21,7 @@ function UpComing({ programs }: { programs: any[] }) {
             .map((prgrm, index) => (
               <div
                 key={index}
-                className="w-64 h-5/6 flex-shrink-0  bg-gradient-to-r from-red-700 to-red-600 border-red-500 border-[2px] rounded-2xl flex flex-col justify-start items-start p-4 box-border overflow-hidden relative snap-center mx-2"
+                className="w-64 h-5/6 flex-shrink-0  bg-gradient-to-br from-red-700 via-rose-600 to-rose-700 border-red-500 border-[2px] rounded-2xl flex flex-col justify-start items-start p-4 box-border overflow-hidden relative snap-center mx-2"
               >
                 <div className="border-b-2 border-red-400 flex-1 w-full">
                   <p className="text-lg w-max capitalize bg-red-500 px-2 font-semibold text-white rounded-md">

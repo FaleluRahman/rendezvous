@@ -297,7 +297,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Clock, MapPin, MoreVertical, ChevronDown, ChevronUp, Sparkles, Users, GraduationCap, PenTool, MessageCircle, Heart, Calendar, Coins, PencilLine } from "lucide-react";
+import { Clock, MapPin, MoreVertical, ChevronDown, ChevronUp, Sparkles, Users, GraduationCap, PenTool, MessageCircle, Heart, Calendar, Coins, PencilLine, CalendarDays } from "lucide-react";
 
 import { phpInstance } from "@/lib/utils";
 
@@ -306,6 +306,7 @@ interface Event {
   title: string;
   type: string;
   image?: string;
+  date?: string;
   time?: string;
   place?: string;
   description?: string;
@@ -450,6 +451,16 @@ export default function Eventset() {
 
                     {/* Event Details - Location and Time */}
                     <div className="flex flex-wrap gap-4 justify-between items-center text-sm">
+
+                         {event.date && (
+                        <div className="flex items-center gap-2">
+                          <div className="w-8 h-8 bg-blue-500/10 rounded-full flex items-center justify-center">
+                            <CalendarDays className="w-4 h-4 text-green-600" />
+                          </div>
+                          <span className="font-semibold">{event.date}</span>
+                        </div>
+                      )}
+
                       {event.time && (
                         <div className="flex items-center gap-2">
                           <div className="w-8 h-8 bg-blue-500/10 rounded-full flex items-center justify-center">
