@@ -4,7 +4,7 @@ function UpComing({ programs }: { programs: any[] }) {
   console.log(programs);
   
   return (
-    <div className="bg-white overflow-hidden ">
+    <div className="bg-white overflow-hidden font-baloo ">
       <div className="flex justify-between ml-4 w-full ">
         <p className="flex font-bold text-lg text-zinc-700 rounded-badge mb-3 px-1.5 mr-2 pt-0.5 ">
           Live Programmes

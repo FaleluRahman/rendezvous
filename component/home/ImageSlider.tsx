@@ -13,7 +13,7 @@ const ImageSlider = () => {
     // "/image/website themetalk.webg",
     "/image/expert.jpg",
     "/image/20250104_174302.jpg",
-    // "/image/eduloginb.webg",
+    "/image/Zen vista_land.jpg",
     "/image/scholarly Exchange lnd.jpg",
     "/image/scholarly Exchange lnd eng.jpg",
     "/image/20250104_172018.jpg",
@@ -22,7 +22,7 @@ const ImageSlider = () => {
 ];
 
   return (
-    <div className="w-full swiper-sec flex flex-col items-center bg-white overflow-hidden pb-6">
+    <div className="w-full swiper-sec flex font-baloo flex-col items-center bg-white overflow-hidden pb-6">
       <div className="flex justify-between px-7 w-full pb-2  text-zinc-700 font-bold">
       <p className=' text-lg rounded-badge '>Events</p>
       <Link href="/Events"> <p className='font-bold text-xs text-red-700 rounded-badge  bg-red-100  px-2 py-1 cursor-pointer'>View More</p>
