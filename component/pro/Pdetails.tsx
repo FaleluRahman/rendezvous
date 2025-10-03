@@ -169,7 +169,7 @@
 
 
 import { useEffect, useState } from "react";
-import { User, LogOut } from "lucide-react";
+import { User, LogOut, RectangleEllipsis } from "lucide-react";
 import Logout from "./Logout";
 
 type StudentDetails = {
@@ -347,7 +347,7 @@ const StudentProfilePage = () => {
                 <User className="w-4 h-4 text-red-600" />
               </div>
             </div>
-            <div className="text-xs text-gray-500 mb-1">Jamia ID</div>
+            <div className="text-xs text-gray-500 ">Jamia ID</div>
             <div className="text-base font-bold text-gray-900">
               {details?.jamiaNo || "N/A"}
             </div>
@@ -357,10 +357,10 @@ const StudentProfilePage = () => {
           <div className="bg-white rounded-2xl p-4 shadow-sm">
             <div className="flex items-center gap-2 mb-2">
               <div className="w-8 h-8 rounded-full bg-purple-50 flex items-center justify-center">
-                <User className="w-4 h-4 text-rose-600" />
+                <RectangleEllipsis  className="w-4 h-4 text-rose-600" />
               </div>
             </div>
-            <div className="text-xs text-gray-500 mb-1">Category</div>
+            <div className="text-xs text-gray-500 ">Category</div>
             <div className="text-base font-bold text-gray-900">
               {details?.category
                 ? details.category.charAt(0).toUpperCase() + details.category.slice(1)
@@ -371,7 +371,7 @@ const StudentProfilePage = () => {
       </div>
 
       {/* Programs Section */}
-      <div className="bg-gradient-to-br from-blue-50 to-purple-50 py-5 w-full flex justify-center font-sans">
+      <div className="bg-gradient-to-br from-blue-50 to-purple-50 py-5 w-full flex justify-center font-baloo">
         <div className="w-[90%] bg-white rounded-3xl shadow-xl flex flex-col pb-6 overflow-hidden">
           {/* Header */}
           <div className="bg-gradient-to-r from-red-500 to-red-800 px-5 py-4 flex justify-between items-center">

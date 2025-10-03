@@ -32,7 +32,7 @@
 //     {
 //       id: 2,
 //       img: "/image/eduloginb.webg",
-//       // time: "10:30AM", 
+//       // time: "10:30AM",
 //       location: "Library ",
 //       price: "07",
 //       topic:
@@ -86,7 +86,6 @@
 
 //     },
 
-
 //     {
 //       id: 7,
 //       img: "/image/najeeb noor.jpg",
@@ -111,7 +110,6 @@
 
 //     },
 
-
 //     {
 //       id: 9,
 //       img: "/image/yasir .jpg",
@@ -135,7 +133,6 @@
 //       sec: "Expert Convos",
 
 //     },
-
 
 //     {
 //       id: 11,
@@ -225,7 +222,7 @@
 //       sec: "WriteWell Clinic - Kannada",
 
 //     },
-  
+
 //   ];
 
 //   return (
@@ -293,11 +290,26 @@
 
 // export default Eventset;
 
-
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Clock, MapPin, MoreVertical, ChevronDown, ChevronUp, Sparkles, Users, GraduationCap, PenTool, MessageCircle, Heart, Calendar, Coins, PencilLine, CalendarDays } from "lucide-react";
+import {
+  Clock,
+  MapPin,
+  MoreVertical,
+  ChevronDown,
+  ChevronUp,
+  Sparkles,
+  Users,
+  GraduationCap,
+  PenTool,
+  MessageCircle,
+  Heart,
+  Calendar,
+  Coins,
+  PencilLine,
+  CalendarDays,
+} from "lucide-react";
 
 import { phpInstance } from "@/lib/utils";
 
@@ -345,20 +357,20 @@ export default function Eventset() {
     "WriteWell Clinic",
     "Pro Chat",
     "Mind Wellness Cliinic",
-    "Science Orbit"
+    "Science Orbit",
   ] as const;
-  type EventType = typeof eventTypes[number];
+  type EventType = (typeof eventTypes)[number];
 
   const getEventPoints = (type: string): number => {
     const points: Record<EventType, number> = {
-    "Expert Convos": 7,
-        "Edu Login": 7,
-        "WriteWell Clinic": 5,
-        "Pro Chat": 3,
-        "Mind Wellness Cliinic": 5,
-"Science Orbit":7 ,
+      "Expert Convos": 7,
+      "Edu Login": 7,
+      "WriteWell Clinic": 5,
+      "Pro Chat": 3,
+      "Mind Wellness Cliinic": 5,
+      "Science Orbit": 7,
     };
-    return (type in points ? points[type as EventType] : 0);
+    return type in points ? points[type as EventType] : 0;
   };
 
   // Get icon based on event type
@@ -370,7 +382,7 @@ export default function Eventset() {
       case "Edu Login":
         return <GraduationCap className={iconProps} />;
       case "WriteWell Clinic":
-        return <PencilLine  className={iconProps} />;
+        return <PencilLine className={iconProps} />;
       case "Pro Chat":
         return <MessageCircle className={iconProps} />;
       case "Tranquil Wellness Hub":
@@ -381,25 +393,28 @@ export default function Eventset() {
   };
 
   // Single consistent gradient for all events
-  const eventGradient = "bg-gradient-to-br from-red-700 via-rose-600 to-rose-700";
+  const eventGradient =
+    "bg-gradient-to-br from-red-700 via-rose-600 to-rose-700";
 
   return (
     <>
       <div className="min-h-screen pb-28 bg-gray-50 relative overflow-hidden">
-       
         <div className="max-w-2xl mx-auto relative z-10 ">
           <div className="text-center mb-8  bg-gradient-to-br from-red-700 via-rose-600 to-rose-700 py-8 rounded-b-3xl">
-         
-            <h1 className="text-3xl font-baloo  font-bold text-white mb-2">Explore Events</h1>
+            <h1 className="text-3xl font-baloo  font-bold text-white mb-2">
+              Explore Events
+            </h1>
           </div>
 
           {events.length === 0 && (
             <div className="text-center py-12">
-         
-              <h3 className="text-2xl font-bold text-gray-800 mb-3 font-baloo">Something  is Coming!</h3>
+              <h3 className="text-2xl font-bold text-gray-800 mb-3 font-baloo">
+                Something is Coming!
+              </h3>
               <div className="flex justify-center items-center gap-2 text-sm text-gray-500">
-                
-                <span className="ml-2 font-medium font-baloo-thin">Stay tuned for updates</span>
+                <span className="ml-2 font-medium font-baloo-thin">
+                  Stay tuned for updates
+                </span>
               </div>
             </div>
           )}
@@ -419,10 +434,12 @@ export default function Eventset() {
                   className="bg-white/90 backdrop-blur-sm font-baloo rounded-t-3xl rounded-b-xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group border border-white/50"
                   onClick={() => toggleVisibility(index)}
                   style={{
-                    animationDelay: `${index * 0.1}s`
+                    animationDelay: `${index * 0.1}s`,
                   }}
                 >
-                  <div className={`bg-gradient-to-r ${eventGradient} py-3 px-5 rounded-t-3xl text-white flex justify-between items-center shadow-md`}>
+                  <div
+                    className={`bg-gradient-to-r ${eventGradient} py-3 px-5 rounded-t-3xl text-white flex justify-between items-center shadow-md`}
+                  >
                     <div className="flex items-center gap-2">
                       {getEventTypeIcon(event.type)}
                       <span className="font-bold text-sm sm:text-base truncate">
@@ -448,31 +465,38 @@ export default function Eventset() {
 
                     {/* Event Details - Location and Time */}
                     <div className="flex flex-wrap gap-4 justify-between items-center text-sm">
-
-                         {event.date && (
-                        <div className="flex items-center gap-2">
+                      {event.date && event.time && (
+                        <div className="flex items-center ">
                           <div className="w-8 h-8 bg-blue-500/10 rounded-full flex items-center justify-center">
                             <CalendarDays className="w-4 h-4 text-green-600" />
                           </div>
-                          <span className="font-semibold">{event.date}</span>
+                          <span className="pl-1 font-semibold">
+                            {new Date(event.date).toLocaleDateString("en-US", {
+                              weekday: "long",
+                            })}
+                          </span>
+                           <span className="font-semibold">-{event.time}</span>
+
                         </div>
                       )}
 
-                      {event.time && (
+                      {/* {event.time && (
                         <div className="flex items-center gap-2">
                           <div className="w-8 h-8 bg-blue-500/10 rounded-full flex items-center justify-center">
                             <Clock className="w-4 h-4 text-blue-600" />
                           </div>
                           <span className="font-semibold">{event.time}</span>
                         </div>
-                      )}
-                      
+                      )} */}
+
                       {event.place && (
                         <div className="flex items-center gap-2">
                           <div className="w-8 h-8 bg-red-500/10 rounded-full flex items-center justify-center">
                             <MapPin className="w-4 h-4 text-red-600" />
                           </div>
-                          <span className="font-semibold truncate">{event.place}</span>
+                          <span className="font-semibold truncate">
+                            {event.place}
+                          </span>
                         </div>
                       )}
                     </div>
@@ -482,7 +506,7 @@ export default function Eventset() {
                   {isExpanded && (
                     <div className="px-5 pb-4 animate-in slide-in-from-top-2 duration-300">
                       {/* Image */}
-                     {event.image && (
+                      {event.image && (
                         <div className="relative mb-4 group-hover:scale-[1.02] transition-transform duration-500">
                           <img
                             className="rounded-xl w-full h-auto object-contain shadow-lg"
@@ -499,18 +523,13 @@ export default function Eventset() {
                       {/* Description */}
                       {event.description && (
                         <div className="bg-gradient-to-r from-gray-50 to-orange-50 text-gray-700 px-4 py-3 rounded-xl border border-gray-200/50 mb-4">
-                          <p className="text-sm leading-relaxed">{event.description}</p>
+                          <p className="text-sm leading-relaxed">
+                            {event.description}
+                          </p>
                         </div>
                       )}
 
-                     
-
                       {/* Points Display */}
-                      
-
-
-
-
 
                       <div className="bg-gradient-to-r from-green-50 to-emerald-50 px-4 py-3 rounded-xl border border-green-200/50">
                         <div className="flex items-center justify-between">
@@ -518,9 +537,14 @@ export default function Eventset() {
                             <div className="w-8 h-8 bg-green-500/10 rounded-full flex items-center justify-center">
                               <Coins className="w-4 h-4 text-green-600" />
                             </div>
-                            <span className="font-semibold text-green-800 text-sm"> Glocal Points</span>
+                            <span className="font-semibold text-green-800 text-sm">
+                              {" "}
+                              Glocal Points
+                            </span>
                           </div>
-                          <span className="font-bold text-green-700 text-lg">{getEventPoints(event.type)}</span>
+                          <span className="font-bold text-green-700 text-lg">
+                            {getEventPoints(event.type)}
+                          </span>
                         </div>
                       </div>
                     </div>

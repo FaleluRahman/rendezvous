@@ -1,7 +1,7 @@
 import React from "react";
 
 function UpComing({ programs }: { programs: any[] }) {
-  console.log(programs);
+  // console.log(programs);
   
   return (
     <div className="bg-white overflow-hidden font-baloo ">
