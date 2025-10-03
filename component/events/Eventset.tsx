@@ -388,21 +388,18 @@ export default function Eventset() {
       <div className="min-h-screen pb-28 bg-gray-50 relative overflow-hidden">
        
         <div className="max-w-2xl mx-auto relative z-10 ">
-          {/* Professional Header */}
           <div className="text-center mb-8  bg-gradient-to-br from-red-700 via-rose-600 to-rose-700 py-8 rounded-b-3xl">
          
-            <h1 className="text-3xl font-bold text-white mb-2">Explore Events</h1>
-            {/* <p className="text-amber-50 font-medium text-xl"> Join exciting events</p> */}
+            <h1 className="text-3xl font-baloo  font-bold text-white mb-2">Explore Events</h1>
           </div>
 
-          {/* Empty State - Updated Design */}
           {events.length === 0 && (
             <div className="text-center py-12">
          
-              <h3 className="text-2xl font-bold text-gray-800 mb-3">Something  is Coming!</h3>
+              <h3 className="text-2xl font-bold text-gray-800 mb-3 font-baloo">Something  is Coming!</h3>
               <div className="flex justify-center items-center gap-2 text-sm text-gray-500">
                 
-                <span className="ml-2 font-medium">Stay tuned for updates</span>
+                <span className="ml-2 font-medium font-baloo-thin">Stay tuned for updates</span>
               </div>
             </div>
           )}
@@ -419,7 +416,7 @@ export default function Eventset() {
               return (
                 <div
                   key={event.id}
-                  className="bg-white/90 backdrop-blur-sm rounded-t-3xl rounded-b-xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group border border-white/50"
+                  className="bg-white/90 backdrop-blur-sm font-baloo rounded-t-3xl rounded-b-xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group border border-white/50"
                   onClick={() => toggleVisibility(index)}
                   style={{
                     animationDelay: `${index * 0.1}s`
@@ -445,7 +442,7 @@ export default function Eventset() {
                   {/* First View - Always Visible */}
                   <div className="px-5 py-3">
                     {/* Event Title */}
-                    <h2 className="font-bold text-gray-800 text-sm sm:text-base leading-tight mb-3 transition-all duration-300">
+                    <h2 className="font-bold   text-gray-800 text-sm sm:text-base leading-tight mb-3 transition-all duration-300">
                       {event.title}
                     </h2>
 
@@ -509,6 +506,12 @@ export default function Eventset() {
                      
 
                       {/* Points Display */}
+                      
+
+
+
+
+
                       <div className="bg-gradient-to-r from-green-50 to-emerald-50 px-4 py-3 rounded-xl border border-green-200/50">
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-2">

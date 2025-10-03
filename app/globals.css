@@ -3,6 +3,12 @@
 @tailwind utilities;
 
 /* Fonts */
+
+
+@import "@fontsource/baloo-chettan-2"; /* Defaults to weight 400 */
+@import "@fontsource/baloo-chettan-2/500.css";
+@import "@fontsource/baloo-chettan-2/700.css";
+
 @font-face {
   font-family: 'Gilroy';
   src: url('/fonts/Gilroy-Regular.ttf') format('truetype');
