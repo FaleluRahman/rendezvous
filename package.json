@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fontsource/baloo-chettan-2": "^5.2.7",
     "@vercel/speed-insights": "^1.2.0",
     "@yudiel/react-qr-scanner": "^2.1.0",
     "@zoff-tech/zt-qr-scan": "^1.1.0",

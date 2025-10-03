@@ -10,12 +10,12 @@ import Link from "next/link"; // Correct Link import for navigation
 
 const ImageSlider = () => {
   const images = [
-    "/image/website themetalk.webg",
-    "/image/website1 expert.webg",
+    // "/image/website themetalk.webg",
+    "/image/expert.jpg",
     "/image/20250104_174302.jpg",
-    "/image/eduloginb.webg",
-    "/image/web pro.webg",
-    "/image/web green theme.webg",
+    // "/image/eduloginb.webg",
+    "/image/scholarly Exchange lnd.jpg",
+    "/image/scholarly Exchange lnd eng.jpg",
     "/image/20250104_172018.jpg",
     "/image/20250104_173205.jpg",
     "/image/20250104_174833.jpg",

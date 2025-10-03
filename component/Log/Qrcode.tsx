@@ -410,7 +410,7 @@ const QrCodeScanner = () => {
         <div className="relative max-w-md w-full mx-4">
           <div className="bg-white rounded-3xl shadow-lg overflow-hidden">
             {/* Header */}
-            <div className="bg-gradient-to-r from-red-900 to-red-700 p-6 text-white text-center">
+            <div className="bg-gradient-to-br from-red-700 via-rose-600 to-rose-700 p-6 text-white text-center">
               <h2 className="font-bold text-zinc-50 text-xl">Scan your Id card</h2>
             </div>
             
@@ -428,7 +428,7 @@ const QrCodeScanner = () => {
             <div className="p-6 pt-0">
               <a
                 href="/login"
-                className="p-2 px-5 font-bold text-zinc-50 rounded-xl bg-red-700 hover:bg-red-800 transition-colors inline-block"
+                className="p-2 px-5 font-bold text-zinc-50 rounded-xl bg-gradient-to-br from-red-700 via-rose-600 to-rose-700 hover:bg-rose-700 transition-colors inline-block"
               >
                 Back to login
               </a>
