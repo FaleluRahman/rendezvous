@@ -260,7 +260,7 @@ export default function QrScan({ setScan }: QrScanProps) {
   };
 
   return (
-    <div className="fixed inset-0 h-screen w-full bg-black bg-opacity-80 flex items-center justify-center z-50 p-4">
+    <div className="fixed inset-0 h-screen w-full font-baloo bg-black bg-opacity-80 flex items-center justify-center z-50 p-4">
       <div className="relative max-w-md w-full">
         {status === "scanning" ? (
           <div className="bg-white rounded-xl shadow-2xl overflow-hidden">

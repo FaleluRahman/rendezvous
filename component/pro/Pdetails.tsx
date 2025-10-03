@@ -311,7 +311,7 @@ const StudentProfilePage = () => {
   }
 
   return (
-    <div className="bg-gray-50 h-auto">
+    <div className="bg-gray-50 h-auto font-baloo">
       {/* Logout Button */}
       <Logout/>
 
@@ -327,7 +327,7 @@ const StudentProfilePage = () => {
               </div>
             </div>
           </div>
-          <h2 className="text-xl font-bold text-gray-900 mb-1">
+          <h2 className="text-xl font-bold text-gray-900 ">
             {details?.name
               ? details.name
                   .split(" ")

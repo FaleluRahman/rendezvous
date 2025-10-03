@@ -15,6 +15,7 @@ export default {
         sans: ["Gilroy", ...fontFamily.sans],
         gilroy: ["Gilroy", "sans-serif"],
         malayalam: ['"Noto Serif Malayalam"', 'serif'],
+         baloo: ["'Baloo Chettan 2'", "cursive"],
       },
       
       keyframes: {

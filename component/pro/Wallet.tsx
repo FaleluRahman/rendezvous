@@ -46,7 +46,7 @@ const Wallet = () => {
   }, [scan]);
   
   return (
-    <div className="bg-gray-50 pt-5 px-6 w-full flex pb-28 flex-col justify-center" id="collect">
+    <div className="bg-gray-50 pt-5 px-6 w-full flex pb-28 flex-col font-baloo justify-center" id="collect">
       {/* Info Card */}
       <div className="w-full mb-4">
         <button 
