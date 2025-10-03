@@ -12,9 +12,9 @@ const Headtop = () => {
 
         {/* Notification and Profile Icons */}
         <div className="flex gap-2 px-5">
-          <Link href="/notification">
+          {/* <Link href="/notification">
             <FaBell className="text-stone-900 text-xl cursor-pointer" />
-          </Link>
+          </Link> */}
           <Link href="/profile">
             <CgProfile className="text-stone-900 text-xl cursor-pointer" />
           </Link>
