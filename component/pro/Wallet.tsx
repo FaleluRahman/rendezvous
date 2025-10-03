@@ -48,7 +48,7 @@ const Wallet = () => {
   return (
     <div className="bg-gray-50 pt-5 px-6 w-full flex pb-28 flex-col font-baloo justify-center" id="collect">
       {/* Info Card */}
-      <div className="w-full mb-4">
+      <div className="w-full mb-4 font-baloo">
         <button 
           onClick={() => setShowInfo(!showInfo)}
           className="w-full bg-gradient-to-br from-red-700 via-rose-600 to-rose-700 rounded-2xl shadow-lg flex items-center justify-between p-5 text-white hover:shadow-xl transition-all"
@@ -141,7 +141,7 @@ Redeem your points at Papyrus Reading Carnival, Tajammul Mart, MG Cafe, and VR H
           </p>
         </div>
         <button
-          className="bg-white/90 hover:bg-white ml-5 font-2xl text-red-800 w-fit pr-[30%] font-bold px-3 py-1 rounded-2xl shadow-md transition-all"
+          className="bg-white/95 hover:bg-white ml-5 font-2xl text-red-800 w-fit pr-[30%] font-bold px-3 py-1 rounded-2xl shadow-md transition-all"
           onClick={() => setScan(true)}
         >
           Redeem

@@ -59,9 +59,9 @@ function Header() {
               </h1> 
             </div>
 
-            <div className='text-black/45 m-8 flex text-justify text-xs leading-[14px] font-base'>
+            <div className='text-black/85 m-8 flex text-justify text-xs leading-[14px] font-base'>
               <p className='font-gilroy'>
-                <span className='font-semibold text-black/55'>Rendezvous Life Festival</span> is an annual arts and cultural event organized by Jamia Madeenathunnoor
+                <span className='font-semibold text-black/95'>Rendezvous Life Festival</span> is an annual arts and cultural event organized by Jamia Madeenathunnoor
                 to nurture and enhance the artistic talents of its students. This event not only promotes individual artistic development but also aims to build a supportive, 
                 and vibrant community around the arts at Jamia Madeenathunnoor.
               </p>
