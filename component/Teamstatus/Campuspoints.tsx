@@ -51,18 +51,21 @@ function Campuspoints() {
 
   // Get total programs count for the current category
   const getTotalProgramsCount = () => {
+    // Normalize category names to match the data structure
+    const normalizeCategory = (category: string) => {
+      if (category === "subJunior") return "subJunior";
+      return category.toLowerCase();
+    }
+    
     return programs.filter((prgrm) =>
-      cat === "premier"
-        ? prgrm.category === "premier"
-        : prgrm.category === cat.toLowerCase()
+      prgrm.category === normalizeCategory(cat)
     ).length;
   };
 
-  // Determine if it's final status or showing partial results
   const getStatusText = () => {
     const totalPrograms = getTotalProgramsCount();
     if (after === 0 || totalPrograms <= after) {
-      return "After 10 Results";
+      return "After Results";
     }
     return `After ${after} Results`;
   };
@@ -71,8 +74,8 @@ function Campuspoints() {
     <div className="bg-gray-50 flex flex-col h-fit pt-4 pb-10 px-5">
       <div className="flex flex-col justify-between items-end w-full">
         {/* Category Selection Buttons */}
-        <div className="flex gap-1 w-11/12 mx-auto overflow-x-auto">
-          {["Minor", "Premier", "Subjunior", "Junior", "Senior"].map(
+        <div className="flex gap-1 w-11/12 mx-auto overflow-x-auto capitalize hide-scrollbar"> 
+          {["Minor", "Premier","subJunior", "Junior", "Senior"].map(
             (item: any) => (
               <div
                 onClick={() => {
@@ -110,7 +113,8 @@ function Campuspoints() {
       {/* Results Display - Only show if we have data with points */}
       {!loading && !error && results && results.length > 0 && results.some((item: any) => item.points > 0) && (
         <div className="flex flex-col gap-1">
-<h3 className="text-2xl font-bold text-center bg-gradient-to-br from-red-700 via-rose-600 to-rose-700 bg-clip-text text-transparent">            {getStatusText()}
+          <h3 className="text-2xl font-bold text-center bg-gradient-to-br from-red-700 via-rose-600 to-rose-700 bg-clip-text text-transparent">
+            {getStatusText()}
           </h3>
 
           {/* Top 3 Results */}
@@ -121,7 +125,7 @@ function Campuspoints() {
             >
               <img src={placeImage[index + 1]} alt="" className="h-8" />
               <p className="font-bold align-middle text-center">{item.campus}</p>
-              <p className="font-bold">{item.points}</p>
+              <p className="font-bold bg-gradient-to-br from-red-700 via-rose-600 to-rose-700 bg-clip-text text-transparent">{item.points}</p>
             </div>
           ))}
 
@@ -136,7 +140,7 @@ function Campuspoints() {
                   {index + 4}
                 </p>
                 <p className="font-semibold text-zinc-700 align-middle text-center">{item.campus}</p>
-                <p className="font-semibold">{item.points}</p>
+                <p className="font-semibold bg-gradient-to-br from-red-700 via-rose-600 to-rose-700 bg-clip-text text-transparent">{item.points}</p>
               </div>
             ))}
 
