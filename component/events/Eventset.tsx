@@ -363,12 +363,12 @@ export default function Eventset() {
 
   const getEventPoints = (type: string): number => {
     const points: Record<EventType, number> = {
-      "Expert Convos": 7,
-      "Edu Login": 7,
-      "WriteWell Clinic": 5,
-      "Pro Chat": 3,
-      "Mind Wellness Cliinic": 5,
-      "Science Orbit": 7,
+      "Expert Convos": 4,
+      "Edu Login": 4,
+      "WriteWell Clinic": 3,
+      "Pro Chat": 2,
+      "Mind Wellness Cliinic": 3,
+      "Science Orbit": 4,
     };
     return type in points ? points[type as EventType] : 0;
   };
