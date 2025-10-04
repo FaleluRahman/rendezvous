@@ -62,7 +62,7 @@ function Campuspoints() {
   const getStatusText = () => {
     const totalPrograms = getTotalProgramsCount();
     if (after === 0 || totalPrograms <= after) {
-      return "Final Status";
+      return "After 10 Results";
     }
     return `After ${after} Results`;
   };
@@ -72,7 +72,7 @@ function Campuspoints() {
       <div className="flex flex-col justify-between items-end w-full">
         {/* Category Selection Buttons */}
         <div className="flex gap-1 w-11/12 mx-auto overflow-x-auto">
-          {["Minor", "Premier", "SubJunior", "Junior", "Senior"].map(
+          {["Minor", "Premier", "Subjunior", "Junior", "Senior"].map(
             (item: any) => (
               <div
                 onClick={() => {
