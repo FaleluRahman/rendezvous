@@ -443,7 +443,7 @@ const StudentProfilePage = () => {
   ) : program.status === "announced" ? (
     <span className="bg-cyan-100 text-cyan-700 text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1">
       
-      Finished
+      Announced
     </span>
   ) : null}
 </div>
