@@ -19,6 +19,7 @@ const ImageSlider = () => {
     "/image/20250104_172018.jpg",
     "/image/20250104_173205.jpg",
     "/image/20250104_174833.jpg",
+    "/image/ev ceo.jpg",
 ];
 
   return (

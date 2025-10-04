@@ -82,7 +82,7 @@ function Campuspoints() {
                 key={item}
                 className={`py-1 px-2 rounded-lg text-white text-xs text-center w-full my-4 cursor-pointer ${
                   cat === item
-                    ? "bg-red-700 text-xs font-bold"
+                    ? "bg-gradient-to-br from-red-700 via-rose-600 to-rose-700 text-xs font-bold"
                     : "bg-zinc-500 font-sans"
                 }`}
               >
@@ -110,8 +110,7 @@ function Campuspoints() {
       {/* Results Display - Only show if we have data with points */}
       {!loading && !error && results && results.length > 0 && results.some((item: any) => item.points > 0) && (
         <div className="flex flex-col gap-1">
-          <h3 className="text-2xl font-bold text-center text-red-700">
-            {getStatusText()}
+<h3 className="text-2xl font-bold text-center bg-gradient-to-br from-red-700 via-rose-600 to-rose-700 bg-clip-text text-transparent">            {getStatusText()}
           </h3>
 
           {/* Top 3 Results */}
@@ -133,7 +132,7 @@ function Campuspoints() {
                 key={index}
                 className="p-3 rounded-xl shadow-md bg-white flex items-center text-zinc-700 justify-between px-5"
               >
-                <p className="bg-red-800 text-center h-8 w-8 py-1 px-2 text-white rounded-full font-semibold">
+                <p className="bg-gradient-to-br from-red-700 via-rose-600 to-rose-700 text-center h-8 w-8 py-1 px-2 text-white rounded-full font-semibold">
                   {index + 4}
                 </p>
                 <p className="font-semibold text-zinc-700 align-middle text-center">{item.campus}</p>
@@ -144,7 +143,7 @@ function Campuspoints() {
           {/* Toggle Button - Only show if more than 3 results */}
           {results.length > 3 && (
             <button
-              className="bg-red-700 rounded-xl text-white font-bold font-sans py-2 mt-2"
+              className="bg-gradient-to-br from-red-700 via-rose-600 to-rose-700 rounded-xl text-white font-bold font-sans py-2 mt-2"
               onClick={() => setView(!view)}
             >
               {!view ? "View More" : "View Less"}
