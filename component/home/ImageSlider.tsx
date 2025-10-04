@@ -10,7 +10,7 @@ import Link from "next/link"; // Correct Link import for navigation
 
 const ImageSlider = () => {
   const images = [
-    // "/image/website themetalk.webg",
+    "/image/prochat.jpg",
     "/image/expert.jpg",
     "/image/20250104_174302.jpg",
     "/image/Zen vista_land.jpg",
