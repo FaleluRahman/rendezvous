@@ -419,7 +419,7 @@ const StudentProfilePage = () => {
                         {program.program}
                       </h3>
                     </div>
-                   <div className="flex items-center gap-2">
+                                    <div className="flex items-center gap-2">
   {program.status === "finished" ? (
     <span className="bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1">
       
@@ -439,6 +439,11 @@ const StudentProfilePage = () => {
     <span className="bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1">
       <span className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></span>
       Ongoing
+    </span>
+  ) : program.status === "announced" ? (
+    <span className="bg-cyan-100 text-cyan-700 text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1">
+      
+      Finished
     </span>
   ) : null}
 </div>

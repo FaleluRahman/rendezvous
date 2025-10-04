@@ -328,7 +328,7 @@ const ItemResult = () => {
                 className={`flex items-center gap-1.5 px-4 py-2.5 rounded-xl font-semibold text-sm transition-all ${
                   currentPage === totalPages
                     ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                    : 'bg-red-600 text-white hover:bg-red-700 active:scale-95'
+                    : 'bg-gradient-to-br from-red-700 via-rose-600 to-rose-700 text-white hover:bg-red-700 active:scale-95'
                 }`}
               >
                 <span>Next</span>
