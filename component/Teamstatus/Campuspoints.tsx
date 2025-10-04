@@ -62,7 +62,7 @@ function Campuspoints() {
   const getStatusText = () => {
     const totalPrograms = getTotalProgramsCount();
     if (after === 0 || totalPrograms <= after) {
-      return "";
+      return "After 10 Results";
     }
     return `After ${after} Results`;
   };
