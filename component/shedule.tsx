@@ -19,7 +19,7 @@ function convertTo12Hour(time24: string) {
 }
 
 const Schedule = () => {
-  const [date, setDate] = useState<string>("03"); 
+  const [date, setDate] = useState<string>("05"); 
   const [stage, setStage] = useState<number>(1);
   const [schedule, setSchedule] = useState<any>([]);
   const [loading, setLoading] = useState<boolean>(false);
@@ -48,7 +48,7 @@ const Schedule = () => {
       case "05":
         return "2025-10-05";
       default:
-        return "2025-10-02";
+        return "2025-10-05";
     }
   };
 

@@ -144,8 +144,8 @@ const ItemResult = () => {
                   onClick={() => setSelectedCategory(category)}
                   className={`flex-shrink-0 px-4 py-2 rounded-xl text-xs font-semibold transition-all whitespace-nowrap ${
                     selectedCategory === category
-                      ? 'bg-gradient-to-br from-red-700 via-rose-600 to-rose-700 text-white shadow-sm'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200 active:scale-95'
+                      ? 'bg-gradient-to-br from-red-700 via-rose-600 to-rose-700 text-white shadow-sm capitalize'
+                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200 active:scale-95 capitalize'
                   }`}
                 >
                   {category === "all" ? "All Categories" : category}
@@ -192,7 +192,7 @@ const ItemResult = () => {
                     <span className="inline-block text-[10px] font-semibold text-gray-600 uppercase tracking-wider bg-gray-50 px-2.5 py-1 rounded-md mb-2.5">
                       {program.category}
                     </span>
-                    <h3 className="text-base font-semibold leading-snug text-red-800 break-words">
+                    <h3 className="text-base font-semibold leading-snug bg-gradient-to-br from-red-700 via-rose-600 to-rose-700 bg-clip-text text-transparent break-words">
                       {program.name}
                     </h3>
                   </div>
@@ -220,7 +220,7 @@ const ItemResult = () => {
                       </div>
                     ) : result === "loading" ? (
                       <div className="flex justify-center py-10">
-                        <LoaderCircle className="text-red-600 animate-spin text-3xl" />
+                        <LoaderCircle className="bg-gradient-to-br from-red-700 via-rose-600 to-rose-700 bg-clip-text text-transparent animate-spin text-3xl" />
                       </div>
                     ) : (
                       <div className="space-y-2.5">
@@ -278,7 +278,7 @@ const ItemResult = () => {
                 className={`flex items-center gap-1.5 px-4 py-2.5 rounded-xl font-semibold text-sm transition-all ${
                   currentPage === 1
                     ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                    : 'bg-red-600 text-white hover:bg-red-700 active:scale-95'
+                    : 'bg-gradient-to-br from-red-700 via-rose-600 to-rose-700  text-white hover:bg-red-700 active:scale-95'
                 }`}
               >
                 <ChevronLeft className="w-4 h-4" />
@@ -310,7 +310,7 @@ const ItemResult = () => {
                           onClick={() => goToPage(page)}
                           className={`w-10 h-10 rounded-xl font-semibold text-sm transition-all ${
                             currentPage === page
-                              ? 'bg-red-600 text-white'
+                              ? 'bg-gradient-to-br from-red-700 via-rose-600 to-rose-700  text-white'
                               : 'bg-gray-100 text-gray-700 hover:bg-gray-200 active:scale-95'
                           }`}
                         >
